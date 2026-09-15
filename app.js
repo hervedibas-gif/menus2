@@ -397,10 +397,6 @@ function draw(){
  $('weekTitle').innerHTML='Semaine '+m.week+' • Cycle '+Math.ceil(m.week/4)+' <span class="timebadge '+ds+'">'+labels[ds]+'</span>';
  const dn=document.querySelector('.daynav');dn.classList.remove('pastday','currentday','futureday');dn.classList.add(ds==='past'?'pastday':ds==='current'?'currentday':'futureday');
 
- const breakfast=m.breakfast||'';
- if(breakfast){$('breakfastCard').style.display='';$('breakfastText').textContent=breakfast;$('breakfastImg').src=imageForText(breakfast,'breakfast');$('breakfastPhotoLabel').textContent=breakfast.split('+')[0].trim();}
- else{$('breakfastCard').style.display='none';}
-
  const lunch=cleanLunchMain(currentMeal(i,'lunch')), dinner=currentMeal(i,'dinner');
  $('lunchText').innerHTML=lunchHTML(i);
  $('dinnerText').innerHTML=escHtml(dinner)+'<button class="recipe-btn" onclick="openRecipe(currentMeal('+i+',\'dinner\'),\'Recette du dîner\')">📖 Recette complète</button>';
@@ -502,8 +498,8 @@ function searchMenus(q){
   q=q.trim().toLowerCase();if(q.length<2)return[];
   const out=[];
   M.forEach((m,idx)=>{
-    const starter=starterForIndex(idx), lunch=cleanLunchMain(currentMeal(idx,'lunch')), dinner=currentMeal(idx,'dinner'), bf=m.breakfast||'';
-    const hay=(starter+' '+lunch+' '+dinner+' '+bf).toLowerCase();
+    const starter=starterForIndex(idx), lunch=cleanLunchMain(currentMeal(idx,'lunch')), dinner=currentMeal(idx,'dinner');
+    const hay=(starter+' '+lunch+' '+dinner).toLowerCase();
     if(hay.includes(q))out.push({idx,week:m.week,day:m.day,starter,lunch,dinner});
   });
   return out;
@@ -638,7 +634,7 @@ function buildNextCycle(){
  const extra=[];
  for(let k=0;k<28;k++){
    const idx=BASE_M.length+k;
-   extra.push({day:dayNames[k%7],week:Math.floor(BASE_M.length/7)+1+Math.floor(k/7),breakfast:BASE_M[idx%BASE_M.length]?.breakfast||'',lunch:'Entrée : '+ALL_STARTERS[idx%ALL_STARTERS.length]+' • Plat : '+lunches[(k*5+3)%lunches.length],snack:'',dinner:dinners[(k*7+2)%dinners.length]});
+   extra.push({day:dayNames[k%7],week:Math.floor(BASE_M.length/7)+1+Math.floor(k/7),lunch:'Entrée : '+ALL_STARTERS[idx%ALL_STARTERS.length]+' • Plat : '+lunches[(k*5+3)%lunches.length],snack:'',dinner:dinners[(k*7+2)%dinners.length]});
  }
  M=[...BASE_M,...extra];localStorage.setItem('v6_nextcycle','1');i=BASE_M.length;save();setView('menus');
 }
@@ -650,8 +646,8 @@ function printCurrentWeek(){
  const week=M[i].week;
  const days=M.map((m,idx)=>({...m,idx})).filter(m=>m.week===week);
  const sheet=$('weekPrintSheet');
- sheet.innerHTML='<div class="print-head"><h1>Mes Menus — Semaine '+week+'</h1><p>Petit-déjeuner, entrée, déjeuner et dîner, du lundi au dimanche</p></div>'+
-  days.map(m=>'<article class="print-day"><h2>'+m.day+'</h2>'+(m.breakfast?'<div><b>☀️ Petit-déjeuner</b><p>'+m.breakfast+'</p></div>':'')+'<div><b>🥗 Entrée</b><p>'+starterForIndex(m.idx)+'</p></div><div><b>🍴 Plat du déjeuner</b><p>'+cleanLunchMain(currentMeal(m.idx,'lunch'))+'</p></div><div><b>🌙 Dîner</b><p>'+currentMeal(m.idx,'dinner')+'</p></div></article>').join('');
+ sheet.innerHTML='<div class="print-head"><h1>Mes Menus — Semaine '+week+'</h1><p>Entrée, déjeuner et dîner, du lundi au dimanche</p></div>'+
+  days.map(m=>'<article class="print-day"><h2>'+m.day+'</h2><div><b>🥗 Entrée</b><p>'+starterForIndex(m.idx)+'</p></div><div><b>🍴 Plat du déjeuner</b><p>'+cleanLunchMain(currentMeal(m.idx,'lunch'))+'</p></div><div><b>🌙 Dîner</b><p>'+currentMeal(m.idx,'dinner')+'</p></div></article>').join('');
  document.body.classList.add('printing-week');
  setTimeout(()=>window.print(),80);
 }
