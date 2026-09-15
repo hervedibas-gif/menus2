@@ -211,3 +211,55 @@ body.dark .advice.text{background:#131b17}
 .photo img{height:92px!important;width:auto!important;max-width:70%!important;object-fit:contain!important;background:transparent!important;border:none!important;box-shadow:none!important}
 .photo span{font-size:11.5px!important;padding:4px 8px!important;bottom:2px!important}
 .weekgrid-day .mini-photo{display:none}
+
+/* ===================== V6.1 — confort d'usage ===================== */
+
+/* Bouton annuler dans l'en-tête */
+#undoBtn[disabled]{opacity:.35;pointer-events:none}
+
+/* Modale de choix (3 propositions) */
+#choiceOptions{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.choice-option{display:block;width:100%;text-align:left;border:1px solid #d7e4dc;background:#fff;border-radius:14px;padding:12px 14px;font-size:14.5px;font-weight:700;color:#173e2d}
+.choice-option:active{background:#eef7f1}
+#choiceReroll{width:100%;margin-top:4px}
+
+/* Sélecteur segmenté (taille du texte) */
+.segmented{display:flex;border:1px solid #cfe0d4;border-radius:12px;overflow:hidden;margin-top:6px}
+.segmented button{flex:1;border:0;background:#fff;padding:9px 6px;font-size:12.5px;font-weight:800;color:#3a5548;border-right:1px solid #cfe0d4}
+.segmented button:last-child{border-right:0}
+.segmented button.on{background:#11804e;color:#fff}
+
+/* Tailles de texte accessibles */
+body.text-large{font-size:112%}
+body.text-large .chip,body.text-large button{font-size:104%}
+body.text-xlarge{font-size:126%}
+body.text-xlarge .chip,body.text-xlarge button{font-size:108%}
+body.text-large h1, body.text-xlarge h1{line-height:1.25}
+
+/* Contraste élevé */
+body.high-contrast{background:#fff;color:#000}
+body.high-contrast .meal,body.high-contrast .progressbox,body.high-contrast .shop-section,
+body.high-contrast .favorite-card,body.high-contrast .weekgrid-day,body.high-contrast .recipe-panel{
+  border:2px solid #000!important;box-shadow:none!important;background:#fff!important;color:#000!important
+}
+body.high-contrast .mealbody p,body.high-contrast h1,body.high-contrast h2,body.high-contrast h3,
+body.high-contrast .weekgrid-day b,body.high-contrast .weekgrid-day small{color:#000!important}
+body.high-contrast .chip{border:2px solid #000;color:#000}
+body.high-contrast .chip.on{background:#000;color:#fff;border-color:#000}
+body.high-contrast .daynav button,body.high-contrast .bottom button{color:#000}
+body.high-contrast .bottom button.on{color:#000;font-weight:900;text-decoration:underline}
+body.high-contrast .primary{background:#000!important;color:#fff!important;border:2px solid #000!important}
+body.high-contrast .secondary{background:#fff!important;color:#000!important;border:2px solid #000!important}
+body.high-contrast a,body.high-contrast .warn-badge{color:#000;background:#ffe27a!important;border:1px solid #000}
+body.high-contrast.dark{background:#000!important;color:#fff!important}
+body.high-contrast.dark .meal,body.high-contrast.dark .progressbox,body.high-contrast.dark .shop-section,
+body.high-contrast.dark .favorite-card,body.high-contrast.dark .weekgrid-day,body.high-contrast.dark .recipe-panel{
+  border:2px solid #fff!important;background:#000!important;color:#fff!important
+}
+body.high-contrast.dark .mealbody p,body.high-contrast.dark h1,body.high-contrast.dark h2,body.high-contrast.dark h3,
+body.high-contrast.dark .weekgrid-day b,body.high-contrast.dark .weekgrid-day small{color:#fff!important}
+
+/* Badge nutrition indicative sur les cartes repas */
+.nutri-badge{display:block;font-size:11px;color:#5b6862;margin:3px 0 6px;font-weight:600}
+body.dark .nutri-badge{color:#9fb0a5}
+body.high-contrast .nutri-badge{color:#000;font-weight:800}

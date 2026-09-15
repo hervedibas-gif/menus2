@@ -89,6 +89,36 @@ MISE À JOUR COMPLÉMENTAIRE #2 (variété insuffisante malgré la mise à jour 
     n'étaient pas reconnus par le programme et tombaient par erreur dans la
     catégorie « légumes », faussant les alternatives proposées. Corrigé.
 
+MISE À JOUR COMPLÉMENTAIRE #3 (confort d'usage)
+29. « Changer ce repas » et « Changer l'entrée » proposent désormais 3
+    suggestions au choix (avec un bouton pour en voir 3 autres) au lieu
+    d'appliquer directement un tirage aléatoire.
+30. Bouton « Annuler » (↩, en haut de l'écran) pour revenir en un geste sur
+    le dernier changement de repas ou d'entrée.
+31. Accessibilité : taille du texte réglable (Normal / Grand / Très grand)
+    et mode Contraste élevé, dans Réglages > Affichage.
+
+MISE À JOUR COMPLÉMENTAIRE #4 (contenu, suivi et partage)
+32. Estimation nutritionnelle indicative (calories, protéines) affichée sur
+    chaque carte de repas et dans la fiche recette — approximative, calculée
+    à partir des quantités types, elle ne remplace pas une analyse
+    nutritionnelle précise ni l'avis de votre diététicien.
+33. Bouton « 🌱 Version végétarienne » sur le déjeuner et le dîner : propose
+    3 alternatives à base de tofu, tempeh, seitan, haloumi ou légumineuses,
+    en respectant toujours la règle « pas de féculent le soir ».
+34. Vue « Batch cooking » (dans l'onglet Semaine) : les recettes de la
+    semaine sont regroupées par technique de cuisson (four, vapeur, poêle/
+    grill/wok, mariné/mijoté, cru/assemblage) pour cuisiner en une fois.
+35. Liste de courses enrichie : en plus du poids exact, une estimation en
+    unités d'achat réalistes est indiquée (ex. « 600 g (≈ 3 poivrons) »,
+    « 400 g (≈ 2 barquettes) »).
+36. Export PDF de tout le programme (Réglages > Sauvegarde), en plus de
+    l'export d'une seule semaine déjà existant.
+37. Partage d'une semaine : génère un fichier HTML autonome et lisible
+    (sans besoin de l'application) à envoyer par email ou messagerie à
+    votre diététicien ; utilise le partage natif du téléphone quand il est
+    disponible.
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de

@@ -19,6 +19,7 @@
     <span>🌿</span>
     <div><b>Mes Menus</b><small id="programSubtitle">12 semaines • 84 jours</small></div>
     <button id="searchBtn" class="icon-btn" aria-label="Rechercher">🔍</button>
+    <button id="undoBtn" class="icon-btn" aria-label="Annuler le dernier changement" disabled>↩</button>
     <span class="heart">♥</span>
   </div>
   <div class="mode-switch">
@@ -48,6 +49,7 @@
       <div class="meal-actions owner-only">
         <button id="changeStarter">🔄 Changer l'entrée</button>
         <button id="changeLunch">🔄 Changer le plat</button>
+        <button id="veggieLunch">🌱 Version végétarienne</button>
         <button id="resetLunch">↩ Original</button>
       </div>
     </div>
@@ -61,6 +63,7 @@
       <p id="dinnerText"></p>
       <div class="meal-actions owner-only">
         <button id="changeDinner">🔄 Changer ce repas</button>
+        <button id="veggieDinner">🌱 Version végétarienne</button>
         <button id="resetDinner">↩ Original</button>
       </div>
     </div>
@@ -81,6 +84,7 @@
 
   <div class="week-print owner-only">
     <button id="printWeek" class="primary">🖨️ Imprimer les recettes de la semaine</button>
+    <button id="shareWeek" class="secondary">📤 Partager cette semaine</button>
   </div>
 
   <aside class="daily-tip">🌿 <b>Conseil du jour :</b> mangez lentement et prenez le temps de savourer votre repas.</aside>
@@ -89,7 +93,12 @@
 
 <section id="semaine" class="view">
   <div class="sectionhead"><h1>📆 Vue de la semaine</h1><p id="weekGridTitle">Semaine 1</p></div>
+  <div class="segmented" id="weekViewSeg">
+    <button data-view="days" class="on">Jour par jour</button>
+    <button data-view="batch">🍳 Batch cooking</button>
+  </div>
   <div id="weekGrid" class="weekgrid"></div>
+  <div id="batchCooking" class="weekgrid" style="display:none"></div>
 </section>
 
 <section id="courses" class="view">
@@ -160,6 +169,13 @@
   <div class="progressbox">
     <h2>🌓 Affichage</h2>
     <label class="switch-row"><span>Mode sombre</span><input id="darkModeToggle" type="checkbox"></label>
+    <label class="switch-row"><span>Contraste élevé</span><input id="contrastToggle" type="checkbox"></label>
+    <p class="hint" style="margin-top:10px">Taille du texte</p>
+    <div class="segmented" id="fontSizeSeg">
+      <button data-scale="normal" class="on">Normal</button>
+      <button data-scale="large">Grand</button>
+      <button data-scale="xlarge">Très grand</button>
+    </div>
   </div>
 
   <div class="progressbox owner-only">
@@ -184,6 +200,7 @@
     <h2>💾 Sauvegarde</h2>
     <p class="hint">Vos données (suivi, favoris, journal) restent uniquement sur cet appareil. Exportez-les avant un changement de téléphone.</p>
     <button id="exportData" class="primary">⬇️ Exporter mes données</button>
+    <button id="exportProgramPdf" class="secondary">🖨️ Exporter tout le programme (PDF)</button>
     <label class="secondary filelabel">⬆️ Importer un fichier
       <input id="importData" type="file" accept="application/json" style="display:none">
     </label>
@@ -221,6 +238,16 @@
     <h2>🔍 Rechercher un menu</h2>
     <input id="searchInput" type="search" placeholder="ex. saumon, riz complet, gombo…" class="search-input">
     <div id="searchResults"></div>
+  </article>
+</div>
+
+<div id="choiceModal" class="recipe-modal" aria-hidden="true">
+  <div class="recipe-backdrop" onclick="closeChoiceModal()"></div>
+  <article class="recipe-panel recipe-panel-small">
+    <button class="recipe-close" onclick="closeChoiceModal()" aria-label="Fermer">×</button>
+    <h2 id="choiceTitle">Choisissez une option</h2>
+    <div id="choiceOptions"></div>
+    <button id="choiceReroll" class="secondary">🎲 Voir 3 autres propositions</button>
   </article>
 </div>
 
