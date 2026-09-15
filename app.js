@@ -893,6 +893,40 @@ function shareWeek(){
 }
 $('shareWeek').onclick=shareWeek;
 
+// ---------- Envoi par WhatsApp ----------
+function whatsappDayBlock(idx){
+  const m=M[idx];
+  return '*'+m.day+'* (Semaine '+m.week+')\n'+
+    '🥗 Entrée : '+starterForIndex(idx)+'\n'+
+    '🍴 Déjeuner : '+cleanLunchMain(currentMeal(idx,'lunch'))+'\n'+
+    '🌙 Dîner : '+currentMeal(idx,'dinner');
+}
+function buildWhatsAppText(scope){
+  const header='🌿 *Mes Menus*';
+  let body;
+  if(scope==='day'){
+    body=header+'\n\n'+whatsappDayBlock(i);
+  } else {
+    const weeksCount=scope==='week'?1:4;
+    const startWeek=M[i].week;
+    const days=M.map((m,idx)=>({...m,idx})).filter(d=>d.week>=startWeek && d.week<startWeek+weeksCount);
+    const label=scope==='week'?('Semaine '+startWeek):('Semaines '+startWeek+' à '+(startWeek+weeksCount-1));
+    body=header+' — '+label+'\n\n'+days.map(d=>whatsappDayBlock(d.idx)).join('\n\n');
+  }
+  const LIMIT=3500;
+  if(body.length>LIMIT){
+    body=body.slice(0,LIMIT)+'\n\n… message raccourci — utilisez « Partager cette semaine » pour le détail complet.';
+  }
+  return body;
+}
+function sendWhatsApp(scope){
+  const text=buildWhatsAppText(scope);
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
+$('waDay').onclick=()=>sendWhatsApp('day');
+$('waWeek').onclick=()=>sendWhatsApp('week');
+$('waMonth').onclick=()=>sendWhatsApp('month');
+
 // ---------- Réglages : portions / dark mode / export / import ----------
 $('servingsInput').value=settings.servings||2;
 $('servingsInput').onchange=()=>{settings.servings=Math.max(1,Math.min(8,+$('servingsInput').value||2));safeSet('v6_settings',settings);draw()};

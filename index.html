@@ -9,7 +9,11 @@
 <meta name="apple-mobile-web-app-title" content="Mes Menus">
 <title>Mes Menus V6</title>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="assets/icon-167.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/icon-152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/icon-120.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
 <link rel="stylesheet" href="styles.css?v=6.0">
 </head>
 <body>
@@ -85,6 +89,15 @@
   <div class="week-print owner-only">
     <button id="printWeek" class="primary">🖨️ Imprimer les recettes de la semaine</button>
     <button id="shareWeek" class="secondary">📤 Partager cette semaine</button>
+  </div>
+
+  <div class="whatsapp-box owner-only">
+    <p class="hint" style="margin:0 0 6px">📱 Envoyer par WhatsApp</p>
+    <div class="whatsapp-actions">
+      <button id="waDay" class="wa-btn">Aujourd'hui</button>
+      <button id="waWeek" class="wa-btn">Cette semaine</button>
+      <button id="waMonth" class="wa-btn">4 semaines</button>
+    </div>
   </div>
 
   <aside class="daily-tip">🌿 <b>Conseil du jour :</b> mangez lentement et prenez le temps de savourer votre repas.</aside>

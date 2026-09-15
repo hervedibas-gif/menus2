@@ -263,3 +263,11 @@ body.high-contrast.dark .weekgrid-day b,body.high-contrast.dark .weekgrid-day sm
 .nutri-badge{display:block;font-size:11px;color:#5b6862;margin:3px 0 6px;font-weight:600}
 body.dark .nutri-badge{color:#9fb0a5}
 body.high-contrast .nutri-badge{color:#000;font-weight:800}
+
+/* Envoi WhatsApp */
+.whatsapp-box{margin:14px 0;padding:12px 14px;border-radius:16px;background:#e9f8ef;border:1px solid #cdeedb}
+.whatsapp-actions{display:flex;gap:8px}
+.wa-btn{flex:1;border:0;border-radius:12px;padding:10px 6px;background:#25D366;color:#fff;font-weight:800;font-size:13px}
+.wa-btn:active{background:#1ebd5a}
+body.dark .whatsapp-box{background:#132018;border-color:#1f3527}
+body.high-contrast .wa-btn{background:#000;border:2px solid #000}

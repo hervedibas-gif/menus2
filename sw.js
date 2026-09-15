@@ -1,4 +1,4 @@
-const CACHE_NAME='mes-menus-v6-0';
+const CACHE_NAME='mes-menus-v6-1';
 const ASSETS=[
   './',
   './index.html',
@@ -6,6 +6,7 @@ const ASSETS=[
   './app.js?v=6.0',
   './manifest.webmanifest',
   './icon.svg',
+  './assets/icon-120.png','./assets/icon-152.png','./assets/icon-167.png','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
   './assets/food_papaya.png','./assets/food_vegetables.png','./assets/food_salad.png','./assets/food_water.png',
   './assets/food_fruit_salad.png','./assets/food_salmon.png','./assets/food_chicken_lean.png','./assets/food_chicken.png',
   './assets/food_apple.png','./assets/food_watermelon.png','./assets/food_breakfast_oats.png','./assets/food_shrimp.png',

@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="110" fill="#fff"/><text x="115" y="210" font-size="110">🌿</text><text x="255" y="330" font-size="165" text-anchor="middle">🍴</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#11804e"/>
+  <g transform="rotate(-15 256 256)">
+    <path fill="#ffffff" d="M256 130
+             C 350 175 350 340 256 400
+             C 162 340 162 175 256 130 Z"/>
+    <path stroke="#11804e" stroke-width="7" fill="none" d="M256 150 L256 385"/>
+    <path stroke="#11804e" stroke-width="5" fill="none" d="M256 220 L215 195 M256 260 L200 245 M256 300 L215 320 M256 340 L240 365"/>
+  </g>
+  <rect x="243" y="400" width="26" height="55" rx="10" fill="#ffffff" transform="rotate(-15 256 256)"/>
+</svg>

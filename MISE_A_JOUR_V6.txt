@@ -139,6 +139,23 @@ MISE À JOUR COMPLÉMENTAIRE #5 (enrichissement par recherche)
     une vraie méthode de cuisson) ; une élision manquante dans certains
     ingrédients ("de aubergines" → "d'aubergines").
 
+MISE À JOUR COMPLÉMENTAIRE #6 (icône iPhone)
+41. Bug corrigé : l'icône de l'application utilisait des emojis dans un
+    fichier SVG, qui ne s'affichaient pas du tout une fois convertis en PNG
+    (obligatoire pour l'écran d'accueil iPhone) — l'icône était donc
+    invisible ou cassée à l'installation. Remplacée par une icône vectorielle
+    (une feuille) qui s'affiche correctement partout, dans toutes les
+    tailles requises par iOS.
+
+MISE À JOUR COMPLÉMENTAIRE #7 (envoi WhatsApp)
+42. Nouveaux boutons « 📱 Envoyer par WhatsApp » sur l'écran du jour :
+    « Aujourd'hui » (le menu du jour), « Cette semaine » (7 jours), ou
+    « 4 semaines » — ouvre directement WhatsApp avec le message pré-rempli,
+    prêt à choisir un contact (fonctionne aussi bien avec l'app WhatsApp
+    qu'avec WhatsApp Web). Au-delà d'une certaine longueur, le message est
+    raccourci automatiquement avec une invitation à utiliser « Partager
+    cette semaine » (fichier complet) pour le détail intégral.
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
