@@ -66,6 +66,29 @@ MISE À JOUR COMPLÉMENTAIRE (suite à vos retours)
     recadrage serré sur le plat (à l'image des modèles fournis), et
     affichage réduit dans l'application.
 
+MISE À JOUR COMPLÉMENTAIRE #2 (variété insuffisante malgré la mise à jour précédente)
+24. Cause identifiée : même avec une grande banque de plats, le programme des
+    12 semaines original pouvait concentrer 3 à 5 plats de la même famille
+    (poisson, par exemple) sur une seule semaine de 7 jours — la sensation de
+    répétition venait de là, pas seulement du nombre de plats disponibles.
+25. Le planning des 84 jours a été régénéré : chaque semaine respecte
+    désormais un vrai équilibre (au maximum 2 plats de la même famille par
+    semaine, 4 à 5 familles différentes représentées chaque semaine), tout en
+    gardant strictement les mêmes règles diététiques (jamais de féculent le
+    soir, féculent complet à midi, variété des féculents dans la semaine).
+26. Banque de plats à nouveau très largement augmentée : plus de 400 dîners
+    et 400 déjeuners disponibles au total (contre ~180 précédemment), plus de
+    440 entrées.
+27. Le tirage est désormais réellement aléatoire (et non plus une simple
+    rotation séquentielle) pour « Changer ce repas », « Changer l'entrée »
+    et la génération des semaines suivantes — tout en conservant les
+    garde-fous : jamais de féculent le soir, jamais un même plat à moins de
+    2 semaines d'intervalle.
+28. Correction d'un bug de classification : plusieurs nouveaux poissons et
+    viandes (lieu, colin, rouget, flétan, truite, bavette, rumsteck…)
+    n'étaient pas reconnus par le programme et tombaient par erreur dans la
+    catégorie « légumes », faussant les alternatives proposées. Corrigé.
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
@@ -73,4 +96,7 @@ INSTALLATION
 3. Ouvrir l'application, faire Ctrl+Shift+R (ou vider le cache Safari une
    fois) pour charger la nouvelle version.
 4. Vos favoris, votre historique et votre date de démarrage sont repris
-   automatiquement depuis la version précédente.
+   automatiquement depuis la version précédente. Comme le contenu des 84
+   jours a été régénéré pour la variété, vos favoris précédents (s'ils
+   pointaient vers d'anciens plats) resteront visibles dans l'historique
+   mais ne correspondront plus forcément à un jour du nouveau programme.
