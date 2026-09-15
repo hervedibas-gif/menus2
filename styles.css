@@ -1,0 +1,207 @@
+*{box-sizing:border-box}html,body{margin:0;background:#f1f5f2;color:#1f2a25;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}.app{max-width:520px;margin:auto;background:#fff;min-height:100vh;padding-bottom:86px}.top{padding:calc(14px + env(safe-area-inset-top)) 14px 10px;background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #e7ece9}.brand{display:grid;grid-template-columns:36px 1fr 32px;align-items:center;gap:8px}.brand>span:first-child{font-size:27px}.brand b{font-size:26px;display:block}.brand small{display:block;color:#6f7c76;margin-top:-2px}.heart{color:#ef706e;font-size:22px;text-align:right}.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.weeks button{border:0;border-radius:12px;padding:9px;background:#eef1ef;font-size:14px;font-weight:800;color:#43534c}.weeks button.on{background:#3db35c;color:#fff}.view{display:none;padding:12px}.view.active{display:block}.daynav{display:grid;grid-template-columns:42px 1fr 42px;align-items:center;margin:4px 0 10px}.daynav div{text-align:center}.daynav h1{margin:0;font-size:30px}.daynav p{margin:1px 0;color:#75817c}.daynav button{border:1px solid #d4dcd7;background:#f8faf9;border-radius:50%;height:42px;font-size:29px;color:#27362f}.meal{margin:11px 0;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(26,63,45,.10);border:1px solid rgba(0,0,0,.03)}.meal img{width:100%;height:155px;display:block;object-fit:cover}.mealbody{padding:14px 15px}.mealbody h2{font-size:18px;margin:0 0 8px}.mealbody h2 small{font-size:11px;color:#65716c;font-weight:600}.mealbody p{font-size:16px;line-height:1.42;margin:0}.breakfast{background:#ffead2}.lunch{background:#e2f5df}.snack{background:#e4f1ff}.dinner{background:#e6f2ff}.daily-tip{margin:12px 0;padding:14px;border-radius:16px;background:#f4faf5;color:#356246;line-height:1.35}.swipe{text-align:center;font-size:12px;color:#7b8782;margin:15px 0 4px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:grid;grid-template-columns:repeat(3,1fr);padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:#fffffff2;border-top:1px solid #dce3df;backdrop-filter:blur(12px);z-index:30}.bottom button{border:0;background:transparent;font-size:20px;color:#78847f}.bottom span{display:block;font-size:11px;font-weight:800;margin-top:2px}.bottom button.on{color:#0a9144}.sectionhead{text-align:center;padding:5px 0 10px}.sectionhead h1{font-size:28px;margin:0}.sectionhead p{margin:4px 0;color:#73817a}.category{border-radius:18px;overflow:hidden;margin:10px 0;background:#fff;box-shadow:0 6px 18px rgba(23,61,42,.08)}.category h3{margin:0;padding:11px 13px;color:#fff;font-size:17px}.category ul{list-style:none;margin:0;padding:4px 12px 10px}.category li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #edf0ee}.category li:last-child{border:0}.category input{width:22px;height:22px;accent-color:#2eaa51}.fruit h3{background:#3aaa52}.protein h3{background:#ef685e}.starch h3{background:#b98b42}.break h3{background:#e78c38}.season h3{background:#5c9abf}.reset{width:100%;border:0;border-radius:14px;background:#edf4ef;padding:12px;font-weight:800;color:#345c43;margin-top:8px}.advice{display:grid;grid-template-columns:112px 1fr;gap:12px;border-radius:18px;overflow:hidden;background:#eef8ee;margin:12px 0;box-shadow:0 6px 18px rgba(25,61,43,.08)}.advice img{width:112px;height:112px;object-fit:cover}.advice div{padding:12px 12px 12px 0}.advice b{font-size:17px}.advice p{font-size:14px;line-height:1.4;margin:5px 0 0}.advice.text{display:block;background:#f7f9f8}.advice.text div{padding:15px}@media(min-width:600px){body{padding:18px}.app{border-radius:28px;overflow:hidden;box-shadow:0 25px 60px rgba(18,54,36,.18)}}
+.photo{position:relative}.photo img{width:100%;height:165px;display:block;object-fit:cover}
+.photo span{position:absolute;left:12px;bottom:10px;max-width:88%;background:rgba(255,255,255,.90);
+color:#173b2a;font-weight:800;font-size:13px;padding:6px 9px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+
+.weeks{display:flex!important;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.weeks::-webkit-scrollbar{display:none}.weeks button{min-width:52px;flex:0 0 52px}
+.progressbox{background:linear-gradient(135deg,#eef9f0,#e7f3ff);padding:16px;border-radius:20px;margin:8px 0 16px;box-shadow:0 6px 18px rgba(25,61,43,.08)}
+.progressbox h2{margin:0 0 7px}.progressbox p{line-height:1.45}.resultgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.resultgrid label{font-size:12px;font-weight:800}.resultgrid input{width:100%;margin-top:5px;border:1px solid #ccd8d1;border-radius:12px;padding:11px;font-size:16px;background:white}.progressbox small{display:block;color:#2c7d49;margin-top:8px}
+
+/* V4.1 transparent food-family visuals */
+.photo{height:150px;background:transparent!important;display:flex;align-items:center;justify-content:center;overflow:visible}
+.photo img{width:auto!important;height:135px!important;max-width:88%;object-fit:contain!important;background:transparent!important}
+
+/* V4.2 — repères temporels */
+.weeks button.past{background:#e7ebe8!important;color:#6f7b75!important;position:relative}
+.weeks button.past::after{content:"✓";position:absolute;right:5px;top:3px;font-size:10px;color:#6b7b73}
+.weeks button.current{background:#1e9f55!important;color:#fff!important;box-shadow:0 0 0 3px rgba(30,159,85,.16)}
+.weeks button.future{background:#f1f3f2!important;color:#4e5b55!important}
+.weeks button.on.current{background:#11804e!important}
+.daynav.pastday{opacity:.68}
+.daynav.currentday{outline:3px solid rgba(17,128,78,.18)}
+.daynav.futureday{opacity:1}
+.timebadge{display:inline-block;margin-top:5px;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}
+.timebadge.past{background:#e9edeb;color:#66736d}
+.timebadge.current{background:#dff5e6;color:#0c7a3f}
+.timebadge.future{background:#eef2f0;color:#6b7771}
+.startdate-label{display:block;font-size:12px;font-weight:800;margin:10px 0}
+.startdate-label input{width:100%;margin-top:6px;border:1px solid #ccd8d1;border-radius:12px;padding:11px;font-size:16px;background:white}
+.reset.secondary{background:#e8efe9;color:#31543d;margin-top:8px}
+
+/* V4.3 — visuels réellement transparents */
+.photo{
+  height:150px!important;
+  background:transparent!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+}
+.photo img{
+  width:auto!important;
+  height:130px!important;
+  max-width:82%!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.photo span{
+  background:rgba(255,255,255,.88)!important;
+}
+
+/* V4.4 - PNG alpha transparents, sans arrière-plan d'image */
+.photo{height:145px!important;background:none!important;background-color:transparent!important;
+display:flex!important;align-items:center!important;justify-content:center!important;overflow:visible!important}
+.photo img{height:125px!important;width:125px!important;max-width:42%!important;object-fit:contain!important;
+background:none!important;background-color:transparent!important;border:none!important;box-shadow:none!important}
+
+/* V4.5 — visuels photoréalistes détourés */
+.photo{height:165px!important;background:transparent!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.photo img{height:150px!important;width:auto!important;max-width:92%!important;object-fit:contain!important;background:transparent!important;border:none!important;box-shadow:none!important}
+
+/* V4.7 – fonctions complètes */
+.app{padding-bottom:92px}
+.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.mode-switch button{border:0;border-radius:12px;padding:9px 7px;font-weight:800;background:#eef2ef;color:#5b6862}
+.mode-switch button.on{background:#173e2d;color:#fff}
+.bottom{grid-template-columns:repeat(5,1fr)}
+.bottom button{font-size:18px;padding:3px 1px}
+.bottom span{font-size:10px}
+.daynav h1{font-size:27px}
+#dateTitle{font-size:12px;color:#53665d;margin:2px 0}
+.meal-title-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.meal-title-row h2{margin-bottom:8px}
+.icon-btn{border:0;background:#fff;border-radius:50%;width:38px;height:38px;font-size:23px;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.icon-btn.faved{color:#e65062;background:#fff2f5}
+.meal-actions{display:grid;grid-template-columns:1fr auto;gap:7px;margin-top:12px}
+.meal-actions button,.toolbar button,.primary,.secondary{border:0;border-radius:12px;padding:10px 11px;font-weight:800}
+.meal-actions button:first-child,.primary{background:#11804e;color:#fff}
+.meal-actions button:last-child,.secondary{background:#edf2ef;color:#486056}
+.toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.shop-empty,.empty-card{padding:18px;border-radius:18px;background:#f5f8f6;color:#6b7771;text-align:center}
+.shop-section{background:#fff;border-radius:18px;margin:10px 0;box-shadow:0 6px 18px rgba(23,61,42,.08);overflow:hidden}
+.shop-section h3{margin:0;padding:11px 13px;background:#2f9a55;color:#fff;font-size:16px}
+.shop-section ul{list-style:none;margin:0;padding:5px 12px}
+.shop-section li{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #edf0ee}
+.shop-section li:last-child{border:0}
+.shop-section input{width:21px;height:21px;accent-color:#2eaa51}
+.favorite-card{padding:14px;border-radius:17px;background:#fff;box-shadow:0 6px 18px rgba(23,61,42,.08);margin:10px 0}
+.favorite-card b{display:block;margin-bottom:5px}
+.favorite-card small{color:#718078}
+.favorite-card button{margin-top:9px;border:0;border-radius:10px;padding:8px 10px;background:#f3eded;color:#875253;font-weight:800}
+.resultgrid{grid-template-columns:repeat(3,1fr)}
+#resultChart{display:block;width:100%;height:auto;background:#fff;border-radius:14px;margin-top:14px;border:1px solid #e3ebe6}
+.result-row{display:grid;grid-template-columns:1.2fr .8fr .8fr 34px;gap:6px;align-items:center;padding:9px 3px;border-bottom:1px solid #e6ece8;font-size:13px}
+.result-row button{border:0;background:#f4eded;border-radius:8px;height:30px}
+.summarybox{padding:12px;border-radius:13px;background:#fff;margin-top:10px;line-height:1.45}
+.viewer .owner-only,.viewer .owner-view,.viewer .owner-only-nav{display:none!important}
+.viewer .bottom{grid-template-columns:repeat(4,1fr)}
+.cycle-ready{background:linear-gradient(135deg,#e3f8e8,#fff5d9)!important}
+.badge-cycle{display:inline-block;padding:3px 7px;border-radius:999px;background:#e4f5ea;color:#187947;font-size:10px;font-weight:900}
+@media(max-width:390px){
+  .resultgrid{grid-template-columns:1fr}
+  .toolbar{grid-template-columns:1fr}
+  .meal-actions{grid-template-columns:1fr}
+}
+
+
+/* Impression hebdomadaire */
+.week-print{margin:14px 0 4px;text-align:center}
+.week-print button{width:100%;max-width:520px}
+.week-print-sheet{display:none}
+@media print{
+  @page{size:A4 portrait;margin:10mm}
+  html,body{background:#fff!important;margin:0!important;padding:0!important}
+  body.printing-week .app > *:not(.week-print-sheet){display:none!important}
+  body.printing-week .week-print-sheet{display:block!important;position:static!important;width:100%!important;background:#fff!important;color:#111!important;padding:0!important;margin:0!important}
+  body.printing-week .print-head{text-align:center;border-bottom:2px solid #222;margin-bottom:8px;padding-bottom:6px}
+  body.printing-week .print-head h1{margin:0 0 3px;font-size:20px}
+  body.printing-week .print-head p{margin:0;font-size:10px}
+  body.printing-week .print-day{break-inside:avoid;border-bottom:1px solid #bbb;padding:5px 0}
+  body.printing-week .print-day h2{margin:0 0 3px;font-size:14px}
+  body.printing-week .print-day div{margin:2px 0}
+  body.printing-week .print-day b{font-size:10.5px}
+  body.printing-week .print-day p{display:inline;margin:0 0 0 6px;font-size:10.5px;line-height:1.25}
+}
+
+.lunch-course{display:block;margin:0 0 12px 0}
+.lunch-course:last-child{margin-bottom:0}
+.lunch-course b{font-weight:800}
+
+.recipe-btn{display:block;margin-top:8px;border:1px solid #b9d7c1;background:#fff;color:#17643d;border-radius:12px;padding:7px 11px;font-weight:800;font-size:.82rem;cursor:pointer}
+.recipe-btn:active{transform:scale(.98)}
+.recipe-modal{display:none;position:fixed;inset:0;z-index:9999}
+.recipe-modal.open{display:block}
+.recipe-backdrop{position:absolute;inset:0;background:rgba(15,35,25,.45)}
+.recipe-panel{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(680px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:24px 22px 34px;box-shadow:0 -10px 40px rgba(0,0,0,.18)}
+.recipe-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:0;border-radius:50%;font-size:26px;background:#f1f5f2}
+.recipe-kind{font-weight:800;color:#56806a;text-transform:uppercase;letter-spacing:.04em}
+.recipe-panel h2{padding-right:45px;margin:8px 0 6px;color:#183c2b}
+.recipe-meta{color:#718078;margin-top:0}
+.recipe-panel h3{margin:20px 0 8px;color:#174d31}
+.recipe-panel ul,.recipe-panel ol{padding-left:23px;line-height:1.5}
+.recipe-panel li{margin:6px 0}
+body.recipe-open{overflow:hidden}
+@media print{.recipe-modal,.recipe-btn{display:none!important}}
+
+/* ===================== V6 — nouvelles fonctionnalités ===================== */
+
+/* Petit-déjeuner affiché */
+.breakfast{background:#fff3df}
+
+/* Alerte répétition de protéines */
+.warn-badge{background:#fff2df;color:#8a5a12;border-radius:10px;padding:7px 10px;font-size:12.5px;font-weight:700;margin:0 0 8px}
+
+/* Journal quotidien */
+.journal-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.chip{border:1px solid #cfe0d4;background:#fff;border-radius:999px;padding:9px 10px;font-weight:800;color:#3a5548}
+.chip.on{background:#11804e;color:#fff;border-color:#11804e}
+.hunger-label{display:block;font-size:12px;font-weight:800;margin:10px 0 2px}
+.hunger-label input{width:100%}
+#journalNote{width:100%;border:1px solid #ccd8d1;border-radius:12px;padding:10px;font-size:14px;margin-top:8px;font-family:inherit}
+
+/* Vue semaine en grille */
+.weekgrid{display:grid;grid-template-columns:1fr;gap:8px}
+.weekgrid-day{display:block;text-align:left;border:0;border-radius:16px;padding:12px 14px;background:#fff;box-shadow:0 6px 18px rgba(23,61,42,.08)}
+.weekgrid-day b{display:block;margin-bottom:4px;color:#173e2d}
+.weekgrid-day small{display:block;color:#5b6862;font-size:12.5px;margin-top:2px}
+
+/* Réglages */
+.switch-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;margin:6px 0}
+.switch-row input{width:44px;height:24px}
+.filelabel{display:inline-block;text-align:center;cursor:pointer;margin-top:8px}
+.hint{font-size:12px;color:#73817a;margin:6px 0}
+
+/* Recherche & PIN — modales réutilisant le style recette */
+.search-input{width:100%;border:1px solid #ccd8d1;border-radius:12px;padding:11px;font-size:16px;margin:10px 0}
+.search-result{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid #edf0ee;background:transparent;padding:10px 2px}
+.search-result b{display:block}
+.search-result small{display:block;color:#5b6862}
+.recipe-panel-small{max-width:380px;left:50%;bottom:auto;top:50%;transform:translate(-50%,-50%);border-radius:22px}
+
+/* Mode sombre */
+body.dark,body.dark .app{background:#0f1613;color:#e7efe9}
+body.dark .top{background:#131b17;border-color:#233029}
+body.dark .brand small{color:#8fa197}
+body.dark .meal,body.dark .progressbox,body.dark .shop-section,body.dark .favorite-card,body.dark .weekgrid-day,body.dark .recipe-panel{background:#182019;box-shadow:none;border-color:#233029}
+body.dark .progressbox{background:linear-gradient(135deg,#152018,#101a22)}
+body.dark .mealbody p,body.dark .weekgrid-day b{color:#e7efe9}
+body.dark .daynav button{background:#182019;border-color:#233029;color:#e7efe9}
+body.dark .resultgrid input,body.dark .startdate-label input,body.dark .search-input,body.dark #journalNote,body.dark #servingsInput,body.dark #reminderTime,body.dark #pinInput,body.dark #pinCheckInput{background:#101a16;color:#e7efe9;border-color:#2a3a32}
+body.dark .shop-empty,body.dark .empty-card{background:#182019;color:#9fb0a5}
+body.dark .bottom{background:#131b17f2;border-color:#233029}
+body.dark .bottom button{color:#8fa197}
+body.dark .bottom button.on{color:#3fd07c}
+body.dark .daily-tip{background:#152018;color:#bfe3cd}
+body.dark .icon-btn{background:#182019;color:#e7efe9}
+body.dark .advice{background:#152018}
+body.dark .advice.text{background:#131b17}
+
+/* Impression du suivi (PDF navigateur) */
+@media print{
+  body.printing-track .app > *:not(#trackPrintSheet){display:none!important}
+  body.printing-track #trackPrintSheet{display:block!important;position:static!important;width:100%!important;background:#fff!important;color:#111!important}
+  .print-table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:11px}
+  .print-table th,.print-table td{border:1px solid #ccc;padding:5px 7px;text-align:left}
+}

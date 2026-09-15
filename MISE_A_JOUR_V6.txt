@@ -1,0 +1,62 @@
+MES MENUS V6.0 — VERSION COMPLÈTE
+
+CORRECTIONS IMPORTANTES
+1. Bug corrigé : le cycle complémentaire (semaines suivantes) pouvait auparavant
+   réassigner un déjeuner favori (contenant un féculent) à un dîner. Les dîners
+   générés excluent désormais systématiquement tout féculent, y compris parmi
+   vos favoris.
+2. Les entrées ne manquent plus au-delà du jour 84 (banque d'entrées étendue).
+3. Les gambas et la langouste sont maintenant correctement classées comme
+   "fruits de mer" pour proposer des alternatives cohérentes (au lieu d'être
+   confondues avec des plats de légumes).
+4. Vrai fonctionnement hors-ligne : le service worker met désormais en cache
+   l'application et les images (l'ancien fichier sw.js était vide).
+
+NOUVEAUTÉS
+5. Petit-déjeuner affiché (il existait dans les données mais n'apparaissait
+   jamais à l'écran).
+6. Bouton « Changer l'entrée » indépendant du plat principal.
+7. Vraies quantités dans les recettes et dans la liste de courses (au lieu de
+   texte générique), ajustées au nombre de personnes défini dans Réglages.
+8. 20 nouveaux déjeuners et 20 nouveaux dîners (banque de variantes), tous
+   conformes à vos règles : jamais de féculent le soir, féculents complets
+   (riz complet, quinoa, boulgour complet, semoule complète, pain complet…)
+   à midi. Utilisés par « Changer ce repas » et pour le cycle suivant.
+9. Vue « Semaine » en un coup d'œil (grille des 7 jours).
+10. Recherche dans tous les menus (icône 🔍 en haut de l'écran).
+11. Journal quotidien : suivi tel quel / adapté, sensation de faim, note libre.
+12. Tour de taille ajouté au suivi, en plus du poids et de la masse grasse.
+13. Export de votre suivi et de votre journal au format PDF (impression
+    navigateur).
+14. Export / import de toutes vos données en un fichier, pour sauvegarder ou
+    changer d'appareil sans tout perdre.
+15. Mode sombre.
+16. Code d'accès à 4 chiffres facultatif pour protéger le retour au mode
+    « Mon programme » depuis le mode Consultation.
+17. Rappel quotidien facultatif (fonctionne uniquement lorsque l'application
+    est ouverte dans le navigateur — aucune notification garantie en
+    arrière-plan, en particulier sur iPhone).
+18. Petite alerte visuelle si un repas partage la même famille de protéines
+    que la veille (poisson deux jours de suite, par exemple).
+
+CE QUI N'A PAS CHANGÉ
+- Les 84 jours (12 semaines) du programme initial sont strictement identiques :
+  aucun plat, aucune quantité de féculent n'a été modifié.
+- Les données restent stockées uniquement sur l'appareil (désormais sous des
+  clés "v6_..." ; vos anciennes données "v47_..." sont importées
+  automatiquement au premier lancement).
+
+CE QUI RESTE HORS DE PORTÉE D'UNE APPLICATION STATIQUE (sans serveur)
+- Notifications fiables en arrière-plan.
+- Partage en temps réel avec un tiers (diététicien, coach) via un lien.
+- Plusieurs profils synchronisés entre appareils.
+Ces trois points demanderaient un petit serveur en plus du site actuel.
+
+INSTALLATION
+1. Décompresser l'archive.
+2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
+   l'application actuelle.
+3. Ouvrir l'application, faire Ctrl+Shift+R (ou vider le cache Safari une
+   fois) pour charger la nouvelle version.
+4. Vos favoris, votre historique et votre date de démarrage sont repris
+   automatiquement depuis la version précédente.

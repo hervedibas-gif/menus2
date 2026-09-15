@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11804e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mes Menus">
+<title>Mes Menus V6</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css?v=6.0">
+</head>
+<body>
+<main class="app">
+<header class="top">
+  <div class="brand">
+    <span>🌿</span>
+    <div><b>Mes Menus</b><small id="programSubtitle">12 semaines • 84 jours</small></div>
+    <button id="searchBtn" class="icon-btn" aria-label="Rechercher">🔍</button>
+    <span class="heart">♥</span>
+  </div>
+  <div class="mode-switch">
+    <button id="ownerMode" class="on">👤 Mon programme</button>
+    <button id="viewerMode">👥 Consultation</button>
+  </div>
+  <div id="weekTabs" class="weeks"></div>
+</header>
+
+<section id="menus" class="view active">
+  <div class="daynav">
+    <button id="prev">‹</button>
+    <div>
+      <h1 id="dayTitle">Lundi</h1>
+      <p id="dateTitle"></p>
+      <p id="weekTitle">Semaine 1</p>
+    </div>
+    <button id="next">›</button>
+  </div>
+
+  <article class="meal breakfast" id="breakfastCard">
+    <div class="photo"><img id="breakfastImg" alt="Petit-déjeuner"><span id="breakfastPhotoLabel"></span></div>
+    <div class="mealbody">
+      <div class="meal-title-row"><h2>☀️ Petit-déjeuner</h2></div>
+      <p id="breakfastText"></p>
+    </div>
+  </article>
+
+  <article class="meal lunch">
+    <div class="photo"><img id="lunchImg" alt="Déjeuner"><span id="lunchPhotoLabel"></span></div>
+    <div class="mealbody">
+      <div class="meal-title-row"><h2>🍴 Déjeuner</h2><button id="favLunch" class="icon-btn owner-only" aria-label="Favori">♡</button></div>
+      <p id="warnLunch" class="warn-badge" style="display:none"></p>
+      <p id="lunchText"></p>
+      <div class="meal-actions owner-only">
+        <button id="changeStarter">🔄 Changer l'entrée</button>
+        <button id="changeLunch">🔄 Changer le plat</button>
+        <button id="resetLunch">↩ Original</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="meal dinner">
+    <div class="photo"><img id="dinnerImg" alt="Dîner"><span id="dinnerPhotoLabel"></span></div>
+    <div class="mealbody">
+      <div class="meal-title-row"><h2>🌙 Dîner</h2><button id="favDinner" class="icon-btn owner-only" aria-label="Favori">♡</button></div>
+      <p id="warnDinner" class="warn-badge" style="display:none"></p>
+      <p id="dinnerText"></p>
+      <div class="meal-actions owner-only">
+        <button id="changeDinner">🔄 Changer ce repas</button>
+        <button id="resetDinner">↩ Original</button>
+      </div>
+    </div>
+  </article>
+
+  <div class="progressbox owner-only" id="journalBox">
+    <h2>📝 Mon journal du jour</h2>
+    <div class="journal-row">
+      <button id="journalOk" class="chip">✅ Suivi tel quel</button>
+      <button id="journalAdapt" class="chip">🔁 Adapté</button>
+    </div>
+    <label class="hunger-label">Sensation de faim en fin de journée
+      <input id="journalHunger" type="range" min="1" max="5" value="3">
+    </label>
+    <textarea id="journalNote" placeholder="Une remarque pour vous (ou pour votre diététicien)…" rows="2"></textarea>
+    <small id="journalStatus"></small>
+  </div>
+
+  <div class="week-print owner-only">
+    <button id="printWeek" class="primary">🖨️ Imprimer les recettes de la semaine</button>
+  </div>
+
+  <aside class="daily-tip">🌿 <b>Conseil du jour :</b> mangez lentement et prenez le temps de savourer votre repas.</aside>
+  <div class="swipe">← Glissez pour changer de menu →</div>
+</section>
+
+<section id="semaine" class="view">
+  <div class="sectionhead"><h1>📆 Vue de la semaine</h1><p id="weekGridTitle">Semaine 1</p></div>
+  <div id="weekGrid" class="weekgrid"></div>
+</section>
+
+<section id="courses" class="view">
+  <div class="sectionhead">
+    <h1>🛒 Liste de courses</h1>
+    <p id="shoppingWeek">Semaine 1</p>
+  </div>
+  <div class="toolbar">
+    <button id="generateShopping" class="primary">Générer depuis les 7 menus</button>
+    <button id="resetChecks" class="secondary">Réinitialiser les coches</button>
+  </div>
+  <p class="hint">Quantités calculées pour <span id="shoppingServings">2</span> personne(s) — modifiable dans Réglages.</p>
+  <div id="shopping"></div>
+</section>
+
+<section id="favoris" class="view">
+  <div class="sectionhead"><h1>❤️ Mes favoris</h1><p>Vos repas préférés, mémorisés sur cet appareil</p></div>
+  <div id="favoritesList"></div>
+</section>
+
+<section id="suivi" class="view owner-view">
+  <div class="progressbox trackerbox">
+    <h2>📅 Suivi du programme</h2>
+    <p>Définissez le Jour 1. Les dates, jours écoulés et semaines passées sont calculés automatiquement.</p>
+    <label class="startdate-label">Date de démarrage
+      <input id="programStartDate" type="date">
+    </label>
+    <button id="saveStartDate" class="primary">Enregistrer la date de départ</button>
+    <button id="goToday" class="secondary">Aller au jour actuel</button>
+    <small id="startDateStatus"></small>
+  </div>
+
+  <div class="progressbox">
+    <h2>⚖️ Historique des résultats</h2>
+    <div class="resultgrid">
+      <label>Date<input id="resultDate" type="date"></label>
+      <label>Poids (kg)<input id="weightResult" type="number" step="0.1" placeholder="ex. 76.8"></label>
+      <label>Masse grasse (%)<input id="fatResult" type="number" step="0.1" placeholder="ex. 38"></label>
+      <label>Tour de taille (cm)<input id="waistResult" type="number" step="0.5" placeholder="ex. 92"></label>
+    </div>
+    <button id="saveResult" class="primary">Ajouter cette mesure</button>
+    <button id="printSuivi" class="secondary">🖨️ Exporter mon suivi (PDF)</button>
+    <small id="resultStatus"></small>
+    <canvas id="resultChart" width="440" height="190"></canvas>
+    <div id="resultSummary" class="summarybox"></div>
+    <div id="resultHistory"></div>
+  </div>
+
+  <div class="progressbox" id="cycleReview">
+    <h2>🏁 Bilan & cycle suivant</h2>
+    <p id="cycleMessage">Le bilan apparaîtra ici à la fin du programme.</p>
+    <button id="buildNextCycle" class="primary">Préparer les semaines suivantes</button>
+    <small>Le cycle suivant pioche dans le programme initial et dans une banque de nouvelles variantes qui respectent vos contraintes (jamais de féculent au dîner, féculents complets à midi).</small>
+  </div>
+</section>
+
+<section id="reglages" class="view">
+  <div class="sectionhead"><h1>⚙️ Réglages</h1></div>
+
+  <div class="progressbox">
+    <h2>🍽️ Portions</h2>
+    <label>Nombre de personnes
+      <input id="servingsInput" type="number" min="1" max="8" value="2">
+    </label>
+    <p class="hint">Utilisé pour les quantités des recettes et de la liste de courses.</p>
+  </div>
+
+  <div class="progressbox">
+    <h2>🌓 Affichage</h2>
+    <label class="switch-row"><span>Mode sombre</span><input id="darkModeToggle" type="checkbox"></label>
+  </div>
+
+  <div class="progressbox owner-only">
+    <h2>🔒 Code d'accès au mode « Mon programme »</h2>
+    <p class="hint">Facultatif. Si vous partagez l'appli, ce code sera demandé pour repasser du mode Consultation à Mon programme.</p>
+    <div class="resultgrid">
+      <label>Nouveau code (4 chiffres)<input id="pinInput" type="password" inputmode="numeric" maxlength="4" placeholder="ex. 1234"></label>
+    </div>
+    <button id="savePin" class="secondary">Enregistrer le code</button>
+    <button id="clearPin" class="secondary">Retirer le code</button>
+    <small id="pinStatus"></small>
+  </div>
+
+  <div class="progressbox owner-only">
+    <h2>🔔 Rappels</h2>
+    <label class="switch-row"><span>Activer un rappel quotidien</span><input id="remindersToggle" type="checkbox"></label>
+    <label>Heure du rappel<input id="reminderTime" type="time" value="19:00"></label>
+    <small class="hint">Le rappel s'affiche uniquement lorsque l'application est ouverte dans le navigateur (aucune garantie de notification en arrière-plan, notamment sur iPhone).</small>
+  </div>
+
+  <div class="progressbox owner-only">
+    <h2>💾 Sauvegarde</h2>
+    <p class="hint">Vos données (suivi, favoris, journal) restent uniquement sur cet appareil. Exportez-les avant un changement de téléphone.</p>
+    <button id="exportData" class="primary">⬇️ Exporter mes données</button>
+    <label class="secondary filelabel">⬆️ Importer un fichier
+      <input id="importData" type="file" accept="application/json" style="display:none">
+    </label>
+    <small id="dataStatus"></small>
+  </div>
+
+  <div class="progressbox">
+    <h2>💡 Mes conseils</h2>
+    <article class="advice"><img src="assets/food_vegetables.png"><div><b>Variez les légumes</b><p>Alternez gombo, aubergine, chou, concombre, tomate, courgette, haricots verts et feuilles vertes.</p></div></article>
+    <article class="advice"><img src="assets/food_water.png"><div><b>Hydratez-vous</b><p>1 à 1,5 L d'eau par jour. Pas de sodas ni de jus de fruits.</p></div></article>
+    <article class="advice text"><div><b>🍽️ Déjeuner</b><p>Légumes d'abord, protéines maigres ensuite, puis la portion de féculents prévue.</p></div></article>
+    <article class="advice text"><div><b>🌙 Dîner</b><p>Privilégiez légumes et protéines maigres, sans féculent.</p></div></article>
+    <article class="advice text"><div><b>🔥 Cuisson</b><p>Privilégiez grill, four, vapeur, papillote ou wok léger.</p></div></article>
+  </div>
+</section>
+
+<div id="recipeModal" class="recipe-modal" aria-hidden="true">
+  <div class="recipe-backdrop" onclick="closeRecipe()"></div>
+  <article class="recipe-panel">
+    <button class="recipe-close" onclick="closeRecipe()" aria-label="Fermer">×</button>
+    <small id="recipeKind" class="recipe-kind"></small>
+    <h2 id="recipeTitle"></h2>
+    <p id="recipeMeta" class="recipe-meta"></p>
+    <h3>🧺 Ingrédients</h3>
+    <ul id="recipeIngredients"></ul>
+    <h3>👩‍🍳 Préparation</h3>
+    <ol id="recipeSteps"></ol><div id="recipeTipsBlock"><h3>💡 Conseils</h3><ul id="recipeTips"></ul></div>
+  </article>
+</div>
+
+<div id="searchModal" class="recipe-modal" aria-hidden="true">
+  <div class="recipe-backdrop" onclick="closeSearch()"></div>
+  <article class="recipe-panel">
+    <button class="recipe-close" onclick="closeSearch()" aria-label="Fermer">×</button>
+    <h2>🔍 Rechercher un menu</h2>
+    <input id="searchInput" type="search" placeholder="ex. saumon, riz complet, gombo…" class="search-input">
+    <div id="searchResults"></div>
+  </article>
+</div>
+
+<div id="pinModal" class="recipe-modal" aria-hidden="true">
+  <div class="recipe-backdrop" onclick="closePinModal()"></div>
+  <article class="recipe-panel recipe-panel-small">
+    <button class="recipe-close" onclick="closePinModal()" aria-label="Fermer">×</button>
+    <h2>🔒 Code d'accès</h2>
+    <p>Entrez le code à 4 chiffres pour revenir en mode « Mon programme ».</p>
+    <input id="pinCheckInput" type="password" inputmode="numeric" maxlength="4" class="search-input">
+    <button id="pinCheckBtn" class="primary">Valider</button>
+    <small id="pinCheckStatus"></small>
+  </article>
+</div>
+
+<section id="weekPrintSheet" class="week-print-sheet" aria-hidden="true"></section>
+<section id="trackPrintSheet" class="week-print-sheet" aria-hidden="true"></section>
+
+<nav class="bottom">
+  <button data-view="menus" class="on">🏠<span>Menu</span></button>
+  <button data-view="semaine">📆<span>Semaine</span></button>
+  <button data-view="courses">🛒<span>Courses</span></button>
+  <button data-view="favoris">❤️<span>Favoris</span></button>
+  <button data-view="suivi" class="owner-only-nav">📈<span>Suivi</span></button>
+  <button data-view="reglages">⚙️<span>Réglages</span></button>
+</nav>
+</main>
+<script src="app.js?v=6.0"></script>
+</body></html>
