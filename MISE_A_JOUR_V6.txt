@@ -52,6 +52,20 @@ CE QUI RESTE HORS DE PORTÉE D'UNE APPLICATION STATIQUE (sans serveur)
 - Plusieurs profils synchronisés entre appareils.
 Ces trois points demanderaient un petit serveur en plus du site actuel.
 
+MISE À JOUR COMPLÉMENTAIRE (suite à vos retours)
+21. Variété très fortement augmentée : 80 nouveaux dîners, 80 nouveaux
+    déjeuners et 80 nouvelles entrées ajoutés à la banque de variantes
+    (soit environ 180 choix par créneau au lieu d'une centaine), tous
+    conformes à vos règles (jamais de féculent le soir, féculents complets
+    à midi).
+22. Garantie anti-répétition : un même plat ne peut plus revenir à moins de
+    2 semaines d'intervalle, aussi bien pour « Changer ce repas » que pour
+    la génération des semaines suivantes.
+23. Photos des plats nettoyées : suppression du texte et de l'encadré
+    d'origine incrustés dans les images, détourage réellement transparent,
+    recadrage serré sur le plat (à l'image des modèles fournis), et
+    affichage réduit dans l'application.
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
