@@ -119,6 +119,26 @@ MISE À JOUR COMPLÉMENTAIRE #4 (contenu, suivi et partage)
     votre diététicien ; utilise le partage natif du téléphone quand il est
     disponible.
 
+MISE À JOUR COMPLÉMENTAIRE #5 (enrichissement par recherche)
+38. À votre demande, la banque de plats a été enrichie à partir d'une vraie
+    recherche de tendances culinaires actuelles (sites de nutrition, blogs
+    diététiques) : bowls méditerranéens (quinoa/riz complet + protéine +
+    légumes rôtis), aubergines rôties au citron et pignons, poulpe mariné,
+    crevettes rôties tomates-feta-origan, etc. — reformulés et vérifiés un
+    par un pour respecter vos règles (jamais de féculent le soir).
+39. Important : l'application elle-même NE PEUT PAS rechercher en
+    permanence de nouvelles recettes sur internet ou des forums — c'est un
+    programme qui vit uniquement sur votre appareil, sans les moyens
+    techniques (ni l'autorisation légale sur du contenu tiers) de le faire
+    seule, même installée sur votre téléphone. La méthode fiable et durable
+    est de me solliciter quand vous voulez : je cherche, je vérifie la
+    conformité à vos règles, je reformule proprement, et j'ajoute les
+    nouveaux plats à votre application.
+40. Corrections mineures découvertes pendant cet ajout : le poulpe et les
+    calamars avaient une fiche recette générique peu adaptée (corrigée avec
+    une vraie méthode de cuisson) ; une élision manquante dans certains
+    ingrédients ("de aubergines" → "d'aubergines").
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
