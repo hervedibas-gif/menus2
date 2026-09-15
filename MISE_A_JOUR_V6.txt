@@ -156,6 +156,38 @@ MISE À JOUR COMPLÉMENTAIRE #7 (envoi WhatsApp)
     raccourci automatiquement avec une invitation à utiliser « Partager
     cette semaine » (fichier complet) pour le détail intégral.
 
+MISE À JOUR COMPLÉMENTAIRE #8 (recettes pour le cuisinier)
+43. Correction importante : « Imprimer les recettes de la semaine » et
+    « Partager cette semaine » n'envoyaient jusqu'ici que le nom des plats,
+    pas les recettes elles-mêmes. Les deux incluent désormais, pour
+    l'entrée, le déjeuner et le dîner de chaque jour, la liste complète des
+    ingrédients (avec quantités) et les étapes de préparation détaillées —
+    exploitable directement par un cuisinier.
+
+MISE À JOUR COMPLÉMENTAIRE #9 (accès permanent en cuisine)
+44. Bouton « 📍 Aujourd'hui » ajouté directement sur l'écran du jour,
+    accessible aussi en Mode Consultation — permet à votre cuisinier de
+    revenir instantanément au jour actuel après avoir consulté d'autres
+    jours ou d'autres écrans, sans passer par vos réglages personnels.
+45. Réglage « Garder l'écran allumé » (Réglages > Affichage, visible aussi
+    en Consultation) : évite la mise en veille automatique de l'écran,
+    pratique pour une tablette laissée en cuisine pendant la préparation.
+    Fonctionne sur les navigateurs qui le permettent (Safari iOS 16.4+,
+    Chrome récent) ; ignoré silencieusement sinon, sans rien casser.
+
+COMMENT METTRE EN PLACE UN ACCÈS PERMANENT EN CUISINE
+1. Sur le téléphone ou la tablette du cuisinier, ouvrez l'application dans
+   le navigateur puis « Ajouter à l'écran d'accueil » (Safari : bouton
+   Partager ; Android/Chrome : menu ⋮).
+2. Dans l'application, basculez sur « 👥 Consultation » en haut de l'écran.
+3. Optionnel mais recommandé : définissez un code PIN à 4 chiffres dans
+   Réglages (section visible uniquement en mode « Mon programme ») pour
+   empêcher un retour accidentel sur vos données personnelles.
+4. Le cuisinier peut ensuite naviguer librement (jour par jour, vue
+   Semaine, Batch cooking, Courses) et ouvrir « 📖 Recette complète » sur
+   n'importe quel plat, sans pouvoir modifier vos menus ni voir votre
+   suivi personnel.
+
 INSTALLATION
 1. Décompresser l'archive.
 2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de

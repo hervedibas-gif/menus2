@@ -31,7 +31,7 @@ let overrides=safeGet('v6_overrides',{});
 let favorites=safeGet('v6_favorites',{});
 let results=safeGet('v6_results',[]);
 let journal=safeGet('v6_journal',{});
-let settings=safeGet('v6_settings',{servings:2,darkMode:false,pin:null,remindersEnabled:false,reminderTime:'19:00',fontScale:'normal',highContrast:false});
+let settings=safeGet('v6_settings',{servings:2,darkMode:false,pin:null,remindersEnabled:false,reminderTime:'19:00',fontScale:'normal',highContrast:false,keepAwake:false});
 let mode=localStorage.getItem('v6_mode')||'owner';
 if(localStorage.getItem('v6_nextcycle')==='1' && M.length<=BASE_M.length){/* rebuilt below after functions defined */}
 
@@ -747,10 +747,16 @@ function renderFavorites(){
 }
 
 // ---------- Suivi ----------
+function jumpToToday(showMissingMsg){
+  const n=dayNumberFromStart();
+  if(n===null){ if(showMissingMsg)showMissingMsg('Enregistrez d’abord la date de départ.'); return false; }
+  i=Math.min(M.length-1,Math.max(0,n));save();setView('menus');return true;
+}
 const sd=$('programStartDate'),sbtn=$('saveStartDate'),gbtn=$('goToday'),sstat=$('startDateStatus');
 const savedStart=localStorage.getItem('program_start_date');if(savedStart)sd.value=savedStart;
 sbtn.onclick=()=>{if(!sd.value){sstat.textContent='Choisissez une date.';return}localStorage.setItem('program_start_date',sd.value);sstat.textContent='Date enregistrée.';draw()};
-gbtn.onclick=()=>{const n=dayNumberFromStart();if(n===null){sstat.textContent='Enregistrez d’abord la date de départ.';return}i=Math.min(M.length-1,Math.max(0,n));save();setView('menus')};
+gbtn.onclick=()=>jumpToToday(msg=>sstat.textContent=msg);
+$('gotoTodayQuick').onclick=()=>jumpToToday();
 
 function saveResult(){
  const date=$('resultDate').value,weight=parseFloat($('weightResult').value),fat=parseFloat($('fatResult').value),waist=parseFloat($('waistResult').value);
@@ -843,12 +849,26 @@ $('buildNextCycle').onclick=buildNextCycle;
 if(localStorage.getItem('v6_nextcycle')==='1')buildNextCycle();
 
 // ---------- Impression semaine (recettes) ----------
+function recipeBlockHtml(title, kind){
+  const r=recipeDetails(title);
+  const n=estimateNutrition(title);
+  return '<div class="print-recipe"><b>'+kind+' — '+escHtml(r.title)+'</b>'+
+    '<p class="print-meta">'+r.servings+' • '+r.time+' • ~'+n.kcal+' kcal, ~'+n.protein+' g protéines/pers. (estimation)</p>'+
+    '<p class="print-sub">Ingrédients</p><ul>'+r.ingredients.map(x=>'<li>'+escHtml(x)+'</li>').join('')+'</ul>'+
+    '<p class="print-sub">Préparation</p><ol>'+r.steps.map(x=>'<li>'+escHtml(x)+'</li>').join('')+'</ol>'+
+    ((r.tips&&r.tips.length)?'<p class="print-sub">Astuce</p><ul>'+r.tips.map(x=>'<li>'+escHtml(x)+'</li>').join('')+'</ul>':'')+
+    '</div>';
+}
 function printCurrentWeek(){
  const week=M[i].week;
  const days=M.map((m,idx)=>({...m,idx})).filter(m=>m.week===week);
  const sheet=$('weekPrintSheet');
- sheet.innerHTML='<div class="print-head"><h1>Mes Menus — Semaine '+week+'</h1><p>Entrée, déjeuner et dîner, du lundi au dimanche</p></div>'+
-  days.map(m=>'<article class="print-day"><h2>'+m.day+'</h2><div><b>🥗 Entrée</b><p>'+starterForIndex(m.idx)+'</p></div><div><b>🍴 Plat du déjeuner</b><p>'+cleanLunchMain(currentMeal(m.idx,'lunch'))+'</p></div><div><b>🌙 Dîner</b><p>'+currentMeal(m.idx,'dinner')+'</p></div></article>').join('');
+ sheet.innerHTML='<div class="print-head"><h1>Mes Menus — Semaine '+week+'</h1><p>Recettes complètes (ingrédients et préparation) pour le cuisinier, du lundi au dimanche</p></div>'+
+  days.map(m=>'<article class="print-day"><h2>'+m.day+'</h2>'+
+    recipeBlockHtml(starterForIndex(m.idx),'🥗 Entrée')+
+    recipeBlockHtml(cleanLunchMain(currentMeal(m.idx,'lunch')),'🍴 Déjeuner')+
+    recipeBlockHtml(currentMeal(m.idx,'dinner'),'🌙 Dîner')+
+    '</article>').join('');
  document.body.classList.add('printing-week');
  setTimeout(()=>window.print(),80);
 }
@@ -869,18 +889,28 @@ function exportProgramPdf(){
 }
 $('exportProgramPdf').onclick=exportProgramPdf;
 
+function shareRecipeBlockHtml(title, kind){
+  const r=recipeDetails(title);
+  const n=estimateNutrition(title);
+  return '<div style="margin:10px 0 18px;padding:10px 14px;background:#f7faf8;border-radius:12px">'+
+    '<p style="margin:0 0 4px"><b>'+kind+' — '+escHtml(r.title)+'</b></p>'+
+    '<p style="margin:2px 0;color:#5b6862;font-size:13px">'+r.servings+' • '+r.time+' • ~'+n.kcal+' kcal, ~'+n.protein+' g protéines/pers. (estimation)</p>'+
+    '<p style="margin:8px 0 2px"><b>Ingrédients</b></p><ul style="margin:2px 0">'+r.ingredients.map(x=>'<li>'+escHtml(x)+'</li>').join('')+'</ul>'+
+    '<p style="margin:8px 0 2px"><b>Préparation</b></p><ol style="margin:2px 0">'+r.steps.map(x=>'<li>'+escHtml(x)+'</li>').join('')+'</ol>'+
+    '</div>';
+}
 function shareWeek(){
   const week=M[i].week;
   const days=M.map((m,idx)=>({...m,idx})).filter(m=>m.week===week);
   const html='<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Mes Menus — Semaine '+week+'</title>'+
     '<style>body{font-family:sans-serif;max-width:640px;margin:24px auto;padding:0 16px;color:#173e2d}'+
-    'h1{color:#11804e}h2{margin-top:26px;border-bottom:2px solid #e2f5df;padding-bottom:4px}'+
-    'p{margin:4px 0}b{color:#3a5548}</style></head><body>'+
-    '<h1>Mes Menus — Semaine '+week+'</h1><p>Programme de suivi alimentaire — document en lecture seule</p>'+
+    'h1{color:#11804e}h2{margin-top:30px;border-bottom:2px solid #e2f5df;padding-bottom:4px}'+
+    'ul,ol{padding-left:20px;font-size:14px}li{margin:2px 0}</style></head><body>'+
+    '<h1>Mes Menus — Semaine '+week+'</h1><p>Recettes complètes pour le cuisinier — document en lecture seule</p>'+
     days.map(m=>'<h2>'+m.day+'</h2>'+
-      '<p><b>🥗 Entrée :</b> '+escHtml(starterForIndex(m.idx))+'</p>'+
-      '<p><b>🍴 Déjeuner :</b> '+escHtml(cleanLunchMain(currentMeal(m.idx,'lunch')))+'</p>'+
-      '<p><b>🌙 Dîner :</b> '+escHtml(currentMeal(m.idx,'dinner'))+'</p>'
+      shareRecipeBlockHtml(starterForIndex(m.idx),'🥗 Entrée')+
+      shareRecipeBlockHtml(cleanLunchMain(currentMeal(m.idx,'lunch')),'🍴 Déjeuner')+
+      shareRecipeBlockHtml(currentMeal(m.idx,'dinner'),'🌙 Dîner')
     ).join('')+
     '</body></html>';
   const blob=new Blob([html],{type:'text/html'});
@@ -937,6 +967,27 @@ $('darkModeToggle').onchange=()=>{settings.darkMode=$('darkModeToggle').checked;
 $('contrastToggle').checked=!!settings.highContrast;
 document.body.classList.toggle('high-contrast',!!settings.highContrast);
 $('contrastToggle').onchange=()=>{settings.highContrast=$('contrastToggle').checked;safeSet('v6_settings',settings);document.body.classList.toggle('high-contrast',settings.highContrast)};
+
+// ---------- Wake Lock : garder l'écran allumé (pratique sur une tablette de cuisine) ----------
+let wakeLock=null;
+async function requestWakeLock(){
+  try{
+    if('wakeLock' in navigator){
+      wakeLock=await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release',()=>{wakeLock=null;});
+    }
+  }catch(e){ /* non supporté ou refusé : on ignore silencieusement */ }
+}
+function releaseWakeLock(){ if(wakeLock){wakeLock.release().catch(()=>{});wakeLock=null;} }
+$('keepAwakeToggle').checked=!!settings.keepAwake;
+if(settings.keepAwake)requestWakeLock();
+$('keepAwakeToggle').onchange=()=>{
+  settings.keepAwake=$('keepAwakeToggle').checked;safeSet('v6_settings',settings);
+  if(settings.keepAwake)requestWakeLock(); else releaseWakeLock();
+};
+document.addEventListener('visibilitychange',()=>{
+  if(settings.keepAwake && document.visibilityState==='visible')requestWakeLock();
+});
 
 function applyFontScale(scale){
   document.body.classList.remove('text-large','text-xlarge');
