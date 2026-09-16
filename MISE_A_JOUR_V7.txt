@@ -1,0 +1,49 @@
+MES MENUS V7.0 — AJOUT DE PLATS TROPICAUX (AFRIQUE CENTRALE)
+
+CE QUI A CHANGÉ (uniquement des ajouts, rien de retiré ni modifié)
+1. 19 nouvelles entrées ajoutées à la banque de variantes (BONUS_STARTERS),
+   à base de saka-saka, amarante, oseille, feuilles de courge, laitue,
+   romaine, batavia, iceberg, mâche, endives, chicorée, céleri-rave, céleri
+   branche, pois gourmands, fèves, potiron, citrouille, courge spaghetti et
+   poivrons multicolores.
+2. 11 nouveaux déjeuners ajoutés à la banque de variantes (BONUS_LUNCHES),
+   avec féculents tropicaux (igname, taro, banane plantain, maïs frais)
+   utilisés à midi uniquement, jamais le soir, conformément à la règle du
+   programme.
+3. 42 nouveaux dîners ajoutés à la banque de variantes (BONUS_DINNERS),
+   couvrant l'ensemble des légumes de votre liste (saka-saka, amarante,
+   oseille, feuilles de patate douce, feuilles de courge, laitue, romaine,
+   batavia, iceberg, mâche, endives, chicorée, tomate cerise, poivrons vert/
+   rouge/jaune, piment, navet, panais, céleri-rave, choux (blanc, rouge,
+   vert, chinois, fleur, Bruxelles), oignons blanc et rouge, échalote,
+   poireau, céleri branche, pois gourmands, potiron, potimarron, butternut,
+   citrouille, courge spaghetti, champignons de Paris, asperges, artichauts,
+   aubergine africaine, épinard local) ainsi que la morue/poisson salé —
+   toujours sans aucun féculent au dîner.
+4. Poissons locaux (capitaine déjà reconnu ; tilapia, machoiron, thiof et
+   morue ajoutés) systématiquement associés au mot « poisson » dans le nom
+   du plat pour être correctement classés par l'application (icône,
+   estimation nutritionnelle, fiche recette) sans toucher au code de
+   classification existant.
+
+CE QUI N'A PAS CHANGÉ
+- Les 84 jours (12 semaines) du programme de base (BASE_M) sont strictement
+  identiques : aucun plat, aucune quantité n'a été modifié ou retiré.
+- Toutes les entrées, déjeuners et dîners déjà présents dans les banques de
+  variantes restent inchangés ; les nouveaux plats sont uniquement ajoutés
+  à la suite.
+- Les données déjà enregistrées sur l'appareil (favoris, historique, poids,
+  réglages, journal) sont conservées telles quelles : les clés de stockage
+  restent "v6_..." comme avant, aucune migration n'est nécessaire.
+- Toutes les règles du programme restent appliquées telles qu'avant :
+  jamais de féculent le soir, féculents complets à midi, tirage aléatoire
+  avec garde-fous, etc.
+
+INSTALLATION
+1. Décompresser l'archive.
+2. Remplacer TOUS les fichiers et le dossier assets à l'emplacement de
+   l'application actuelle.
+3. Ouvrir l'application, faire Ctrl+Shift+R (ou vider le cache Safari une
+   fois) pour charger la nouvelle version.
+4. Vos favoris, votre historique et votre date de démarrage sont conservés
+   automatiquement, comme avant.
