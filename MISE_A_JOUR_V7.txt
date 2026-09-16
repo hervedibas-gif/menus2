@@ -1,6 +1,32 @@
 MES MENUS V7.0 — AJOUT DE PLATS TROPICAUX (AFRIQUE CENTRALE)
 
-CE QUI A CHANGÉ (uniquement des ajouts, rien de retiré ni modifié)
+IMPORTANT — POURQUOI VOUS NE VOYIEZ PAS LES NOUVEAUX PLATS
+Les 84 jours de votre programme sont un planning fixe : ajouter des plats à
+la banque de variantes ne les fait pas apparaître automatiquement sur un
+jour déjà défini. Il fallait soit utiliser "Changer ce repas"/"Changer
+l'entrée" à la main, soit attendre le jour 85. Un vrai tirage au sort avec
+rotation a donc été ajouté (point 0 ci-dessous) pour que les nouveautés
+apparaissent réellement, chaque semaine, sans action manuelle répétée.
+
+0. Nouveau bouton "🔀 Nouveau tirage aléatoire (avec les nouveautés
+   tropicales)" en haut de l'écran du jour. Il tire au sort les entrées,
+   déjeuners et dîners des 84 jours, avec :
+   - un quota garanti chaque semaine (2 entrées, 2 déjeuners, 2 dîners
+     tirés spécifiquement parmi les nouveautés tropicales), pour qu'elles
+     reviennent vraiment semaine après semaine et pas seulement en théorie
+     dans un pool de 700+ plats ;
+   - toutes les garanties déjà en place : jamais de féculent au dîner,
+     jamais un même plat à moins de 2 semaines d'intervalle, au maximum 2
+     plats de la même famille (poisson, volaille, viande…) par semaine ;
+   - le respect total de vos choix manuels : un repas déjà changé à la
+     main via "Changer ce repas"/"Changer l'entrée" n'est plus jamais
+     écrasé par un nouveau tirage, même après plusieurs tirages successifs
+     (bug corrigé en cours de développement et vérifié par test).
+   Ce tirage s'est aussi lancé automatiquement une seule fois à
+   l'installation de cette mise à jour, pour que les nouveaux plats
+   soient visibles dès l'ouverture de l'application.
+
+CE QUI A CHANGÉ PAR AILLEURS (uniquement des ajouts, rien de retiré ni modifié)
 1. 19 nouvelles entrées ajoutées à la banque de variantes (BONUS_STARTERS),
    à base de saka-saka, amarante, oseille, feuilles de courge, laitue,
    romaine, batavia, iceberg, mâche, endives, chicorée, céleri-rave, céleri
