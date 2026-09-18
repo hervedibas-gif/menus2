@@ -1,3 +1,45 @@
+MES MENUS V7.3 — CORRECTION DES FICHES RECETTE D'ENTRÉES (VELOUTÉ, TARTARE, CARPACCIO...)
+
+CONSTAT (signalé avec un exemple concret : "Velouté froid de cœurs de laitue")
+Les entrées utilisant un nom de technique (velouté, tartare, carpaccio,
+poêlée tiède, mille-feuille, assiette) recevaient toutes la même fiche
+générique "salade + vinaigrette", qui ne correspond à aucune de ces
+techniques : un velouté ne dit pas comment cuire et mixer, une poêlée
+tiède ne dit pas comment saisir à la poêle, etc.
+
+Plus grave : un "Tartare de betterave et agrumes" ou toute autre entrée de
+LÉGUME nommée "tartare" ou "carpaccio" tombait par erreur dans la fiche
+prévue pour un tartare/carpaccio de poisson, et demandait donc "300 g de
+poisson très frais, qualité consommation crue" pour une recette qui ne
+contient pas de poisson — une fiche fausse et trompeuse.
+
+CORRECTIONS
+1. Six nouvelles fiches recette dédiées, avec leurs vraies étapes :
+   - Velouté (froid ou chaud) : suer, mouiller, cuire, mixer finement,
+     passer au chinois, puis (si froid) refroidir et rectifier l'assaisonnement.
+   - Tartare de légume : légumes taillés en brunoise, assaisonnés, dressés
+     à l'emporte-pièce (sans aucune protéine crue).
+   - Carpaccio de légume : tranches fines à la mandoline, vinaigrette,
+     marinade courte.
+   - Poêlée tiède : légumes saisis à la poêle, déglacés, servis tièdes.
+   - Mille-feuille : tranches fines superposées à l'emporte-pièce.
+   - Assiette : légumes préparés et dressés simplement.
+2. Bug corrigé : un tartare ou un carpaccio de LÉGUME (sans poisson ni
+   bœuf dans le nom) ne demande plus jamais de "poisson cru" — cette fiche
+   reste désormais réservée aux vrais tartares/carpaccios de poisson ou de
+   bœuf, inchangés.
+3. Ces six entrées ont chacune une fiche autonome et complète : elles ne
+   déclenchent plus, en plus, l'ancienne instruction générique de cuisson
+   du légume (qui pouvait par exemple dire de "faire sauter" une courgette
+   déjà décrite comme taillée en carpaccio cru).
+
+CE QUI N'A PAS CHANGÉ
+- Aucun intitulé d'entrée, de déjeuner ou de dîner n'a été modifié : seul
+  le contenu des fiches recette a été corrigé et complété.
+- Les fiches des vrais tartares/carpaccios de poisson ou de bœuf restent
+  identiques.
+- Vos données (favoris, historique, poids, réglages) sont conservées.
+
 MES MENUS V7.2 — RECETTES VRAIMENT COMPLÈTES (LÉGUMES INCLUS)
 
 CONSTAT

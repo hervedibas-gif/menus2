@@ -7,7 +7,7 @@ const BONUS_DINNERS=["Filet mignon de porc poêlé au citron + salade de pousses
 const VEGGIE_DINNERS=["Tempeh snacké au sésame + brocoli vapeur et carottes", "Tofu ferme grillé à la plancha + ratatouille légère", "Seitan à la provençale + salade de concombre et menthe", "Haloumi poêlé à l'ail et au paprika + poivrons grillés et aubergines", "Bloc de tofu mariné grillé au tamari et gingembre + salade de betterave et roquette", "Bloc de tofu mariné rôti aux épices douces + salade de betterave et roquette", "Tofu ferme poêlé à l'ail et au paprika + haricots verts et amandes effilées", "Tofu ferme grillé à la plancha + épinards sautés à l'ail", "Bloc de tofu mariné snacké au sésame + épinards sautés à l'ail", "Bloc de tofu mariné rôti aux épices douces + haricots verts et amandes effilées", "Bloc de tofu mariné snacké au sésame + poivrons grillés et aubergines", "Tofu ferme snacké au sésame + salade de chou kale et pomme verte", "Tofu ferme à la provençale + poêlée de courgettes et champignons", "Tofu ferme façon tandoori léger + haricots verts et amandes effilées", "Haloumi poêlé à l'ail et au paprika + ratatouille légère", "Tofu ferme façon tandoori léger + salade de concombre et menthe", "Tofu ferme rôti aux épices douces + salade de concombre et menthe", "Seitan façon tandoori léger + poivrons grillés et aubergines", "Tofu fumé grillé à la plancha + salade de chou kale et pomme verte", "Seitan grillé au tamari et gingembre + épinards sautés à l'ail", "Tempeh grillé à la plancha + asperges et champignons", "Tofu fumé poêlé à l'ail et au paprika + salade de concombre et menthe", "Tofu fumé grillé au tamari et gingembre + poivrons grillés et aubergines", "Seitan snacké au sésame + salade de chou kale et pomme verte"];
 const VEGGIE_LUNCHES=[{"entree": "Salade de haricots blancs et citron", "plat": "Tofu fumé grillé au sésame + lentilles corail + poivrons grillés"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Falafels maison rôtis aux épices douces + riz complet + carottes rôties"}, {"entree": "Houmous de betterave et crudités", "plat": "Steak de haricots noirs poêlé au paprika + quinoa + salade croquante"}, {"entree": "Salade de pois chiches et concombre", "plat": "Bloc de tofu mariné au citron et cumin + boulgour complet + haricots verts"}, {"entree": "Salade de pois chiches et concombre", "plat": "Falafels maison rôtis aux épices douces + quinoa + poêlée de courgettes"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Tempeh poêlé à l'ail et au paprika + pois chiches citronnés + poêlée de courgettes"}, {"entree": "Salade de haricots blancs et citron", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + salade croquante"}, {"entree": "Salade de lentilles et coriandre", "plat": "Bloc de tofu mariné au citron et cumin + boulgour complet + carottes rôties"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + épinards sautés"}, {"entree": "Tartare d'avocat et tomate", "plat": "Tofu ferme grillé au tamari + patate douce rôtie + carottes rôties"}, {"entree": "Houmous de betterave et crudités", "plat": "Tempeh poêlé à l'ail et au paprika + pois chiches citronnés + salade croquante"}, {"entree": "Velouté froid de petits pois à la menthe", "plat": "Galette de pois chiches grillée à la plancha + patate douce rôtie + carottes rôties"}, {"entree": "Carpaccio de champignons et parmesan", "plat": "Tofu fumé grillé au sésame + quinoa + carottes rôties"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + haricots verts"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Falafels maison rôtis aux épices douces + semoule complète + carottes rôties"}, {"entree": "Salade de lentilles et coriandre", "plat": "Tempeh poêlé à l'ail et au paprika + riz complet + carottes rôties"}, {"entree": "Salade de pois chiches et concombre", "plat": "Galette de pois chiches grillée à la plancha + semoule complète + épinards sautés"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Tofu fumé grillé au sésame + semoule complète + brocoli vapeur"}, {"entree": "Tartare d'avocat et tomate", "plat": "Galette de pois chiches grillée à la plancha + semoule complète + haricots verts"}, {"entree": "Houmous de betterave et crudités", "plat": "Œufs pochés à la provençale + patate douce rôtie + brocoli vapeur"}, {"entree": "Tartare d'avocat et tomate", "plat": "Galette de pois chiches grillée à la plancha + boulgour complet + brocoli vapeur"}, {"entree": "Salade de lentilles et coriandre", "plat": "Tempeh poêlé à l'ail et au paprika + semoule complète + carottes rôties"}, {"entree": "Salade de pois chiches et concombre", "plat": "Galette de pois chiches grillée à la plancha + lentilles corail + salade croquante"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Œufs pochés à la provençale + sarrasin + haricots verts"}];
 
-const MENUS_DATA_VERSION='v7.2-recettes-completes';
+const MENUS_DATA_VERSION='v7.3-recettes-entrees-corrigees';
 
 // ---------- Migration des données v4.7 -> v6 ----------
 (function migrate(){
@@ -225,6 +225,13 @@ function recipeDetails(title){
   // Si un nom de plat mentionne "tartare/carpaccio/ceviche" avec volaille ou porc (jamais avec bœuf),
   // on ignore ces branches "cru" et on tombe sur les recettes cuites normales plus bas (volaille / viande).
   const unsafeRawProtein=/poulet|dinde|porc|filet mignon/i.test(s) && !/bœuf|boeuf/i.test(s);
+  // Présence d'une vraie protéine animale à base de poisson/fruits de mer ou de bœuf : sert à distinguer
+  // un tartare/carpaccio de poisson ou de bœuf (viande/poisson cru) d'un tartare/carpaccio de LÉGUME
+  // (brunoise ou tranches fines, sans aucune protéine crue), pour ne jamais demander du "poisson cru"
+  // dans la fiche d'une entrée de légumes.
+  const hasFishOrSeafood=/poisson|dorade|daurade|capitaine|saumon|thon|bar\b|cabillaud|sole|merlan|lieu|colin|maquereau|rouget|flétan|turbot|églefin|truite|mulet|darne|empereur|gambas|crevette|langouste|crustacé|poulpe|tourteau|homard|saint-jacques|calamar/.test(s);
+  const hasBeef=/bœuf|boeuf/.test(s);
+  let skipComponents=false;
 
   if(/ceviche/.test(s) && !unsafeRawProtein){
     time='25 min + 15 min au frais';
@@ -239,9 +246,9 @@ function recipeDetails(title){
          'Réserver 10 à 15 minutes au réfrigérateur seulement.',
          'Rectifier l’assaisonnement et servir immédiatement bien frais.');
     tips=['Utiliser impérativement un poisson adapté à la consommation crue et respecter la chaîne du froid.'];
-  } else if(/carpaccio/.test(s) && /bar|thon|saumon|poisson|bœuf|boeuf/.test(s) && !unsafeRawProtein){
+  } else if(/carpaccio/.test(s) && (hasFishOrSeafood||hasBeef) && !unsafeRawProtein){
     time='20 min';
-    if(/bœuf|boeuf/.test(s)){
+    if(hasBeef){
       add(fmtQty(250,'g')+' de filet de bœuf très frais','1 citron','2 c. à soupe d’huile d’olive','copeaux de parmesan','Fleur de sel et poivre');
     } else {
       add(fmtQty(250,'g')+' de poisson très frais, qualité consommation crue','1 citron vert','2 c. à soupe d’huile d’olive','1 c. à soupe de ciboulette ou coriandre','1 petite échalote','Fleur de sel et poivre');
@@ -251,9 +258,9 @@ function recipeDetails(title){
          'Mélanger jus de citron, huile d’olive et herbes ou échalote.',
          'Verser l’assaisonnement juste avant de servir, ajouter fleur de sel et poivre.');
     tips=['Servir immédiatement, sans laisser mariner longtemps.'];
-  } else if(/tartare/.test(s) && !unsafeRawProtein){
+  } else if(/tartare/.test(s) && (hasFishOrSeafood||hasBeef) && !unsafeRawProtein){
     time='20 min';
-    if(/bœuf|boeuf/.test(s)){
+    if(hasBeef){
       add(fmtQty(300,'g')+' de filet de bœuf très frais haché au couteau','1 échalote','2 c. à soupe de câpres','1 c. à café de moutarde','1 c. à soupe d’huile d’olive','Sel et poivre');
     } else {
       add(fmtQty(300,'g')+' de poisson très frais, qualité consommation crue','1 citron vert','1 petite échalote','2 c. à soupe de coriandre ou ciboulette','1 c. à soupe d’huile d’olive','1 c. à café de moutarde douce','Sel et poivre');
@@ -265,6 +272,73 @@ function recipeDetails(title){
          'Incorporer délicatement la protéine et les aromates. Saler et poivrer.',
          'Dresser à l’emporte-pièce et servir immédiatement.');
     tips=['Préparer au dernier moment et conserver au froid.'];
+  } else if(/velouté/.test(s)){
+    skipComponents=true;
+    const froid=/froid/.test(s);
+    time=froid?'25 min + 1 h au frais':'25 min';
+    add(fmtQty(350,'g')+' au total du ou des légumes indiqués (hors éventuel élément mixé cru comme l’avocat)','1/2 oignon ou échalote','1 c. à café d’huile d’olive','300 à 400 ml d’eau ou de bouillon de légumes léger','1 c. à soupe de crème fraîche légère ou de yaourt nature (facultatif)','Sel et poivre');
+    if(s.includes('avocat')) add('1 avocat mûr, ajouté cru au moment de mixer');
+    if(s.includes('gingembre')) add('1 c. à café de gingembre confit ou frais râpé');
+    step('Laver et émincer le ou les légumes indiqués, ainsi que l’oignon ou l’échalote.',
+         'Faire suer l’oignon et le légume 3 à 4 minutes dans l’huile d’olive, à feu doux, sans coloration.',
+         'Couvrir avec l’eau ou le bouillon, saler légèrement et laisser frémir 10 à 15 minutes jusqu’à ce que le légume soit bien tendre.',
+         s.includes('avocat')?'Retirer du feu, laisser tiédir puis ajouter l’avocat cru avant de mixer (il ne doit pas cuire).':'Retirer du feu et laisser tiédir quelques minutes.',
+         'Mixer longuement au blender jusqu’à obtenir une texture parfaitement lisse et veloutée ; passer au chinois pour un résultat encore plus soyeux si désiré.',
+         'Incorporer la crème ou le yaourt si utilisé, rectifier l’assaisonnement.',
+         froid?'Laisser refroidir puis réserver au moins 1 heure au réfrigérateur.':'Servir aussitôt bien chaud.',
+         froid?'Juste avant de servir, goûter et rectifier l’assaisonnement (le froid atténue le goût), avec un filet d’huile d’olive en finition.':'Ajouter un filet d’huile d’olive en finition et servir.');
+    tips=[froid?'Un velouté froid doit être plus relevé qu’un velouté chaud : le froid atténue les saveurs.':'Détendre avec un peu d’eau ou de bouillon si le velouté est trop épais.'];
+  } else if(/tartare/.test(s)){
+    // Tartare de LÉGUME (aucune protéine crue) : brunoise assaisonnée, jamais de "poisson cru" ici.
+    skipComponents=true;
+    time='20 min';
+    add(fmtQty(350,'g')+' au total du ou des légumes indiqués','1 petite échalote','1 c. à soupe d’herbes fraîches (ciboulette, persil, coriandre…)','1 c. à soupe d’huile d’olive','1 c. à soupe de jus de citron ou de vinaigre','Sel et poivre');
+    step('Laver, éplucher si nécessaire et couper le ou les légumes en tout petits dés réguliers (brunoise) au couteau.',
+         'Hacher finement l’échalote et les herbes fraîches.',
+         'Mélanger dans un saladier les dés de légumes, l’échalote, les herbes, l’huile d’olive et le jus de citron ou le vinaigre.',
+         'Saler, poivrer et laisser mariner 10 minutes au frais pour que les saveurs se mêlent.',
+         'Dresser à l’aide d’un emporte-pièce pour un montage net, et servir bien frais.');
+    tips=['Couper les légumes bien réguliers et de petite taille pour une texture agréable en bouche.'];
+  } else if(/carpaccio/.test(s)){
+    // Carpaccio de LÉGUME : tranches fines crues, jamais de "poisson cru" ici.
+    skipComponents=true;
+    time='15 min';
+    add(fmtQty(300,'g')+' au total du ou des légumes indiqués','1 c. à soupe d’huile d’olive','1 c. à soupe de jus de citron ou de vinaigre','1 c. à soupe d’herbes fraîches ou copeaux de parmesan (selon le titre)','Sel et poivre');
+    step('Laver et éplucher si nécessaire le légume, puis le tailler en tranches très fines et régulières à la mandoline (ou à l’économe pour un légume fin comme la courgette).',
+         'Disposer les tranches sans les superposer sur une assiette large et froide.',
+         'Mélanger l’huile d’olive, le jus de citron ou le vinaigre, sel et poivre pour une vinaigrette légère.',
+         'Verser la vinaigrette sur les tranches juste avant de servir, ajouter herbes fraîches ou copeaux de parmesan selon l’indication du titre.',
+         'Laisser mariner 5 minutes à température ambiante pour attendrir légèrement le légume, puis servir aussitôt.');
+    tips=['Une mandoline permet des tranches régulières, essentielles pour la texture du carpaccio.'];
+  } else if(/poêlée tiède/.test(s)){
+    skipComponents=true;
+    time='15 min';
+    add(fmtQty(300,'g')+' au total du ou des légumes indiqués','1 c. à soupe d’huile d’olive','1 c. à soupe de jus de citron ou de vinaigre','1 c. à soupe d’herbes fraîches ou d’épices (selon le titre)','Sel et poivre');
+    step('Laver, éplucher si nécessaire et couper le ou les légumes en morceaux réguliers.',
+         'Faire chauffer l’huile d’olive dans une poêle à feu vif, puis saisir les légumes 5 à 8 minutes en remuant, jusqu’à ce qu’ils soient tendres mais encore légèrement croquants.',
+         'Ajouter les aromates ou épices indiqués dans le titre en toute fin de cuisson pour ne pas les brûler.',
+         'Déglacer avec le jus de citron ou le vinaigre, hors du feu.',
+         'Saler, poivrer, parsemer d’herbes fraîches et servir immédiatement tiède.');
+    tips=['Une poêlée tiède se sert dès la sortie de la poêle, pour garder du croquant et de la fraîcheur.'];
+  } else if(/mille-feuille/.test(s)){
+    skipComponents=true;
+    time='20 min';
+    add(fmtQty(300,'g')+' au total du ou des légumes indiqués','1 c. à soupe d’huile d’olive','1 c. à soupe de jus de citron ou de vinaigre','1 c. à soupe d’herbes fraîches (ou fromage frais/mozzarella selon le titre)','Sel et poivre');
+    step('Laver et couper le ou les légumes en tranches très fines et régulières, à la mandoline si possible.',
+         'Éponger les tranches sur du papier absorbant si elles rendent de l’eau (concombre, tomate…).',
+         'À l’aide d’un emporte-pièce, superposer les tranches en couches, en alternant si besoin avec l’élément indiqué dans le titre (fromage, herbes, autre légume), en pressant légèrement entre chaque couche.',
+         'Réserver au frais 10 minutes pour que le montage se tienne bien.',
+         'Retirer délicatement l’emporte-pièce, arroser d’un filet d’huile et de vinaigrette, et servir frais.');
+    tips=['Des tranches toutes de la même épaisseur donnent un montage plus net et plus stable.'];
+  } else if(/^assiette /.test(s) || /assiette d[e’]/.test(s)){
+    skipComponents=true;
+    time='15 min';
+    add(fmtQty(300,'g')+' au total du ou des légumes indiqués','1 c. à soupe d’huile d’olive','1 c. à soupe de jus de citron ou de vinaigre','1 c. à soupe d’herbes fraîches','Sel et poivre');
+    step('Laver, éplucher si nécessaire et couper le ou les légumes selon la texture recherchée (tranches, quartiers ou bâtonnets).',
+         'Les disposer harmonieusement sur une assiette de service.',
+         'Arroser d’un filet d’huile d’olive et de jus de citron ou de vinaigre.',
+         'Assaisonner de sel, poivre et herbes fraîches, et servir frais ou tiède selon l’indication du titre.');
+    tips=['Un beau dressage se prépare au dernier moment pour garder de la fraîcheur.'];
   } else if(/langouste/.test(s)){
     time='35 min';
     add(fmtQty(2,'pièce(s)')+' queues de langouste (250-300 g chacune)','2 gousses d’ail','1 citron','2 c. à soupe d’huile d’olive','2 c. à soupe de persil frais','Sel et poivre');
@@ -362,7 +436,8 @@ function recipeDetails(title){
   }
 
   // accompagnements détectés (riz, légumes...) ajoutés avec quantités et détail complet de préparation
-  const comps=detectComponents(title);
+  // (jamais pour les entrées mono-légume ci-dessus : leur fiche est déjà complète et autonome)
+  const comps=skipComponents?[]:detectComponents(title);
   comps.forEach(c=>{
     const lbl=c.label.toLowerCase();
     const deOrD=/^[aeiouéèêàh]/i.test(lbl) && !/^haricots?/.test(lbl) ? "d’" : "de ";
