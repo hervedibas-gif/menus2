@@ -1,0 +1,78 @@
+MES MENUS V8.0 — NOUVELLES FONCTIONNALITÉS (sur demande : "quelque chose de révolutionnaire, sans changer l'esprit du projet")
+
+Tout reste conforme à l'esprit initial : rien ne quitte votre appareil, pas
+de compte, pas de serveur, et toutes les règles de votre programme restent
+appliquées à l'identique (jamais de féculent au dîner, féculents complets
+à midi, etc.).
+
+1. COMPRENDRE SA PROPRE PROGRESSION
+   - Séries de constance : nombre de jours d'affilée "suivi tel quel",
+     record personnel, badges de palier (7 / 30 / 90 jours) — dans
+     Suivi > Constance & observance.
+   - Détection de tendances : l'application repère elle-même si un jour
+     de la semaine revient souvent en "adapté" (dès 3 occurrences).
+   - Corrélation observance ⇄ poids : petits repères de couleur (vert =
+     suivi tel quel, orange = adapté, gris = pas de journal) directement
+     sous la courbe de poids, à la date de chaque mesure.
+   - Brief consultation en une page : nouveau bouton "📋 Brief consultation"
+     dans Suivi, qui exporte en PDF (impression) un résumé condensé —
+     évolution, 5 dernières mesures, observance, dernières remarques —
+     pensé pour être montré tel quel à votre diététicienne.
+
+2. EN CUISINE
+   - Minuteurs intégrés : chaque étape de recette qui mentionne une durée
+     affiche un bouton "⏱ Minuteur" ; plusieurs minuteurs peuvent tourner
+     en même temps (utile en batch cooking), avec bip sonore et vibration
+     à la fin. Les durées de plus de 3 heures (ex. dessalage de la morue)
+     ne proposent pas de minuteur, ça n'aurait pas de sens.
+   - Mode vocal mains libres : bouton "🔊 Lire à voix haute" dans chaque
+     fiche recette, qui lit les étapes une par une ; si votre navigateur
+     le permet, un second bouton "🎙️ Commandes vocales" apparaît pour
+     dire "étape suivante", "étape précédente", "répète" ou "stop" sans
+     toucher l'écran. Fonctionne surtout sur Chrome/Android ; sur les
+     navigateurs qui ne supportent pas la reconnaissance vocale, seul le
+     bouton de lecture apparaît (dégradation propre, rien ne casse).
+   - Nouvel onglet "🍳 Cuisine" : un écran unique avec le menu du jour en
+     gros caractères, l'accès direct aux trois recettes complètes et le
+     nombre d'articles de courses restants — pensé pour une tablette
+     posée en cuisine, disponible aussi en mode Consultation.
+
+3. LOGISTIQUE
+   - Liste de courses réorganisée par rayon de magasin : 🥩 Boucherie,
+     🐟 Poissonnerie, 🥕 Fruits & légumes, 🥚 Crèmerie & œufs, puis
+     🌾 Épicerie — au lieu d'une liste plate.
+   - Anti-gaspillage : dans Courses, indiquez ce qu'il reste au frigo (un
+     ingrédient par ligne), l'application repère les jours des deux
+     prochaines semaines qui l'utilisent déjà et propose de les avancer à
+     aujourd'hui en un tap (échange fiable du contenu des deux jours,
+     testé).
+
+4. PARTAGE SANS SERVEUR
+   - QR code du jour : nouveau bouton à côté du partage WhatsApp, qui
+     génère un QR code à faire scanner directement par le téléphone du
+     cuisinier — aucune connexion ni compte nécessaire. Si la génération
+     de QR code n'a pas pu se charger (pas de réseau la toute première
+     fois), le texte du menu s'affiche à la place avec un bouton copier.
+
+5. JOURNAL ENRICHI
+   - Photo du plat réellement préparé, ajoutée depuis l'appareil photo ou
+     la galerie, redimensionnée automatiquement pour ne pas saturer la
+     mémoire du navigateur, et stockée uniquement sur l'appareil. Un
+     bouton permet de la retirer à tout moment.
+
+CE QUI N'A PAS CHANGÉ
+- Le mode vocal (lecture et commandes) dépend des capacités du navigateur
+  et du téléphone ; iOS/Safari a un support plus limité que Chrome/Android.
+- Le QR code transporte le texte du menu du jour, pas une synchronisation
+  complète de l'application (un QR code ne peut techniquement pas contenir
+  84 jours de données) — pour la synchronisation intégrale entre appareils,
+  utilisez toujours l'export/import de données déjà existant.
+- La photo du journal grossit le stockage du navigateur (limité en général
+  à quelques Mo) : au-delà d'un certain nombre de photos, l'application
+  vous préviendra si elle ne peut plus en enregistrer de nouvelles.
+
+CE QUI RESTE IDENTIQUE
+- Les 84 jours du programme de base et toutes les banques de plats restent
+  strictement identiques.
+- Vos données (favoris, historique, poids, réglages, journal) sont
+  conservées ; aucune nouvelle migration n'est nécessaire.

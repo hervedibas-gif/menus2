@@ -7,14 +7,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Mes Menus">
-<title>Mes Menus V7</title>
+<title>Mes Menus V8</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
 <link rel="apple-touch-icon" sizes="167x167" href="assets/icon-167.png">
 <link rel="apple-touch-icon" sizes="152x152" href="assets/icon-152.png">
 <link rel="apple-touch-icon" sizes="120x120" href="assets/icon-120.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
-<link rel="stylesheet" href="styles.css?v=7.3">
+<link rel="stylesheet" href="styles.css?v=8.0">
 </head>
 <body>
 <main class="app">
@@ -86,6 +86,13 @@
       <input id="journalHunger" type="range" min="1" max="5" value="3">
     </label>
     <textarea id="journalNote" placeholder="Une remarque pour vous (ou pour votre diététicien)…" rows="2"></textarea>
+    <div class="journal-photo-row">
+      <label class="photo-upload-btn" for="journalPhotoInput">📷 Photo du plat du jour</label>
+      <input id="journalPhotoInput" type="file" accept="image/*" capture="environment" style="display:none">
+      <img id="journalPhotoThumb" class="journal-photo-thumb" style="display:none" alt="Photo du plat du jour">
+      <button id="journalPhotoRemove" class="secondary" style="display:none">Retirer la photo</button>
+    </div>
+    <small class="hint">La photo reste uniquement sur cet appareil (jamais envoyée nulle part) ; elle est redimensionnée pour ne pas saturer la mémoire du navigateur.</small>
     <small id="journalStatus"></small>
   </div>
 
@@ -101,6 +108,7 @@
       <button id="waWeek" class="wa-btn">Cette semaine</button>
       <button id="waMonth" class="wa-btn">4 semaines</button>
     </div>
+    <button id="showQR" class="wa-btn" style="margin-top:6px">📱 QR code du jour (à faire scanner)</button>
   </div>
 
   <aside class="daily-tip">🌿 <b>Conseil du jour :</b> mangez lentement et prenez le temps de savourer votre repas.</aside>
@@ -117,6 +125,11 @@
   <div id="batchCooking" class="weekgrid" style="display:none"></div>
 </section>
 
+<section id="cuisine" class="view">
+  <div class="sectionhead"><h1>🍳 Vue Cuisine</h1><p id="kitchenDayTitle">Lundi</p></div>
+  <div id="kitchenContent" class="kitchen-content"></div>
+</section>
+
 <section id="courses" class="view">
   <div class="sectionhead">
     <h1>🛒 Liste de courses</h1>
@@ -128,6 +141,14 @@
   </div>
   <p class="hint">Quantités calculées pour <span id="shoppingServings">2</span> personne(s) — modifiable dans Réglages.</p>
   <div id="shopping"></div>
+
+  <div class="progressbox" id="wasteBox">
+    <h2>🥦 Anti-gaspillage</h2>
+    <p class="hint">Indiquez ce qu'il reste au frigo (un ingrédient par ligne), l'application repère les prochains jours qui l'utilisent déjà — et propose d'avancer ce jour-là à aujourd'hui.</p>
+    <textarea id="fridgeItems" rows="3" placeholder="courgette&#10;saumon&#10;fenouil"></textarea>
+    <button id="scanFridge" class="primary">Chercher dans les 14 prochains jours</button>
+    <div id="fridgeResults"></div>
+  </div>
 </section>
 
 <section id="favoris" class="view">
@@ -157,10 +178,17 @@
     </div>
     <button id="saveResult" class="primary">Ajouter cette mesure</button>
     <button id="printSuivi" class="secondary">🖨️ Exporter mon suivi (PDF)</button>
+    <button id="printBrief" class="secondary">📋 Brief consultation (1 page)</button>
     <small id="resultStatus"></small>
     <canvas id="resultChart" width="440" height="190"></canvas>
     <div id="resultSummary" class="summarybox"></div>
     <div id="resultHistory"></div>
+  </div>
+
+  <div class="progressbox" id="observanceBox">
+    <h2>🔥 Constance & observance</h2>
+    <div id="streakSummary" class="summarybox"></div>
+    <div id="patternInsights"></div>
   </div>
 
   <div class="progressbox" id="cycleReview">
@@ -242,10 +270,29 @@
     <small id="recipeKind" class="recipe-kind"></small>
     <h2 id="recipeTitle"></h2>
     <p id="recipeMeta" class="recipe-meta"></p>
+    <div class="voice-controls">
+      <button id="voiceReadBtn" class="secondary">🔊 Lire à voix haute</button>
+      <button id="voiceListenBtn" class="secondary" style="display:none">🎙️ Commandes vocales</button>
+      <small id="voiceStatus" class="hint"></small>
+    </div>
     <h3>🧺 Ingrédients</h3>
     <ul id="recipeIngredients"></ul>
     <h3>👩‍🍳 Préparation</h3>
     <ol id="recipeSteps"></ol><div id="recipeTipsBlock"><h3>💡 Conseils</h3><ul id="recipeTips"></ul></div>
+  </article>
+</div>
+
+<div id="qrModal" class="recipe-modal" aria-hidden="true">
+  <div class="recipe-backdrop" onclick="closeQR()"></div>
+  <article class="recipe-panel">
+    <button class="recipe-close" onclick="closeQR()" aria-label="Fermer">×</button>
+    <h2>📱 QR code du jour</h2>
+    <p class="hint">Sans aucun serveur ni connexion : présentez cet écran, le cuisinier scanne avec l'appareil photo de son téléphone et lit directement le menu du jour.</p>
+    <div id="qrContainer" style="text-align:center;margin:14px 0"></div>
+    <small id="qrHint" class="hint"></small>
+    <h3>Texte (si le QR ne peut pas être généré ou lu)</h3>
+    <textarea id="qrFallbackText" rows="6" readonly style="width:100%;border:1px solid #d7e1db;border-radius:12px;padding:10px;font-family:inherit;font-size:13px"></textarea>
+    <button id="copyQRText" class="secondary" style="margin-top:8px">Copier le texte</button>
   </article>
 </div>
 
@@ -284,8 +331,11 @@
 <section id="weekPrintSheet" class="week-print-sheet" aria-hidden="true"></section>
 <section id="trackPrintSheet" class="week-print-sheet" aria-hidden="true"></section>
 
+<div id="timersBar" class="timers-bar" style="display:none"></div>
+
 <nav class="bottom">
   <button data-view="menus" class="on">🏠<span>Menu</span></button>
+  <button data-view="cuisine">🍳<span>Cuisine</span></button>
   <button data-view="semaine">📆<span>Semaine</span></button>
   <button data-view="courses">🛒<span>Courses</span></button>
   <button data-view="favoris">❤️<span>Favoris</span></button>
@@ -293,5 +343,6 @@
   <button data-view="reglages">⚙️<span>Réglages</span></button>
 </nav>
 </main>
-<script src="app.js?v=7.3"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="app.js?v=8.0"></script>
 </body></html>

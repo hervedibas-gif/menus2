@@ -7,7 +7,7 @@ const BONUS_DINNERS=["Filet mignon de porc poêlé au citron + salade de pousses
 const VEGGIE_DINNERS=["Tempeh snacké au sésame + brocoli vapeur et carottes", "Tofu ferme grillé à la plancha + ratatouille légère", "Seitan à la provençale + salade de concombre et menthe", "Haloumi poêlé à l'ail et au paprika + poivrons grillés et aubergines", "Bloc de tofu mariné grillé au tamari et gingembre + salade de betterave et roquette", "Bloc de tofu mariné rôti aux épices douces + salade de betterave et roquette", "Tofu ferme poêlé à l'ail et au paprika + haricots verts et amandes effilées", "Tofu ferme grillé à la plancha + épinards sautés à l'ail", "Bloc de tofu mariné snacké au sésame + épinards sautés à l'ail", "Bloc de tofu mariné rôti aux épices douces + haricots verts et amandes effilées", "Bloc de tofu mariné snacké au sésame + poivrons grillés et aubergines", "Tofu ferme snacké au sésame + salade de chou kale et pomme verte", "Tofu ferme à la provençale + poêlée de courgettes et champignons", "Tofu ferme façon tandoori léger + haricots verts et amandes effilées", "Haloumi poêlé à l'ail et au paprika + ratatouille légère", "Tofu ferme façon tandoori léger + salade de concombre et menthe", "Tofu ferme rôti aux épices douces + salade de concombre et menthe", "Seitan façon tandoori léger + poivrons grillés et aubergines", "Tofu fumé grillé à la plancha + salade de chou kale et pomme verte", "Seitan grillé au tamari et gingembre + épinards sautés à l'ail", "Tempeh grillé à la plancha + asperges et champignons", "Tofu fumé poêlé à l'ail et au paprika + salade de concombre et menthe", "Tofu fumé grillé au tamari et gingembre + poivrons grillés et aubergines", "Seitan snacké au sésame + salade de chou kale et pomme verte"];
 const VEGGIE_LUNCHES=[{"entree": "Salade de haricots blancs et citron", "plat": "Tofu fumé grillé au sésame + lentilles corail + poivrons grillés"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Falafels maison rôtis aux épices douces + riz complet + carottes rôties"}, {"entree": "Houmous de betterave et crudités", "plat": "Steak de haricots noirs poêlé au paprika + quinoa + salade croquante"}, {"entree": "Salade de pois chiches et concombre", "plat": "Bloc de tofu mariné au citron et cumin + boulgour complet + haricots verts"}, {"entree": "Salade de pois chiches et concombre", "plat": "Falafels maison rôtis aux épices douces + quinoa + poêlée de courgettes"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Tempeh poêlé à l'ail et au paprika + pois chiches citronnés + poêlée de courgettes"}, {"entree": "Salade de haricots blancs et citron", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + salade croquante"}, {"entree": "Salade de lentilles et coriandre", "plat": "Bloc de tofu mariné au citron et cumin + boulgour complet + carottes rôties"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + épinards sautés"}, {"entree": "Tartare d'avocat et tomate", "plat": "Tofu ferme grillé au tamari + patate douce rôtie + carottes rôties"}, {"entree": "Houmous de betterave et crudités", "plat": "Tempeh poêlé à l'ail et au paprika + pois chiches citronnés + salade croquante"}, {"entree": "Velouté froid de petits pois à la menthe", "plat": "Galette de pois chiches grillée à la plancha + patate douce rôtie + carottes rôties"}, {"entree": "Carpaccio de champignons et parmesan", "plat": "Tofu fumé grillé au sésame + quinoa + carottes rôties"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Bloc de tofu mariné au citron et cumin + riz complet + haricots verts"}, {"entree": "Salade de quinoa et légumes croquants", "plat": "Falafels maison rôtis aux épices douces + semoule complète + carottes rôties"}, {"entree": "Salade de lentilles et coriandre", "plat": "Tempeh poêlé à l'ail et au paprika + riz complet + carottes rôties"}, {"entree": "Salade de pois chiches et concombre", "plat": "Galette de pois chiches grillée à la plancha + semoule complète + épinards sautés"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Tofu fumé grillé au sésame + semoule complète + brocoli vapeur"}, {"entree": "Tartare d'avocat et tomate", "plat": "Galette de pois chiches grillée à la plancha + semoule complète + haricots verts"}, {"entree": "Houmous de betterave et crudités", "plat": "Œufs pochés à la provençale + patate douce rôtie + brocoli vapeur"}, {"entree": "Tartare d'avocat et tomate", "plat": "Galette de pois chiches grillée à la plancha + boulgour complet + brocoli vapeur"}, {"entree": "Salade de lentilles et coriandre", "plat": "Tempeh poêlé à l'ail et au paprika + semoule complète + carottes rôties"}, {"entree": "Salade de pois chiches et concombre", "plat": "Galette de pois chiches grillée à la plancha + lentilles corail + salade croquante"}, {"entree": "Velouté froid de concombre au yaourt", "plat": "Œufs pochés à la provençale + sarrasin + haricots verts"}];
 
-const MENUS_DATA_VERSION='v7.3-recettes-entrees-corrigees';
+const MENUS_DATA_VERSION='v8.0-fonctionnalites-avancees';
 
 // ---------- Migration des données v4.7 -> v6 ----------
 (function migrate(){
@@ -106,56 +106,56 @@ function imageForText(text,slot){
 // ---------- Ingrédients / quantités (recettes + courses) ----------
 // dictionnaire de composants détectés dans les textes de menus, avec quantité de base pour 2 personnes
 const COMPONENTS=[
- {re:/riz complet/i,label:'Riz complet',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Rincer le riz complet à l’eau claire jusqu’à ce qu’elle devienne transparente, pour retirer l’excès d’amidon.',cook:'Le cuire 25 à 30 minutes dans deux à trois fois son volume d’eau salée, à couvert et à feu doux.',finish:'Égoutter l’excédent d’eau si besoin, laisser reposer 5 minutes à couvert, puis égrainer à la fourchette.'},
- {re:/riz basmati/i,label:'Riz basmati',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Rincer le riz basmati à l’eau claire ; le laisser tremper 10 minutes si le temps le permet, pour des grains bien détachés.',cook:'Le cuire 10 à 12 minutes dans l’eau bouillante salée.',finish:'Égoutter, égrainer à la fourchette et servir aussitôt.'},
- {re:/riz sauvage/i,label:'Riz sauvage',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Rincer le riz sauvage à l’eau froide.',cook:'Le cuire 35 à 40 minutes à l’eau frémissante salée, à couvert, jusqu’à ce que les grains s’entrouvrent.',finish:'Égoutter et laisser gonfler 5 minutes hors du feu avant de servir.'},
- {re:/quinoa/i,label:'Quinoa',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Rincer soigneusement le quinoa sous l’eau froide, pour retirer son enveloppe naturellement amère (saponine).',cook:'Le cuire 12 à 15 minutes dans deux fois son volume d’eau légèrement salée, à couvert et à petit frémissement.',finish:'Laisser reposer 5 minutes hors du feu à couvert, puis égrainer à la fourchette.'},
- {re:/boulgour complet|boulgour/i,label:'Boulgour complet',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Verser le boulgour dans un saladier ou une casserole.',cook:'Le cuire 12 minutes dans l’eau bouillante salée (ou le couvrir d’eau bouillante à hauteur et laisser gonfler 15 minutes à couvert, hors du feu).',finish:'Égoutter l’excédent d’eau et égrainer à la fourchette avant de servir.'},
- {re:/semoule complète|semoule/i,label:'Semoule complète',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Verser la semoule dans un saladier.',cook:'Verser dessus un volume égal d’eau bouillante (ou de bouillon léger), couvrir et laisser gonfler 5 minutes.',finish:'Égrainer à la fourchette avec un filet d’huile d’olive avant de servir.'},
- {re:/patate douce/i,label:'Patate douce',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Éplucher la patate douce et la couper en cubes réguliers d’environ 2 cm.',cook:'La rôtir au four 25 minutes à 200 °C avec un filet d’huile, en retournant à mi-cuisson (ou la cuire 15 minutes à la vapeur).',finish:'Vérifier la cuisson à la pointe d’un couteau : elle doit être tendre à cœur avant de servir.'},
- {re:/pommes? grenaille/i,label:'Pommes de terre grenaille',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Laver soigneusement les pommes grenaille (les couper en deux si elles sont grosses).',cook:'Les cuire à l’eau bouillante salée 15 à 20 minutes, ou les rôtir au four 25 minutes à 200 °C avec un filet d’huile.',finish:'Égoutter et servir aussitôt, éventuellement parsemées d’herbes fraîches.'},
- {re:/manioc/i,label:'Manioc',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Éplucher le manioc, retirer la fibre centrale et le couper en tronçons réguliers.',cook:'Le cuire 20 à 25 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’il soit tendre à cœur.',finish:'Égoutter et servir chaud.'},
- {re:/lentilles? (tièdes|verte|corail)?/i,label:'Lentilles',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Rincer les lentilles à l’eau froide et retirer les éventuelles impuretés.',cook:'Les cuire 20 à 25 minutes dans l’eau non salée (saler seulement en fin de cuisson), à léger frémissement.',finish:'Égoutter, assaisonner d’un filet d’huile d’olive et de sel avant de servir.'},
- {re:/pois chiches?/i,label:'Pois chiches',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Égoutter et rincer les pois chiches (en conserve) sous l’eau froide.',cook:'Les réchauffer 5 minutes à la casserole ou à la poêle (ou les cuire 45 minutes à l’eau s’ils sont secs et pré-trempés la veille).',finish:'Assaisonner d’un filet de citron et d’huile d’olive avant de servir.'},
- {re:/haricots rouges/i,label:'Haricots rouges',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Égoutter et rincer les haricots rouges (en conserve) sous l’eau froide.',cook:'Les réchauffer doucement 5 minutes à la casserole, en remuant.',finish:'Assaisonner et servir chaud.'},
- {re:/pain complet/i,label:'Pain complet',unit:'tranche(s)',qty:1,cat:'Féculents & légumineuses',cook:'Toaster légèrement le pain complet si besoin.'},
- {re:/tartine complète/i,label:'Pain complet',unit:'tranche(s)',qty:1,cat:'Féculents & légumineuses',cook:'Toaster légèrement le pain complet si besoin.'},
- {re:/brocoli/i,label:'Brocoli',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Détailler le brocoli en petits bouquets réguliers, en retirant la base fibreuse de la tige (que l’on peut éplucher et cuire aussi).',cook:'Le cuire 6 à 8 minutes à la vapeur, jusqu’à ce qu’il soit tendre mais encore croquant.',finish:'Rafraîchir brièvement sous l’eau froide pour garder la couleur, puis assaisonner d’un filet d’huile d’olive.'},
- {re:/épinards?/i,label:'Épinards',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver soigneusement les épinards et retirer les tiges les plus épaisses.',cook:'Les faire tomber 3 à 4 minutes dans une poêle chaude avec un filet d’huile, en remuant.',finish:'Égoutter l’excès d’eau de végétation, saler, poivrer et servir aussitôt.'},
- {re:/courgettes?/i,label:'Courgettes',unit:'g',qty:250,cat:'Légumes & fruits',prep:'Laver les courgettes et les couper en rondelles ou en bâtonnets.',cook:'Les faire sauter ou griller 8 à 10 minutes à feu moyen-vif, en remuant régulièrement.',finish:'Assaisonner de sel, poivre et d’herbes fraîches en fin de cuisson.'},
- {re:/carottes?/i,label:'Carottes',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Éplucher les carottes et les couper en rondelles ou en bâtonnets.',cook:'Les cuire à la vapeur 15 à 20 minutes, ou les rôtir au four 20 minutes à 200 °C avec un filet d’huile.',finish:'Vérifier qu’elles sont tendres à la pointe du couteau avant de servir.'},
- {re:/haricots verts/i,label:'Haricots verts',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Équeuter les haricots verts (retirer les deux extrémités).',cook:'Les cuire 8 à 10 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’ils soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive.'},
- {re:/poivrons?/i,label:'Poivrons',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver les poivrons, retirer les pépins et les couper en lanières.',cook:'Les faire sauter ou griller 8 minutes à feu vif, en remuant.',finish:'Saler et poivrer en fin de cuisson.'},
- {re:/aubergines?/i,label:'Aubergines',unit:'g',qty:250,cat:'Légumes & fruits',prep:'Laver les aubergines et les couper en tranches ou en cubes.',cook:'Les griller ou les rôtir au four 20 minutes à 200 °C avec un filet d’huile, en les retournant à mi-cuisson.',finish:'Elles doivent être fondantes à cœur ; assaisonner et servir chaud.'},
- {re:/gombo/i,label:'Gombo',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver le gombo et couper les extrémités.',cook:'Le faire sauter 8 à 10 minutes à feu moyen, en remuant régulièrement pour limiter le côté filandreux.',finish:'Assaisonner d’ail, d’oignon et d’un filet de citron avant de servir.'},
- {re:/chou\b/i,label:'Chou',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Émincer finement le chou, en retirant le trognon central.',cook:'Le braiser 10 minutes à couvert avec un filet d’eau ou d’huile, ou le servir cru en salade.',finish:'Assaisonner de sel, poivre et, au choix, d’un trait de vinaigre.'},
- {re:/champignons?/i,label:'Champignons',unit:'g',qty:150,cat:'Légumes & fruits',prep:'Nettoyer les champignons avec un linge ou une brosse humide (éviter de les laver sous l’eau, ils absorberaient l’humidité) et les émincer.',cook:'Les faire revenir 6 à 8 minutes à la poêle à feu vif, sans trop les remuer au début pour qu’ils dorent.',finish:'Saler seulement en fin de cuisson, pour éviter qu’ils ne rendent trop d’eau.'},
- {re:/asperges?/i,label:'Asperges',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Casser la base fibreuse des asperges à l’endroit où elle cède naturellement, et les éplucher si elles sont épaisses.',cook:'Les cuire 6 à 8 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’elles soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive et de citron.'},
- {re:/fenouil/i,label:'Fenouil',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Retirer les tiges dures et le cœur ferme du fenouil, puis l’émincer finement.',cook:'Le servir cru en salade avec un filet de citron, ou le braiser 15 minutes à couvert avec un peu d’eau.',finish:'Assaisonner d’herbes fraîches avant de servir.'},
- {re:/ratatouille/i,label:'Légumes pour ratatouille (courgette, aubergine, poivron, tomate)',unit:'g',qty:300,cat:'Légumes & fruits',prep:'Laver et couper tous les légumes (courgette, aubergine, poivron, tomate) en dés réguliers.',cook:'Les faire mijoter ensemble 25 à 30 minutes à couvert, en remuant de temps en temps, avec un filet d’huile d’olive.',finish:'Rectifier l’assaisonnement en fin de cuisson et parsemer d’herbes fraîches.'},
- {re:/tomates?/i,label:'Tomates',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver les tomates et les couper selon la recette (quartiers, rondelles ou dés).',cook:'Les servir crues en salade, ou les rôtir au four 15 à 20 minutes à 180 °C avec un filet d’huile.',finish:'Assaisonner de sel, poivre et basilic frais.'},
- {re:/pak-choï/i,label:'Pak-choï',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver le pak-choï et le couper en deux ou en quatre dans la longueur.',cook:'Le faire sauter 4 à 5 minutes à feu vif dans un wok ou une poêle, en remuant.',finish:'Assaisonner d’une pointe de sauce soja légère si désiré.'},
- {re:/salade (verte|croquante|roquette)?/i,label:'Salade verte',unit:'g',qty:100,cat:'Légumes & fruits',prep:'Laver et essorer soigneusement la salade.',finish:'Assaisonner au dernier moment d’une vinaigrette légère, pour qu’elle reste croquante.'},
- {re:/concombre/i,label:'Concombre',unit:'g',qty:150,cat:'Légumes & fruits',prep:'Laver le concombre (l’éplucher partiellement si la peau est épaisse) et le couper en rondelles ou en dés.',finish:'Servir frais ; on peut le saler légèrement 10 minutes à l’avance puis l’égoutter pour retirer l’excès d’eau.'},
- {re:/avocat/i,label:'Avocat',unit:'pièce(s)',qty:1,cat:'Légumes & fruits',prep:'Couper l’avocat en deux et retirer le noyau.',finish:'Le trancher ou le couper en dés au dernier moment, arrosé d’un filet de citron pour éviter qu’il ne noircisse.'},
- {re:/mozzarella/i,label:'Mozzarella légère',unit:'g',qty:125,cat:'Autres',prep:'Égoutter la mozzarella.',finish:'La couper en tranches ou en dés juste avant de dresser.'},
- {re:/igname/i,label:'Igname',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Éplucher l’igname (se laver les mains aussitôt après, sa sève peut irriter la peau) et la couper en morceaux réguliers.',cook:'La cuire à l’eau bouillante salée 20 à 25 minutes, jusqu’à ce qu’elle soit tendre à cœur.',finish:'Égoutter et servir chaude.'},
- {re:/taro/i,label:'Taro',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Éplucher le taro et le couper en morceaux réguliers.',cook:'Le cuire à l’eau bouillante salée 25 minutes, jusqu’à ce qu’il soit tendre.',finish:'Égoutter et servir chaud.'},
- {re:/banane plantain/i,label:'Banane plantain',unit:'g',qty:250,cat:'Féculents & légumineuses',prep:'Inciser la peau de la banane plantain sur la longueur pour l’éplucher facilement, puis la couper en tronçons.',cook:'La cuire à l’eau bouillante 20 minutes, jusqu’à ce qu’elle soit tendre (jamais frite dans ce programme).',finish:'Égoutter et servir chaude, éventuellement écrasée grossièrement à la fourchette.'},
- {re:/maïs frais/i,label:'Maïs frais',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Éplucher les épis de maïs frais et retirer les fils.',cook:'Les cuire 10 minutes à l’eau bouillante non salée (le sel durcit les grains, à ajouter seulement en fin de cuisson).',finish:'Égrainer à l’aide d’un couteau et servir aussitôt.'},
- {re:/amarante/i,label:'Amarante (feuilles)',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver soigneusement les feuilles d’amarante et retirer les tiges les plus dures.',cook:'Les faire revenir 8 à 10 minutes à la poêle ou à la casserole avec un filet d’eau, de l’ail et de l’oignon émincés.',finish:'Assaisonner de sel, poivre et d’un filet d’huile en fin de cuisson.'},
- {re:/oseille/i,label:'Oseille',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver l’oseille et retirer les tiges les plus épaisses.',cook:'La faire fondre 5 minutes à la poêle avec un peu d’huile : elle réduit beaucoup en cuisant.',finish:'Saler légèrement (l’oseille est naturellement acidulée) et servir aussitôt.'},
- {re:/feuilles de courge/i,label:'Feuilles de courge',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Laver soigneusement les feuilles de courge et retirer les nervures les plus fibreuses.',cook:'Les faire revenir 8 à 10 minutes à l’eau avec de l’ail et de l’oignon émincés.',finish:'Assaisonner et servir chaud.'},
- {re:/\bnavet(s)?\b/i,label:'Navet',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Éplucher le navet et le couper en cubes ou en rondelles.',cook:'Le cuire à la vapeur ou à l’eau bouillante 15 à 20 minutes, jusqu’à ce qu’il soit tendre.',finish:'Assaisonner d’un filet d’huile et d’herbes fraîches.'},
- {re:/panais/i,label:'Panais',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Éplucher le panais et le couper en bâtonnets ou en rondelles.',cook:'Le cuire à la vapeur 15 minutes, ou le rôtir au four 20 minutes à 200 °C avec un filet d’huile.',finish:'Il doit être fondant ; assaisonner avant de servir.'},
- {re:/céleri[- ]rave/i,label:'Céleri-rave',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Éplucher le céleri-rave (le frotter de citron si on ne le cuit pas tout de suite, pour qu’il ne noircisse pas) et le couper en cubes ou le râper.',cook:'Le cuire à l’eau bouillante 15 minutes s’il est en cubes, ou le servir cru et râpé en salade.',finish:'Assaisonner d’un filet de citron et, pour la version crue, d’une pointe de moutarde.'},
- {re:/céleri branche/i,label:'Céleri branche',unit:'g',qty:150,cat:'Légumes & fruits',prep:'Laver le céleri branche et retirer les fils à l’aide d’un économe.',cook:'Le servir cru émincé, ou le faire revenir 5 minutes à la poêle.',finish:'Assaisonner et servir.'},
- {re:/poireaux?/i,label:'Poireau',unit:'g',qty:200,cat:'Légumes & fruits',prep:'Retirer la partie verte la plus dure, fendre le poireau en deux dans la longueur et bien le laver entre les feuilles (la terre s’y loge facilement).',cook:'Le cuire à l’eau ou à la vapeur 12 à 15 minutes, jusqu’à ce qu’il soit fondant.',finish:'Égoutter et assaisonner d’un filet de citron.'},
- {re:/pois gourmands?/i,label:'Pois gourmands',unit:'g',qty:150,cat:'Légumes & fruits',prep:'Équeuter les pois gourmands et retirer le fil sur le côté si nécessaire.',cook:'Les cuire 3 à 4 minutes à la vapeur ou à l’eau bouillante : ils doivent rester croquants.',finish:'Rafraîchir sous l’eau froide pour garder la couleur, puis assaisonner.'},
- {re:/fèves?/i,label:'Fèves',unit:'g',qty:150,cat:'Féculents & légumineuses',prep:'Écosser les fèves ; si la peau est épaisse, les blanchir 1 minute à l’eau bouillante puis les peler.',cook:'Les cuire 5 à 8 minutes à l’eau bouillante salée, jusqu’à ce qu’elles soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive.'},
- {re:/potiron|potimarron|butternut|citrouille|courge spaghetti/i,label:'Courge (potiron, butternut ou courge spaghetti)',unit:'g',qty:250,cat:'Légumes & fruits',prep:'Éplucher la courge si nécessaire, l’épépiner et la couper en cubes (pour la courge spaghetti : la couper en deux et retirer les graines).',cook:'La rôtir au four 25 à 30 minutes à 200 °C avec un filet d’huile, ou la cuire à la vapeur 20 minutes (courge spaghetti : cuire face coupée vers le bas puis gratter la chair à la fourchette pour obtenir des filaments).',finish:'Vérifier qu’elle est fondante à la pointe du couteau avant de servir.'},
- {re:/artichauts?/i,label:'Artichaut',unit:'pièce(s)',qty:2,cat:'Légumes & fruits',prep:'Retirer les feuilles les plus dures de l’artichaut et couper la pointe des feuilles restantes.',cook:'Le cuire 30 à 40 minutes à l’eau bouillante salée avec un filet de citron (pour éviter qu’il ne noircisse), jusqu’à ce qu’une feuille se détache facilement.',finish:'Égoutter tête en bas et servir tiède ou froid.'},
- {re:/piment/i,label:'Piment',unit:'pièce(s)',qty:1,cat:'Légumes & fruits',prep:'Laver le piment, l’épépiner si l’on souhaite une saveur plus douce, puis l’émincer finement (se laver les mains après manipulation).',finish:'Ajouter en fin de cuisson, en dosant selon le niveau de force souhaité.'},
+ {re:/riz complet/i,label:'Riz complet',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Rincer le riz complet à l’eau claire jusqu’à ce qu’elle devienne transparente, pour retirer l’excès d’amidon.',cook:'Le cuire 25 à 30 minutes dans deux à trois fois son volume d’eau salée, à couvert et à feu doux.',finish:'Égoutter l’excédent d’eau si besoin, laisser reposer 5 minutes à couvert, puis égrainer à la fourchette.'},
+ {re:/riz basmati/i,label:'Riz basmati',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Rincer le riz basmati à l’eau claire ; le laisser tremper 10 minutes si le temps le permet, pour des grains bien détachés.',cook:'Le cuire 10 à 12 minutes dans l’eau bouillante salée.',finish:'Égoutter, égrainer à la fourchette et servir aussitôt.'},
+ {re:/riz sauvage/i,label:'Riz sauvage',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Rincer le riz sauvage à l’eau froide.',cook:'Le cuire 35 à 40 minutes à l’eau frémissante salée, à couvert, jusqu’à ce que les grains s’entrouvrent.',finish:'Égoutter et laisser gonfler 5 minutes hors du feu avant de servir.'},
+ {re:/quinoa/i,label:'Quinoa',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Rincer soigneusement le quinoa sous l’eau froide, pour retirer son enveloppe naturellement amère (saponine).',cook:'Le cuire 12 à 15 minutes dans deux fois son volume d’eau légèrement salée, à couvert et à petit frémissement.',finish:'Laisser reposer 5 minutes hors du feu à couvert, puis égrainer à la fourchette.'},
+ {re:/boulgour complet|boulgour/i,label:'Boulgour complet',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Verser le boulgour dans un saladier ou une casserole.',cook:'Le cuire 12 minutes dans l’eau bouillante salée (ou le couvrir d’eau bouillante à hauteur et laisser gonfler 15 minutes à couvert, hors du feu).',finish:'Égoutter l’excédent d’eau et égrainer à la fourchette avant de servir.'},
+ {re:/semoule complète|semoule/i,label:'Semoule complète',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Verser la semoule dans un saladier.',cook:'Verser dessus un volume égal d’eau bouillante (ou de bouillon léger), couvrir et laisser gonfler 5 minutes.',finish:'Égrainer à la fourchette avec un filet d’huile d’olive avant de servir.'},
+ {re:/patate douce/i,label:'Patate douce',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Éplucher la patate douce et la couper en cubes réguliers d’environ 2 cm.',cook:'La rôtir au four 25 minutes à 200 °C avec un filet d’huile, en retournant à mi-cuisson (ou la cuire 15 minutes à la vapeur).',finish:'Vérifier la cuisson à la pointe d’un couteau : elle doit être tendre à cœur avant de servir.'},
+ {re:/pommes? grenaille/i,label:'Pommes de terre grenaille',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Laver soigneusement les pommes grenaille (les couper en deux si elles sont grosses).',cook:'Les cuire à l’eau bouillante salée 15 à 20 minutes, ou les rôtir au four 25 minutes à 200 °C avec un filet d’huile.',finish:'Égoutter et servir aussitôt, éventuellement parsemées d’herbes fraîches.'},
+ {re:/manioc/i,label:'Manioc',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Éplucher le manioc, retirer la fibre centrale et le couper en tronçons réguliers.',cook:'Le cuire 20 à 25 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’il soit tendre à cœur.',finish:'Égoutter et servir chaud.'},
+ {re:/lentilles? (tièdes|verte|corail)?/i,label:'Lentilles',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Rincer les lentilles à l’eau froide et retirer les éventuelles impuretés.',cook:'Les cuire 20 à 25 minutes dans l’eau non salée (saler seulement en fin de cuisson), à léger frémissement.',finish:'Égoutter, assaisonner d’un filet d’huile d’olive et de sel avant de servir.'},
+ {re:/pois chiches?/i,label:'Pois chiches',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Égoutter et rincer les pois chiches (en conserve) sous l’eau froide.',cook:'Les réchauffer 5 minutes à la casserole ou à la poêle (ou les cuire 45 minutes à l’eau s’ils sont secs et pré-trempés la veille).',finish:'Assaisonner d’un filet de citron et d’huile d’olive avant de servir.'},
+ {re:/haricots rouges/i,label:'Haricots rouges',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Égoutter et rincer les haricots rouges (en conserve) sous l’eau froide.',cook:'Les réchauffer doucement 5 minutes à la casserole, en remuant.',finish:'Assaisonner et servir chaud.'},
+ {re:/pain complet/i,label:'Pain complet',unit:'tranche(s)',qty:1,cat:'🌾 Épicerie (féculents & légumineuses)',cook:'Toaster légèrement le pain complet si besoin.'},
+ {re:/tartine complète/i,label:'Pain complet',unit:'tranche(s)',qty:1,cat:'🌾 Épicerie (féculents & légumineuses)',cook:'Toaster légèrement le pain complet si besoin.'},
+ {re:/brocoli/i,label:'Brocoli',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Détailler le brocoli en petits bouquets réguliers, en retirant la base fibreuse de la tige (que l’on peut éplucher et cuire aussi).',cook:'Le cuire 6 à 8 minutes à la vapeur, jusqu’à ce qu’il soit tendre mais encore croquant.',finish:'Rafraîchir brièvement sous l’eau froide pour garder la couleur, puis assaisonner d’un filet d’huile d’olive.'},
+ {re:/épinards?/i,label:'Épinards',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver soigneusement les épinards et retirer les tiges les plus épaisses.',cook:'Les faire tomber 3 à 4 minutes dans une poêle chaude avec un filet d’huile, en remuant.',finish:'Égoutter l’excès d’eau de végétation, saler, poivrer et servir aussitôt.'},
+ {re:/courgettes?/i,label:'Courgettes',unit:'g',qty:250,cat:'🥕 Fruits & légumes',prep:'Laver les courgettes et les couper en rondelles ou en bâtonnets.',cook:'Les faire sauter ou griller 8 à 10 minutes à feu moyen-vif, en remuant régulièrement.',finish:'Assaisonner de sel, poivre et d’herbes fraîches en fin de cuisson.'},
+ {re:/carottes?/i,label:'Carottes',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Éplucher les carottes et les couper en rondelles ou en bâtonnets.',cook:'Les cuire à la vapeur 15 à 20 minutes, ou les rôtir au four 20 minutes à 200 °C avec un filet d’huile.',finish:'Vérifier qu’elles sont tendres à la pointe du couteau avant de servir.'},
+ {re:/haricots verts/i,label:'Haricots verts',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Équeuter les haricots verts (retirer les deux extrémités).',cook:'Les cuire 8 à 10 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’ils soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive.'},
+ {re:/poivrons?/i,label:'Poivrons',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver les poivrons, retirer les pépins et les couper en lanières.',cook:'Les faire sauter ou griller 8 minutes à feu vif, en remuant.',finish:'Saler et poivrer en fin de cuisson.'},
+ {re:/aubergines?/i,label:'Aubergines',unit:'g',qty:250,cat:'🥕 Fruits & légumes',prep:'Laver les aubergines et les couper en tranches ou en cubes.',cook:'Les griller ou les rôtir au four 20 minutes à 200 °C avec un filet d’huile, en les retournant à mi-cuisson.',finish:'Elles doivent être fondantes à cœur ; assaisonner et servir chaud.'},
+ {re:/gombo/i,label:'Gombo',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver le gombo et couper les extrémités.',cook:'Le faire sauter 8 à 10 minutes à feu moyen, en remuant régulièrement pour limiter le côté filandreux.',finish:'Assaisonner d’ail, d’oignon et d’un filet de citron avant de servir.'},
+ {re:/chou\b/i,label:'Chou',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Émincer finement le chou, en retirant le trognon central.',cook:'Le braiser 10 minutes à couvert avec un filet d’eau ou d’huile, ou le servir cru en salade.',finish:'Assaisonner de sel, poivre et, au choix, d’un trait de vinaigre.'},
+ {re:/champignons?/i,label:'Champignons',unit:'g',qty:150,cat:'🥕 Fruits & légumes',prep:'Nettoyer les champignons avec un linge ou une brosse humide (éviter de les laver sous l’eau, ils absorberaient l’humidité) et les émincer.',cook:'Les faire revenir 6 à 8 minutes à la poêle à feu vif, sans trop les remuer au début pour qu’ils dorent.',finish:'Saler seulement en fin de cuisson, pour éviter qu’ils ne rendent trop d’eau.'},
+ {re:/asperges?/i,label:'Asperges',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Casser la base fibreuse des asperges à l’endroit où elle cède naturellement, et les éplucher si elles sont épaisses.',cook:'Les cuire 6 à 8 minutes à la vapeur ou à l’eau bouillante salée, jusqu’à ce qu’elles soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive et de citron.'},
+ {re:/fenouil/i,label:'Fenouil',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Retirer les tiges dures et le cœur ferme du fenouil, puis l’émincer finement.',cook:'Le servir cru en salade avec un filet de citron, ou le braiser 15 minutes à couvert avec un peu d’eau.',finish:'Assaisonner d’herbes fraîches avant de servir.'},
+ {re:/ratatouille/i,label:'Légumes pour ratatouille (courgette, aubergine, poivron, tomate)',unit:'g',qty:300,cat:'🥕 Fruits & légumes',prep:'Laver et couper tous les légumes (courgette, aubergine, poivron, tomate) en dés réguliers.',cook:'Les faire mijoter ensemble 25 à 30 minutes à couvert, en remuant de temps en temps, avec un filet d’huile d’olive.',finish:'Rectifier l’assaisonnement en fin de cuisson et parsemer d’herbes fraîches.'},
+ {re:/tomates?/i,label:'Tomates',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver les tomates et les couper selon la recette (quartiers, rondelles ou dés).',cook:'Les servir crues en salade, ou les rôtir au four 15 à 20 minutes à 180 °C avec un filet d’huile.',finish:'Assaisonner de sel, poivre et basilic frais.'},
+ {re:/pak-choï/i,label:'Pak-choï',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver le pak-choï et le couper en deux ou en quatre dans la longueur.',cook:'Le faire sauter 4 à 5 minutes à feu vif dans un wok ou une poêle, en remuant.',finish:'Assaisonner d’une pointe de sauce soja légère si désiré.'},
+ {re:/salade (verte|croquante|roquette)?/i,label:'Salade verte',unit:'g',qty:100,cat:'🥕 Fruits & légumes',prep:'Laver et essorer soigneusement la salade.',finish:'Assaisonner au dernier moment d’une vinaigrette légère, pour qu’elle reste croquante.'},
+ {re:/concombre/i,label:'Concombre',unit:'g',qty:150,cat:'🥕 Fruits & légumes',prep:'Laver le concombre (l’éplucher partiellement si la peau est épaisse) et le couper en rondelles ou en dés.',finish:'Servir frais ; on peut le saler légèrement 10 minutes à l’avance puis l’égoutter pour retirer l’excès d’eau.'},
+ {re:/avocat/i,label:'Avocat',unit:'pièce(s)',qty:1,cat:'🥕 Fruits & légumes',prep:'Couper l’avocat en deux et retirer le noyau.',finish:'Le trancher ou le couper en dés au dernier moment, arrosé d’un filet de citron pour éviter qu’il ne noircisse.'},
+ {re:/mozzarella/i,label:'Mozzarella légère',unit:'g',qty:125,cat:'🥚 Crèmerie & œufs',prep:'Égoutter la mozzarella.',finish:'La couper en tranches ou en dés juste avant de dresser.'},
+ {re:/igname/i,label:'Igname',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Éplucher l’igname (se laver les mains aussitôt après, sa sève peut irriter la peau) et la couper en morceaux réguliers.',cook:'La cuire à l’eau bouillante salée 20 à 25 minutes, jusqu’à ce qu’elle soit tendre à cœur.',finish:'Égoutter et servir chaude.'},
+ {re:/taro/i,label:'Taro',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Éplucher le taro et le couper en morceaux réguliers.',cook:'Le cuire à l’eau bouillante salée 25 minutes, jusqu’à ce qu’il soit tendre.',finish:'Égoutter et servir chaud.'},
+ {re:/banane plantain/i,label:'Banane plantain',unit:'g',qty:250,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Inciser la peau de la banane plantain sur la longueur pour l’éplucher facilement, puis la couper en tronçons.',cook:'La cuire à l’eau bouillante 20 minutes, jusqu’à ce qu’elle soit tendre (jamais frite dans ce programme).',finish:'Égoutter et servir chaude, éventuellement écrasée grossièrement à la fourchette.'},
+ {re:/maïs frais/i,label:'Maïs frais',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Éplucher les épis de maïs frais et retirer les fils.',cook:'Les cuire 10 minutes à l’eau bouillante non salée (le sel durcit les grains, à ajouter seulement en fin de cuisson).',finish:'Égrainer à l’aide d’un couteau et servir aussitôt.'},
+ {re:/amarante/i,label:'Amarante (feuilles)',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver soigneusement les feuilles d’amarante et retirer les tiges les plus dures.',cook:'Les faire revenir 8 à 10 minutes à la poêle ou à la casserole avec un filet d’eau, de l’ail et de l’oignon émincés.',finish:'Assaisonner de sel, poivre et d’un filet d’huile en fin de cuisson.'},
+ {re:/oseille/i,label:'Oseille',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver l’oseille et retirer les tiges les plus épaisses.',cook:'La faire fondre 5 minutes à la poêle avec un peu d’huile : elle réduit beaucoup en cuisant.',finish:'Saler légèrement (l’oseille est naturellement acidulée) et servir aussitôt.'},
+ {re:/feuilles de courge/i,label:'Feuilles de courge',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Laver soigneusement les feuilles de courge et retirer les nervures les plus fibreuses.',cook:'Les faire revenir 8 à 10 minutes à l’eau avec de l’ail et de l’oignon émincés.',finish:'Assaisonner et servir chaud.'},
+ {re:/\bnavet(s)?\b/i,label:'Navet',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Éplucher le navet et le couper en cubes ou en rondelles.',cook:'Le cuire à la vapeur ou à l’eau bouillante 15 à 20 minutes, jusqu’à ce qu’il soit tendre.',finish:'Assaisonner d’un filet d’huile et d’herbes fraîches.'},
+ {re:/panais/i,label:'Panais',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Éplucher le panais et le couper en bâtonnets ou en rondelles.',cook:'Le cuire à la vapeur 15 minutes, ou le rôtir au four 20 minutes à 200 °C avec un filet d’huile.',finish:'Il doit être fondant ; assaisonner avant de servir.'},
+ {re:/céleri[- ]rave/i,label:'Céleri-rave',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Éplucher le céleri-rave (le frotter de citron si on ne le cuit pas tout de suite, pour qu’il ne noircisse pas) et le couper en cubes ou le râper.',cook:'Le cuire à l’eau bouillante 15 minutes s’il est en cubes, ou le servir cru et râpé en salade.',finish:'Assaisonner d’un filet de citron et, pour la version crue, d’une pointe de moutarde.'},
+ {re:/céleri branche/i,label:'Céleri branche',unit:'g',qty:150,cat:'🥕 Fruits & légumes',prep:'Laver le céleri branche et retirer les fils à l’aide d’un économe.',cook:'Le servir cru émincé, ou le faire revenir 5 minutes à la poêle.',finish:'Assaisonner et servir.'},
+ {re:/poireaux?/i,label:'Poireau',unit:'g',qty:200,cat:'🥕 Fruits & légumes',prep:'Retirer la partie verte la plus dure, fendre le poireau en deux dans la longueur et bien le laver entre les feuilles (la terre s’y loge facilement).',cook:'Le cuire à l’eau ou à la vapeur 12 à 15 minutes, jusqu’à ce qu’il soit fondant.',finish:'Égoutter et assaisonner d’un filet de citron.'},
+ {re:/pois gourmands?/i,label:'Pois gourmands',unit:'g',qty:150,cat:'🥕 Fruits & légumes',prep:'Équeuter les pois gourmands et retirer le fil sur le côté si nécessaire.',cook:'Les cuire 3 à 4 minutes à la vapeur ou à l’eau bouillante : ils doivent rester croquants.',finish:'Rafraîchir sous l’eau froide pour garder la couleur, puis assaisonner.'},
+ {re:/fèves?/i,label:'Fèves',unit:'g',qty:150,cat:'🌾 Épicerie (féculents & légumineuses)',prep:'Écosser les fèves ; si la peau est épaisse, les blanchir 1 minute à l’eau bouillante puis les peler.',cook:'Les cuire 5 à 8 minutes à l’eau bouillante salée, jusqu’à ce qu’elles soient tendres.',finish:'Égoutter et assaisonner d’un filet d’huile d’olive.'},
+ {re:/potiron|potimarron|butternut|citrouille|courge spaghetti/i,label:'Courge (potiron, butternut ou courge spaghetti)',unit:'g',qty:250,cat:'🥕 Fruits & légumes',prep:'Éplucher la courge si nécessaire, l’épépiner et la couper en cubes (pour la courge spaghetti : la couper en deux et retirer les graines).',cook:'La rôtir au four 25 à 30 minutes à 200 °C avec un filet d’huile, ou la cuire à la vapeur 20 minutes (courge spaghetti : cuire face coupée vers le bas puis gratter la chair à la fourchette pour obtenir des filaments).',finish:'Vérifier qu’elle est fondante à la pointe du couteau avant de servir.'},
+ {re:/artichauts?/i,label:'Artichaut',unit:'pièce(s)',qty:2,cat:'🥕 Fruits & légumes',prep:'Retirer les feuilles les plus dures de l’artichaut et couper la pointe des feuilles restantes.',cook:'Le cuire 30 à 40 minutes à l’eau bouillante salée avec un filet de citron (pour éviter qu’il ne noircisse), jusqu’à ce qu’une feuille se détache facilement.',finish:'Égoutter tête en bas et servir tiède ou froid.'},
+ {re:/piment/i,label:'Piment',unit:'pièce(s)',qty:1,cat:'🥕 Fruits & légumes',prep:'Laver le piment, l’épépiner si l’on souhaite une saveur plus douce, puis l’émincer finement (se laver les mains après manipulation).',finish:'Ajouter en fin de cuisson, en dosant selon le niveau de force souhaité.'},
 ];
 function servingsFactor(){return (settings.servings||2)/2}
 function detectComponents(text){
@@ -165,7 +165,14 @@ function detectComponents(text){
 }
 function proteinLine(mainText){
   const fam=mealFamily(mainText);
-  const base={sea:{label:'Gambas / crustacés',unit:'g',qty:175},fish:{label:'Poisson',unit:'g',qty:170},poultry:{label:'Poulet ou dinde',unit:'g',qty:160},meat:{label:'Bœuf, veau ou porc',unit:'g',qty:160},egg:{label:'Œufs',unit:'pièce(s)',qty:2},veg:null}[fam];
+  const base={
+    sea:{label:'Gambas / crustacés',unit:'g',qty:175,cat:'🐟 Poissonnerie'},
+    fish:{label:'Poisson',unit:'g',qty:170,cat:'🐟 Poissonnerie'},
+    poultry:{label:'Poulet ou dinde',unit:'g',qty:160,cat:'🥩 Boucherie'},
+    meat:{label:'Bœuf, veau ou porc',unit:'g',qty:160,cat:'🥩 Boucherie'},
+    egg:{label:'Œufs',unit:'pièce(s)',qty:2,cat:'🥚 Crèmerie & œufs'},
+    veg:null
+  }[fam];
   return base;
 }
 
@@ -198,8 +205,8 @@ function estimateNutrition(dishText){
   }
   detectComponents(dishText).forEach(c=>{
     const perPersonQty=(c.unit==='pièce(s)')? c.qty/2 : c.qty/2;
-    if(c.cat==='Féculents & légumineuses'){kcal+=perPersonQty*NUTRI_RATES.starch.kcal; prot+=perPersonQty*NUTRI_RATES.starch.prot;}
-    else if(c.cat==='Légumes & fruits'){kcal+=perPersonQty*NUTRI_RATES.veg.kcal; prot+=perPersonQty*NUTRI_RATES.veg.prot;}
+    if(c.cat==='🌾 Épicerie (féculents & légumineuses)'){kcal+=perPersonQty*NUTRI_RATES.starch.kcal; prot+=perPersonQty*NUTRI_RATES.starch.prot;}
+    else if(c.cat==='🥕 Fruits & légumes'){kcal+=perPersonQty*NUTRI_RATES.veg.kcal; prot+=perPersonQty*NUTRI_RATES.veg.prot;}
   });
   return {kcal:Math.round(kcal/10)*10, protein:Math.round(prot)};
 }
@@ -450,14 +457,152 @@ function recipeDetails(title){
   return {title,ingredients:[...new Set(ingredients)],steps,time,servings,tips};
 }
 
+// ---------- Minuteurs de recette (déclenchés depuis les étapes de préparation) ----------
+let timers=safeGet('v7_timers',[]); // [{id,label,endTime,duration}]
+let timerInterval=null;
+function extractTimerSeconds(stepText){
+  // Cherche une durée ("6 à 8 minutes", "25 minutes", "1 heure") dans le texte de l'étape.
+  // Ignore les durées trop longues pour un minuteur de cuisine (ex. "24 heures" de dessalage).
+  const s=(stepText||'').toLowerCase();
+  let minutes=null;
+  let m=s.match(/(\d+)\s*(?:à|-)\s*(\d+)\s*minutes?/);
+  if(m) minutes=Math.max(+m[1],+m[2]);
+  else { m=s.match(/(\d+)\s*minutes?/); if(m) minutes=+m[1]; }
+  if(minutes===null){ m=s.match(/(\d+)\s*heures?/); if(m) minutes=+m[1]*60; }
+  if(minutes===null || minutes<=0 || minutes>180) return null;
+  return minutes*60;
+}
+function startTimer(seconds,label){
+  if(!seconds) return;
+  const id='t'+Date.now()+Math.random().toString(36).slice(2,6);
+  timers.push({id,label:label||'Minuteur',endTime:Date.now()+seconds*1000,duration:seconds});
+  safeSet('v7_timers',timers);
+  renderTimers();
+  ensureTimerTicking();
+}
+function cancelTimer(id){
+  timers=timers.filter(t=>t.id!==id);
+  safeSet('v7_timers',timers);
+  renderTimers();
+}
+function timerBeep(){
+  try{
+    const Ctx=window.AudioContext||window.webkitAudioContext;
+    if(!Ctx) return;
+    const actx=new Ctx(), o=actx.createOscillator(), g=actx.createGain();
+    o.frequency.value=880; o.connect(g); g.connect(actx.destination);
+    g.gain.setValueAtTime(0.001,actx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.25,actx.currentTime+0.02);
+    g.gain.exponentialRampToValueAtTime(0.001,actx.currentTime+0.4);
+    o.start(); o.stop(actx.currentTime+0.42);
+  }catch(e){/* audio non disponible, on continue silencieusement */}
+}
+function renderTimers(){
+  const box=$('timersBar');
+  if(!box) return;
+  if(!timers.length){ box.innerHTML=''; box.style.display='none'; return; }
+  box.style.display='flex';
+  box.innerHTML=timers.map(t=>{
+    const remaining=Math.max(0,Math.round((t.endTime-Date.now())/1000));
+    const mm=String(Math.floor(remaining/60)).padStart(2,'0'), ss=String(remaining%60).padStart(2,'0');
+    const done=remaining<=0;
+    return '<div class="timer-chip'+(done?' done':'')+'"><span>'+(done?'⏰ Terminé : ':'⏱ ')+escHtml(t.label)+'</span><b>'+mm+':'+ss+'</b><button data-id="'+t.id+'" class="timer-cancel" aria-label="Arrêter">×</button></div>';
+  }).join('');
+  box.querySelectorAll('.timer-cancel').forEach(b=>b.onclick=()=>cancelTimer(b.dataset.id));
+}
+function ensureTimerTicking(){
+  if(timerInterval) return;
+  timerInterval=setInterval(()=>{
+    let anyJustFinished=false;
+    timers.forEach(t=>{ if(t.endTime<=Date.now() && !t._notified){ t._notified=true; anyJustFinished=true; } });
+    if(anyJustFinished){ timerBeep(); if(navigator.vibrate) navigator.vibrate([200,100,200]); }
+    renderTimers();
+    if(!timers.length){ clearInterval(timerInterval); timerInterval=null; }
+  },1000);
+}
+if(timers.length){ renderTimers(); ensureTimerTicking(); } // reprise si l'appli a été rouverte avec des minuteurs en cours
+function stepsHtmlWithTimers(steps){
+  return steps.map(x=>{
+    const secs=extractTimerSeconds(x);
+    return '<li data-plain="'+escHtml(x)+'">'+escHtml(x)+(secs?' <button class="timer-btn" data-secs="'+secs+'" data-label="'+escHtml(x.slice(0,70))+'">⏱ Minuteur</button>':'')+'</li>';
+  }).join('');
+}
+
+// ---------- Lecture vocale mains libres (Web Speech API du navigateur, sans serveur) ----------
+let voiceSteps=[], voiceIdx=0, voiceActive=false, voiceListening=false, voiceRecognizer=null;
+function speakText(text){
+  if(!('speechSynthesis' in window)) return false;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='fr-FR';
+  window.speechSynthesis.speak(u);
+  return true;
+}
+function voiceSpeakCurrentStep(){
+  if(!voiceSteps.length) return;
+  $('voiceStatus').textContent='Étape '+(voiceIdx+1)+' / '+voiceSteps.length+(voiceListening?' • écoute active':'');
+  speakText('Étape '+(voiceIdx+1)+'. '+voiceSteps[voiceIdx]);
+}
+function voiceStop(){
+  voiceActive=false;
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+  if(voiceListening && voiceRecognizer){ voiceListening=false; try{voiceRecognizer.stop();}catch(e){} }
+  const rb=$('voiceReadBtn'); if(rb) rb.textContent='🔊 Lire à voix haute';
+  const lb=$('voiceListenBtn'); if(lb) lb.textContent='🎙️ Commandes vocales';
+  const vs=$('voiceStatus'); if(vs) vs.textContent='';
+}
+function voiceAdvanceOrFinish(){
+  if(voiceIdx<voiceSteps.length-1){ voiceIdx++; voiceSpeakCurrentStep(); }
+  else { speakText('Recette terminée.'); voiceActive=false; $('voiceReadBtn').textContent='🔊 Lire à voix haute'; }
+}
+function setupVoiceRecognition(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR) return null;
+  const r=new SR();
+  r.lang='fr-FR'; r.continuous=true; r.interimResults=false;
+  r.onresult=(e)=>{
+    const said=(e.results[e.results.length-1][0].transcript||'').toLowerCase();
+    if(!voiceActive) return;
+    if(/suivant/.test(said)) voiceAdvanceOrFinish();
+    else if(/pr[ée]c[ée]dent|retour en arri[èe]re/.test(said)){ if(voiceIdx>0){voiceIdx--; voiceSpeakCurrentStep();} }
+    else if(/r[ée]p[èe]te|redis/.test(said)) voiceSpeakCurrentStep();
+    else if(/^stop$|arr[êe]te/.test(said)) voiceStop();
+  };
+  r.onerror=()=>{}; // erreurs transitoires (silence, micro coupé) : on ignore, onend gère la reprise
+  r.onend=()=>{ if(voiceListening){ try{r.start();}catch(e){} } };
+  return r;
+}
+voiceRecognizer=setupVoiceRecognition();
+const voiceListenBtnEl=$('voiceListenBtn');
+if(voiceRecognizer && voiceListenBtnEl) voiceListenBtnEl.style.display='inline-block';
+$('voiceReadBtn').onclick=()=>{
+  if(!('speechSynthesis' in window)){ $('voiceStatus').textContent='Lecture vocale non prise en charge par ce navigateur.'; return; }
+  if(!voiceActive){
+    const items=Array.from(document.getElementById('recipeSteps').children).map(li=>li.getAttribute('data-plain')||li.textContent);
+    if(!items.length) return;
+    voiceSteps=items; voiceIdx=0; voiceActive=true;
+    $('voiceReadBtn').textContent='▶️ Étape suivante';
+    voiceSpeakCurrentStep();
+  } else {
+    voiceAdvanceOrFinish();
+  }
+};
+$('voiceListenBtn').onclick=()=>{
+  if(!voiceRecognizer){ $('voiceStatus').textContent='Commandes vocales non prises en charge par ce navigateur.'; return; }
+  if(voiceListening){ voiceListening=false; try{voiceRecognizer.stop();}catch(e){} $('voiceListenBtn').textContent='🎙️ Commandes vocales'; }
+  else { voiceListening=true; try{voiceRecognizer.start();}catch(e){} $('voiceListenBtn').textContent='🎙️ Écoute active…'; }
+};
+
 function openRecipe(title, kind){
+  voiceStop();
   const r=recipeDetails(title);
   const n=estimateNutrition(title);
   $('recipeKind').textContent=kind;
   $('recipeTitle').textContent=r.title;
   $('recipeMeta').textContent=r.servings+' • '+r.time+' • ~'+n.kcal+' kcal, ~'+n.protein+' g de protéines / personne (estimation indicative)';
   $('recipeIngredients').innerHTML=r.ingredients.map(x=>'<li>'+escHtml(x.replace(/^•\s*/,''))+'</li>').join('');
-  $('recipeSteps').innerHTML=r.steps.map(x=>'<li>'+escHtml(x)+'</li>').join('');
+  $('recipeSteps').innerHTML=stepsHtmlWithTimers(r.steps);
+  $('recipeSteps').querySelectorAll('.timer-btn').forEach(b=>b.onclick=()=>startTimer(+b.dataset.secs,b.dataset.label));
   $('recipeTips').innerHTML=(r.tips||[]).map(x=>'<li>'+escHtml(x)+'</li>').join('');
   $('recipeTipsBlock').style.display=(r.tips&&r.tips.length)?'block':'none';
   $('recipeModal').classList.add('open');
@@ -466,6 +611,7 @@ function openRecipe(title, kind){
 function closeRecipe(){
   $('recipeModal').classList.remove('open');
   document.body.classList.remove('recipe-open');
+  voiceStop();
 }
 
 function lunchHTML(idx){
@@ -647,6 +793,7 @@ function draw(){
 
  renderJournalInputs(i);
  weekTabs();renderShopping();renderCycleReview();
+ if($('cuisine').classList.contains('active')) renderKitchenView();
 }
 function save(){localStorage.setItem('v6_index',i);draw()}
 $('prev').onclick=()=>{i=(i+M.length-1)%M.length;save()};
@@ -667,6 +814,7 @@ function renderJournalInputs(idx){
   $('journalHunger').value=j.hunger||3;
   $('journalNote').value=j.note||'';
   $('journalStatus').textContent=j.savedAt?('Enregistré le '+new Date(j.savedAt).toLocaleString('fr-FR')):'';
+  renderJournalPhoto();
 }
 function saveJournal(){
   const j=journal[i]||{};
@@ -676,8 +824,44 @@ function saveJournal(){
   journal[i]=j;safeSet('v6_journal',journal);
   $('journalStatus').textContent='Enregistré le '+new Date(j.savedAt).toLocaleString('fr-FR');
 }
-$('journalOk').onclick=()=>{journal[i]=journal[i]||{};journal[i].status='ok';saveJournal();renderJournalInputs(i)};
-$('journalAdapt').onclick=()=>{journal[i]=journal[i]||{};journal[i].status='adapte';saveJournal();renderJournalInputs(i)};
+$('journalOk').onclick=()=>{journal[i]=journal[i]||{};journal[i].status='ok';saveJournal();renderJournalInputs(i);renderObservance()};
+$('journalAdapt').onclick=()=>{journal[i]=journal[i]||{};journal[i].status='adapte';saveJournal();renderJournalInputs(i);renderObservance()};
+
+// ---------- Photo du plat du jour dans le journal (stockée uniquement sur l'appareil) ----------
+function renderJournalPhoto(){
+  const j=journal[i]||{};
+  const thumb=$('journalPhotoThumb'), removeBtn=$('journalPhotoRemove');
+  if(j.photo){ thumb.src=j.photo; thumb.style.display='block'; removeBtn.style.display='inline-block'; }
+  else { thumb.style.display='none'; removeBtn.style.display='none'; }
+}
+function saveJournalPhoto(dataUrl){
+  const j=journal[i]||{}; const prev=j.photo; j.photo=dataUrl; journal[i]=j;
+  try{ safeSet('v6_journal',journal); return true; }
+  catch(e){ j.photo=prev; journal[i]=j; return false; }
+}
+function handleJournalPhotoInput(file){
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=(ev)=>{
+    const img=new Image();
+    img.onload=()=>{
+      const maxDim=480;
+      let w=img.width, h=img.height;
+      if(w>=h && w>maxDim){ h=Math.round(h*maxDim/w); w=maxDim; }
+      else if(h>w && h>maxDim){ w=Math.round(w*maxDim/h); h=maxDim; }
+      const canvas=document.createElement('canvas'); canvas.width=w||maxDim; canvas.height=h||maxDim;
+      const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0,canvas.width,canvas.height);
+      const dataUrl=canvas.toDataURL('image/jpeg',0.6);
+      const ok=saveJournalPhoto(dataUrl);
+      renderJournalPhoto();
+      if(!ok) alert('Impossible d’enregistrer la photo : la mémoire de stockage de ce navigateur est pleine. Retirez d’anciennes photos du journal pour libérer de la place.');
+    };
+    img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+$('journalPhotoInput').onchange=(e)=>handleJournalPhotoInput(e.target.files[0]);
+$('journalPhotoRemove').onclick=()=>{ if(journal[i]){ delete journal[i].photo; safeSet('v6_journal',journal); } renderJournalPhoto(); };
 $('journalHunger').onchange=saveJournal;
 $('journalNote').onblur=saveJournal;
 
@@ -688,6 +872,7 @@ function setView(id){
  if(id==='favoris')renderFavorites();
  if(id==='suivi')renderResults();
  if(id==='semaine')renderWeekGrid();
+ if(id==='cuisine')renderKitchenView();
 }
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>setView(b.dataset.view));
 
@@ -698,6 +883,23 @@ function renderWeekGrid(){
   $('weekGrid').innerHTML=days.map(d=>'<button class="weekgrid-day" data-idx="'+d.idx+'"><b>'+d.day+'</b><small>🍴 '+escHtml(cleanLunchMain(currentMeal(d.idx,'lunch')).split('+')[0].trim())+'</small><small>🌙 '+escHtml(currentMeal(d.idx,'dinner').split('+')[0].trim())+'</small></button>').join('');
   $('weekGrid').querySelectorAll('.weekgrid-day').forEach(b=>b.onclick=()=>{i=+b.dataset.idx;save();setView('menus')});
   renderBatchCooking(days);
+}
+
+// ---------- Vue Cuisine (écran unique pour cuisiner : jour, recettes, courses restantes) ----------
+function renderKitchenView(){
+  const m=M[i], d=dateForIndex(i);
+  $('kitchenDayTitle').textContent=m.day+' • Semaine '+m.week+(d?(' • '+frDate(d)):'');
+  const starter=starterForIndex(i), lunch=cleanLunchMain(currentMeal(i,'lunch')), dinner=currentMeal(i,'dinner');
+  const week=m.week, shopping=ingredientsForWeek(week);
+  let uncheckedCount=0, totalCount=0;
+  Object.entries(shopping).forEach(([cat,items])=>{
+    items.forEach(x=>{ totalCount++; if(localStorage.getItem('v6_shop_'+week+'_'+cat+'_'+x)!=='1') uncheckedCount++; });
+  });
+  $('kitchenContent').innerHTML=
+    '<div class="kitchen-meal"><h2>🥗 Entrée</h2><p>'+escHtml(starter)+'</p><button class="recipe-btn big" onclick="openRecipe(starterForIndex('+i+'),\'Recette de l’entrée\')">📖 Recette complète</button></div>'+
+    '<div class="kitchen-meal"><h2>🍴 Déjeuner</h2><p>'+escHtml(lunch)+'</p><button class="recipe-btn big" onclick="openRecipe(cleanLunchMain(currentMeal('+i+',\'lunch\')),\'Recette du déjeuner\')">📖 Recette complète</button></div>'+
+    '<div class="kitchen-meal"><h2>🌙 Dîner</h2><p>'+escHtml(dinner)+'</p><button class="recipe-btn big" onclick="openRecipe(currentMeal('+i+',\'dinner\'),\'Recette du dîner\')">📖 Recette complète</button></div>'+
+    '<div class="kitchen-shopping"><h2>🛒 Courses de la semaine</h2><p>'+(totalCount? (uncheckedCount+' article(s) restant(s) sur '+totalCount) : 'Aucune liste générée pour cette semaine.')+'</p><button class="secondary" onclick="setView(\'courses\')">Voir la liste complète</button></div>';
 }
 
 // ---------- Batch cooking : regrouper les recettes de la semaine par technique ----------
@@ -793,7 +995,7 @@ function ingredientsForWeek(week){
   days.forEach(m=>{
     [cleanLunchMain(currentMeal(m.idx,'lunch')),currentMeal(m.idx,'dinner')].forEach(t=>{
       const p=proteinLine(t);
-      if(p){const key=p.label;if(!agg[key])agg[key]={qty:0,unit:p.unit,cat:'Protéines'};agg[key].qty+=p.qty*factor;}
+      if(p){const key=p.label;if(!agg[key])agg[key]={qty:0,unit:p.unit,cat:p.cat};agg[key].qty+=p.qty*factor;}
     });
   });
   const byCat={};
@@ -802,7 +1004,12 @@ function ingredientsForWeek(week){
     const qty=Math.round(v.qty);
     byCat[v.cat].push(label+' — '+formatQuantity(label,qty,v.unit));
   });
-  return byCat;
+  // Ordre "rayons de magasin" : frais en premier, épicerie sèche en dernier.
+  const AISLE_ORDER=['🥩 Boucherie','🐟 Poissonnerie','🥕 Fruits & légumes','🥚 Crèmerie & œufs','🌾 Épicerie (féculents & légumineuses)'];
+  const ordered={};
+  AISLE_ORDER.forEach(cat=>{ if(byCat[cat]) ordered[cat]=byCat[cat]; });
+  Object.keys(byCat).forEach(cat=>{ if(!ordered[cat]) ordered[cat]=byCat[cat]; }); // toute catégorie imprévue reste affichée
+  return ordered;
 }
 // Conversion en unités d'achat réalistes (sachet, botte, barquette...) en plus du poids exact
 const PURCHASE_UNITS={
@@ -841,6 +1048,46 @@ function renderShopping(){
 }
 $('generateShopping').onclick=renderShopping;
 $('resetChecks').onclick=()=>{Object.keys(localStorage).filter(k=>k.startsWith('v6_shop_'+M[i].week+'_')).forEach(k=>localStorage.removeItem(k));renderShopping()};
+
+// ---------- Anti-gaspillage : repérer les jours à venir qui utilisent déjà ce qu'il reste au frigo ----------
+function swapDays(idxA,idxB){
+  // Échange le contenu EFFECTIF (override ou original) de deux jours, quel que soit leur état actuel.
+  if(idxA===idxB) return;
+  ['lunch','dinner'].forEach(slot=>{
+    const a=currentMeal(idxA,slot), b=currentMeal(idxB,slot);
+    overrides[idxA+'_'+slot]=b; overrides[idxB+'_'+slot]=a;
+  });
+  const sa=starterForIndex(idxA), sb=starterForIndex(idxB);
+  overrides[idxA+'_starter']=sb; overrides[idxB+'_starter']=sa;
+  markManual(idxA+'_lunch');markManual(idxA+'_dinner');markManual(idxA+'_starter');
+  markManual(idxB+'_lunch');markManual(idxB+'_dinner');markManual(idxB+'_starter');
+  safeSet('v6_overrides',overrides);
+  draw();
+}
+function scanFridgeMatches(){
+  const raw=$('fridgeItems').value.split('\n').map(x=>x.trim().toLowerCase()).filter(Boolean);
+  safeSet('v7_fridge_items',raw);
+  const box=$('fridgeResults');
+  if(!raw.length){ box.innerHTML='<p class="hint">Ajoutez au moins un ingrédient, un par ligne.</p>'; return; }
+  const n=dayNumberFromStart();
+  const startIdx=Math.max(0,Math.min(M.length-1, n!==null? n : i));
+  const horizon=Math.min(M.length-1,startIdx+13);
+  const matches=[];
+  for(let idx=startIdx; idx<=horizon; idx++){
+    const lunch=cleanLunchMain(currentMeal(idx,'lunch')).toLowerCase(), dinner=currentMeal(idx,'dinner').toLowerCase();
+    const hits=raw.filter(item=>lunch.includes(item)||dinner.includes(item));
+    if(hits.length) matches.push({idx,day:M[idx].day,week:M[idx].week,hits});
+  }
+  box.innerHTML = matches.length
+    ? matches.map(m=>'<div class="fridge-match"><b>'+m.day+' (S'+m.week+')</b><span>contient : '+m.hits.join(', ')+'</span>'+
+        (m.idx!==startIdx? '<button class="secondary" data-idx="'+m.idx+'" data-target="'+startIdx+'">Avancer à aujourd’hui</button>':'<span class="hint">déjà prévu aujourd’hui</span>')+
+        '</div>').join('')
+    : '<p class="hint">Aucun de ces ingrédients n’apparaît dans les 14 prochains jours du programme.</p>';
+  box.querySelectorAll('button[data-idx]').forEach(b=>b.onclick=()=>{ swapDays(+b.dataset.idx,+b.dataset.target); scanFridgeMatches(); });
+}
+$('scanFridge').onclick=scanFridgeMatches;
+const savedFridgeItems=safeGet('v7_fridge_items',[]);
+if(savedFridgeItems.length) $('fridgeItems').value=savedFridgeItems.join('\n');
 
 // ---------- Favoris ----------
 function renderFavorites(){
@@ -883,6 +1130,7 @@ function renderResults(){
    sum.innerHTML='<b>Évolution depuis la première mesure</b><br>Poids : '+(dw>0?'+':'')+dw.toFixed(1)+' kg'+(df!==null?'<br>Masse grasse : '+(df>0?'+':'')+df.toFixed(1)+' point(s)':'')+(dwa!==null?'<br>Tour de taille : '+(dwa>0?'+':'')+dwa.toFixed(1)+' cm':'');}
  else sum.textContent=results.length?'Ajoutez au moins une deuxième mesure pour afficher l’évolution.':'Aucune mesure enregistrée.';
  drawChart();
+ renderObservance();
 }
 function drawChart(){
  const c=$('resultChart'),ctx=c.getContext('2d'),W=c.width,H=c.height;ctx.clearRect(0,0,W,H);ctx.fillStyle=settings.darkMode?'#12201a':'#fff';ctx.fillRect(0,0,W,H);
@@ -900,6 +1148,71 @@ function drawChart(){
    ctx.stroke();
    ctx.fillStyle='#78847f';ctx.font='11px sans-serif';ctx.fillText('— Poids (vert)   — Tour de taille (orange)',35,H-6);
  }
+ // Petits repères d'observance sous chaque mesure de poids (si une date de départ est définie) :
+ // vert = suivi tel quel ce jour-là, orange = adapté, gris = pas de journal ce jour-là.
+ const start=parseStart();
+ if(start){
+   results.forEach((r,idx)=>{
+     const dIdx=Math.round((new Date(r.date+'T00:00:00')-start)/DAYMS);
+     const j=journal[dIdx];
+     const x=35+idx*(W-55)/(Math.max(1,results.length-1));
+     const color=!j||!j.status?'#c7cfc9':(j.status==='ok'?'#11804e':'#c98a2e');
+     ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,H-14,3,0,Math.PI*2);ctx.fill();
+   });
+ }
+}
+
+// ---------- Constance, observance et détection de tendances (à partir du journal existant) ----------
+function computeCurrentStreak(){
+  const n=dayNumberFromStart();
+  if(n===null) return 0;
+  let streak=0;
+  for(let idx=Math.min(n,M.length-1); idx>=0; idx--){
+    if(journal[idx] && journal[idx].status==='ok') streak++;
+    else break;
+  }
+  return streak;
+}
+function computeBestStreak(){
+  let best=0, cur=0;
+  for(let idx=0; idx<M.length; idx++){
+    if(journal[idx] && journal[idx].status==='ok'){ cur++; if(cur>best) best=cur; }
+    else cur=0;
+  }
+  return best;
+}
+function renderObservance(){
+  const box=$('streakSummary');
+  if(!box) return;
+  const cur=computeCurrentStreak(), best=computeBestStreak();
+  const entries=Object.values(journal).filter(j=>j.status);
+  const okCount=entries.filter(j=>j.status==='ok').length;
+  const total=entries.length;
+  const pct=total? Math.round(okCount/total*100) : null;
+  const palier=[7,30,90].filter(p=>cur>=p).pop();
+  box.innerHTML='<b>🔥 '+cur+' jour(s) de suite suivi(s) tel quel</b>'+(palier?' <span class="streak-badge">Palier '+palier+' j 🎉</span>':'')+
+    (best>cur?' <small>(record personnel : '+best+' j)</small>':'')+
+    (total? '<br>'+pct+'% des jours enregistrés suivis tel quel ('+okCount+'/'+total+' jours journalisés)' : '<br>Remplissez le journal quotidien (bouton "Suivi tel quel"/"Adapté") pour voir vos statistiques ici.');
+  // Détection de tendances par jour de la semaine (ex. le vendredi soir souvent adapté)
+  const byDay={};
+  Object.entries(journal).forEach(([idx,j])=>{
+    if(!j.status) return;
+    const m=M[+idx]; if(!m) return;
+    byDay[m.day]=byDay[m.day]||{ok:0,adapte:0};
+    byDay[m.day][j.status]=(byDay[m.day][j.status]||0)+1;
+  });
+  const dayOrder=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+  const insights=[];
+  dayOrder.forEach(day=>{
+    const cnt=byDay[day]; if(!cnt) return;
+    const t=(cnt.ok||0)+(cnt.adapte||0);
+    if(t>=3 && (cnt.adapte||0)/t>=0.5){
+      insights.push('Le <b>'+day+'</b> est le jour où vous adaptez le plus souvent le programme ('+cnt.adapte+' fois sur '+t+' enregistrées).');
+    }
+  });
+  $('patternInsights').innerHTML = insights.length
+    ? insights.map(t=>'<p class="insight">💡 '+t+'</p>').join('')
+    : '<p class="hint">Continuez à remplir le journal quotidien : d’éventuelles tendances par jour de la semaine apparaîtront ici dès qu’il y aura assez de données (au moins 3 jours identiques enregistrés).</p>';
 }
 
 // ---------- Export PDF du suivi ----------
@@ -913,6 +1226,40 @@ $('printSuivi').onclick=()=>{
   setTimeout(()=>window.print(),80);
 };
 window.addEventListener('afterprint',()=>document.body.classList.remove('printing-track','printing-week'));
+
+// ---------- Brief consultation en une page (condensé, pour la diététicienne) ----------
+function buildConsultationBriefHtml(){
+  const last5=results.slice(-5);
+  const rowsHtml=last5.map(r=>'<tr><td>'+new Date(r.date+'T00:00:00').toLocaleDateString('fr-FR')+'</td><td>'+r.weight.toFixed(1)+' kg</td><td>'+(r.fat!=null?r.fat.toFixed(1)+' %':'—')+'</td><td>'+(r.waist!=null?r.waist.toFixed(1)+' cm':'—')+'</td></tr>').join('');
+  let evolutionHtml='Aucune mesure enregistrée.';
+  if(results.length>=2){
+    const a=results[0],b=results[results.length-1];
+    const dw=b.weight-a.weight, df=(a.fat!=null&&b.fat!=null)?b.fat-a.fat:null, dwa=(a.waist!=null&&b.waist!=null)?b.waist-a.waist:null;
+    evolutionHtml='Poids : '+(dw>0?'+':'')+dw.toFixed(1)+' kg depuis le '+new Date(a.date+'T00:00:00').toLocaleDateString('fr-FR')+
+      (df!==null?' • Masse grasse : '+(df>0?'+':'')+df.toFixed(1)+' pt':'')+
+      (dwa!==null?' • Tour de taille : '+(dwa>0?'+':'')+dwa.toFixed(1)+' cm':'');
+  }
+  const cur=computeCurrentStreak(), best=computeBestStreak();
+  const entries=Object.values(journal).filter(j=>j.status);
+  const okCount=entries.filter(j=>j.status==='ok').length, total=entries.length;
+  const pct=total?Math.round(okCount/total*100):null;
+  const n=dayNumberFromStart();
+  const curIdx=n!==null?Math.min(Math.max(n,0),M.length-1):null;
+  const progressLine=curIdx!==null? ('Jour '+(curIdx+1)+' / '+M.length+' • Semaine '+(M[curIdx]?M[curIdx].week:'—')) : 'Date de démarrage non définie';
+  const notes=Object.entries(journal).filter(([,j])=>j.note).sort((a,b)=>+a[0]-+b[0]).slice(-5)
+    .map(([idx,j])=>{const m=M[+idx]; return '<li><b>'+(m?m.day+' S'+m.week:idx)+'</b> — '+escHtml(j.note)+'</li>';}).join('');
+  return '<div class="print-head"><h1>Mes Menus — Brief consultation</h1><p>Exporté le '+new Date().toLocaleDateString('fr-FR')+' • '+progressLine+'</p></div>'+
+    '<h2>Évolution</h2><p>'+evolutionHtml+'</p>'+
+    '<h2>Dernières mesures</h2><table class="print-table"><tr><th>Date</th><th>Poids</th><th>Masse grasse</th><th>Tour de taille</th></tr>'+(rowsHtml||'<tr><td colspan="4">Aucune mesure enregistrée</td></tr>')+'</table>'+
+    '<h2>Observance</h2><p>'+(total? (pct+'% des jours enregistrés suivis tel quel ('+okCount+'/'+total+') • série actuelle : '+cur+' j • record personnel : '+best+' j') : 'Aucun jour journalisé pour l’instant.')+'</p>'+
+    (notes? ('<h2>Dernières remarques du journal</h2><ul>'+notes+'</ul>') : '');
+}
+function printConsultationBrief(){
+  $('trackPrintSheet').innerHTML=buildConsultationBriefHtml();
+  document.body.classList.add('printing-track');
+  setTimeout(()=>window.print(),80);
+}
+$('printBrief').onclick=printConsultationBrief;
 
 // ---------- Cycle suivant (corrigé) ----------
 function renderCycleReview(){
@@ -1199,6 +1546,34 @@ function sendWhatsApp(scope){
 $('waDay').onclick=()=>sendWhatsApp('day');
 $('waWeek').onclick=()=>sendWhatsApp('week');
 $('waMonth').onclick=()=>sendWhatsApp('month');
+
+// ---------- QR code du jour : partage sans serveur, juste à faire scanner ----------
+function showDayQR(){
+  const text=whatsappDayBlock(i).replace(/\*/g,'');
+  $('qrFallbackText').value=text;
+  const container=$('qrContainer');
+  container.innerHTML='';
+  if(typeof qrcode==='function'){
+    try{
+      const qr=qrcode(0,'M');
+      qr.addData(text);
+      qr.make();
+      container.innerHTML=qr.createImgTag(5,8);
+      $('qrHint').textContent='Faites scanner cet écran par l’appareil photo du téléphone du cuisinier.';
+    }catch(e){
+      $('qrHint').textContent='Le menu du jour est trop long pour tenir dans un QR code ; utilisez le texte ci-dessous, ou « Partager par WhatsApp ».';
+    }
+  } else {
+    $('qrHint').textContent='La génération de QR code n’a pas pu se charger (pas de réseau la toute première fois) ; utilisez le texte ci-dessous en attendant.';
+  }
+  $('qrModal').classList.add('open');
+}
+function closeQR(){ $('qrModal').classList.remove('open'); }
+$('showQR').onclick=showDayQR;
+$('copyQRText').onclick=()=>{
+  $('qrFallbackText').select();
+  try{ document.execCommand('copy'); $('copyQRText').textContent='Copié !'; setTimeout(()=>{$('copyQRText').textContent='Copier le texte'},1500); }catch(e){}
+};
 
 // ---------- Réglages : portions / dark mode / export / import ----------
 $('servingsInput').value=settings.servings||2;
