@@ -1,9 +1,9 @@
-const CACHE_NAME='mes-menus-v7-1';
+const CACHE_NAME='mes-menus-v7-2';
 const ASSETS=[
   './',
   './index.html',
-  './styles.css?v=7.0',
-  './app.js?v=7.0',
+  './styles.css?v=7.1',
+  './app.js?v=7.1',
   './manifest.webmanifest',
   './icon.svg',
   './assets/icon-120.png','./assets/icon-152.png','./assets/icon-167.png','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',

@@ -1,3 +1,35 @@
+MES MENUS V7.1 — CORRECTION : RECETTES INCOHÉRENTES OU DANGEREUSES
+
+CONSTAT
+Un audit de la banque de plats a mis en évidence 22 intitulés générés
+automatiquement qui combinaient une préparation crue ("tartare", "carpaccio",
+"ceviche") avec de la volaille ou du porc — une erreur de sécurité
+alimentaire (la volaille et le porc ne doivent jamais être consommés crus) —
+ou du veau en "ceviche", qui n'est pas une vraie recette (le ceviche est
+une préparation au citron réservée au poisson/fruits de mer).
+
+CORRECTIONS
+1. Les 22 plats concernés (déjeuners et dîners, dans le programme de base
+   et dans la banque de variantes) ont été réécrits en recettes cuites
+   réelles et cohérentes : ex. "Filet mignon de porc en tartare au citron"
+   → "Filet mignon de porc poêlé au citron" ; "Filet de dinde en ceviche au
+   citron vert" → "Filet de dinde mariné au citron vert puis poêlé". Les
+   accompagnements (légumes, féculents) n'ont pas changé.
+2. Garde-fou ajouté dans le générateur de recettes : un plat combinant
+   "tartare/carpaccio/ceviche" avec volaille ou porc (jamais avec bœuf)
+   n'utilisera plus jamais la fiche "à consommer cru", même si un tel
+   intitulé venait à être réintroduit par erreur plus tard.
+3. Correction ponctuelle et automatique, au premier lancement de cette
+   mise à jour, de tout repas déjà tiré au sort par le bouton "🔀 Nouveau
+   tirage aléatoire" de la V7 et qui aurait retenu l'un de ces 22 anciens
+   intitulés : il est remplacé par sa version corrigée, sans toucher au
+   reste de vos choix, favoris ou repas déjà changés à la main.
+
+CE QUI N'A PAS CHANGÉ
+- Aucun autre plat n'a été retiré ni modifié ; seuls ces 22 intitulés ont
+  été corrigés.
+- Vos données (favoris, historique, poids, réglages) sont conservées.
+
 MES MENUS V7.0 — AJOUT DE PLATS TROPICAUX (AFRIQUE CENTRALE)
 
 IMPORTANT — POURQUOI VOUS NE VOYIEZ PAS LES NOUVEAUX PLATS
