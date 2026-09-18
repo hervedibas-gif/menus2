@@ -1,3 +1,35 @@
+MES MENUS V7.2 — RECETTES VRAIMENT COMPLÈTES (LÉGUMES INCLUS)
+
+CONSTAT
+Les fiches recette détaillaient bien le plat principal, mais réduisaient
+la préparation de chaque légume ou féculent d'accompagnement à une seule
+ligne générique (ex. "Cuire le brocoli 6 à 8 minutes à la vapeur."), sans
+détail de lavage, découpe ou assaisonnement.
+
+CORRECTIONS
+1. Les ~30 légumes et féculents reconnus par l'application ont chacun
+   désormais 2 à 3 étapes détaillées au lieu d'une seule : préparation
+   (lavage, épluchage, découpe — avec les astuces utiles, ex. "laver le
+   poireau entre les feuilles", "frotter le céleri-rave de citron pour
+   qu'il ne noircisse pas"), cuisson, puis assaisonnement/finition.
+2. Une vingtaine de nouveaux légumes et féculents tropicaux, ajoutés en
+   V7 mais jusqu'ici sans aucune fiche de préparation, en ont maintenant
+   une complète : igname, taro, banane plantain, maïs frais, amarante,
+   oseille, feuilles de courge, navet, panais, céleri-rave, céleri
+   branche, poireau, pois gourmands, fèves, courges (potiron, butternut,
+   citrouille, courge spaghetti), artichaut, piment.
+3. La morue (poisson salé) a maintenant sa propre fiche : dessalage la
+   veille (trempage 24 h avec plusieurs changements d'eau), vérification
+   du sel, puis pochage doux au bouillon — au lieu d'être traitée comme un
+   poisson frais ordinaire.
+4. Résultat : une recette de plat complet (protéine + légume + féculent)
+   compte maintenant 10 à 13 étapes détaillées au lieu de 5 à 6.
+
+CE QUI N'A PAS CHANGÉ
+- Aucun intitulé de plat n'a été modifié : seul le contenu des fiches
+  recette (ingrédients et étapes) a été enrichi.
+- Vos données (favoris, historique, poids, réglages) sont conservées.
+
 MES MENUS V7.1 — CORRECTION : RECETTES INCOHÉRENTES OU DANGEREUSES
 
 CONSTAT
