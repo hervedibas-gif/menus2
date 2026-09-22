@@ -142,8 +142,8 @@ body.dark .kitchen-shopping{background:#2a2312}
 @media print{
   @page{size:A4 portrait;margin:10mm}
   html,body{background:#fff!important;margin:0!important;padding:0!important}
-  body.printing-week .app > *:not(.week-print-sheet){display:none!important}
-  body.printing-week .week-print-sheet{display:block!important;position:static!important;width:100%!important;background:#fff!important;color:#111!important;padding:0!important;margin:0!important}
+  body.printing-week .app > *:not(#weekPrintSheet){display:none!important}
+  body.printing-week #weekPrintSheet{display:block!important;position:static!important;width:100%!important;background:#fff!important;color:#111!important;padding:0!important;margin:0!important}
   body.printing-week .print-head{text-align:center;border-bottom:2px solid #222;margin-bottom:8px;padding-bottom:6px}
   body.printing-week .print-head h1{margin:0 0 3px;font-size:20px}
   body.printing-week .print-head p{margin:0;font-size:10px}

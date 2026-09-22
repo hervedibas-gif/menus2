@@ -1,0 +1,26 @@
+MES MENUS V8.1 — CORRECTION : L'IMPRESSION DE LA SEMAINE AFFICHAIT AUTRE CHOSE
+
+CONSTAT
+Signalé : "quand je lance impression des menus de la semaine, c'est autre
+chose qui est imprimé."
+
+CAUSE
+Les deux feuilles d'impression (celle des recettes de la semaine, et celle
+utilisée par "Exporter mon suivi" / "Brief consultation" / "Programme
+complet") partageaient par erreur le même nom de classe CSS. Résultat :
+si vous aviez utilisé l'un des exports du Suivi à un moment donné (son
+contenu reste en mémoire tant que l'appli n'a pas été rechargée), il
+réapparaissait — mélangé ou à la place — la prochaine fois que vous
+imprimiez les menus de la semaine.
+
+CORRECTION
+1. Les règles d'impression de la semaine ciblent maintenant uniquement la
+   feuille des menus de la semaine, jamais l'autre.
+2. Par sécurité supplémentaire, chaque feuille d'impression est maintenant
+   vidée automatiquement juste après l'impression (ou l'annulation), pour
+   qu'un contenu déjà imprimé ne puisse plus jamais resurgir ensuite.
+
+CE QUI N'A PAS CHANGÉ
+- Aucune autre fonctionnalité n'a été touchée.
+- Vos données (favoris, historique, poids, réglages, journal, photos)
+  sont conservées.
