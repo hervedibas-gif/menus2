@@ -1,0 +1,49 @@
+MES MENUS V8.3 — CORRECTION : TARTARE ET CARPACCIO UTILISÉS À TORT POUR TOUT
+
+CONSTAT
+Signalé : "Tartare et carpaccio sont utilisés pour tout et n'importe quoi."
+
+Vérifié par audit systématique (script sur les 469 entrées existantes) :
+119 entrées sur 469 (1 sur 4) utilisaient l'une de ces deux techniques —
+dont 12 qui se contredisaient carrément elles-mêmes, par exemple :
+"Tartare de courge butternut RÔTIE et sauge" ou "Carpaccio de chou-fleur
+RÔTI et curcuma". Un tartare et un carpaccio désignent tous les deux une
+préparation CRUE (finement coupée ou taillée en fines tranches) — les
+associer à un légume explicitement rôti n'a aucun sens.
+
+Au-delà de ces contradictions directes, la technique était aussi
+appliquée à des légumes qui ne se mangent normalement jamais crus
+(topinambour, salsifis, poireau) ou qui ne se prêtent pas à un tartare ou
+un carpaccio (feuilles non taillables comme la roquette, la mâche, les
+pousses d'épinards, l'endive, le chou kale).
+
+CORRECTIONS
+1. Les 12 contradictions directes (technique crue + légume rôti) ont été
+   renommées vers une vraie technique cuite : "Poêlée tiède" ou "Assiette".
+2. 23 autres entrées, culinairement discutables sans être des
+   contradictions à proprement parler, ont été remplacées par une
+   technique plus juste : salade simple pour les feuilles (roquette,
+   mâche, pousses d'épinards, endive, chou kale), poêlée tiède ou velouté
+   pour les racines fibreuses habituellement cuites (salsifis,
+   topinambour), et "poireaux vinaigrette" (le vrai nom du plat classique)
+   au lieu de "tartare/carpaccio de poireaux".
+3. Résultat : tartare et carpaccio ne représentent plus que des légumes
+   réellement adaptés à une préparation crue (betterave, carotte,
+   concombre, tomate, fenouil, radis, avocat, courgette, champignons,
+   asperges, artichauts...), et leur part dans les entrées passe de 1 sur
+   4 à un peu moins de 1 sur 5 — toujours présents, mais plus utilisés à
+   tort pour tout et n'importe quoi.
+
+MÉTHODE DE VÉRIFICATION
+Un script a recherché toute association "tartare" ou "carpaccio" avec un
+mot indiquant une cuisson (rôti, rôtie) dans les 469 entrées : il n'en
+reste plus aucune. Les recettes des entrées renommées ont été testées une
+par une pour vérifier qu'elles restent cohérentes (poêlée tiède affiche
+bien des étapes de cuisson à la poêle, velouté affiche bien les étapes de
+mixage, etc.).
+
+CE QUI N'A PAS CHANGÉ
+- Les déjeuners et dîners (plats principaux) n'étaient pas concernés par
+  ce problème et restent inchangés.
+- Vos données (favoris, historique, poids, réglages, journal, photos)
+  sont conservées.

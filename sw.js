@@ -1,9 +1,9 @@
-const CACHE_NAME='mes-menus-v8-2';
+const CACHE_NAME='mes-menus-v8-3';
 const ASSETS=[
   './',
   './index.html',
-  './styles.css?v=8.2',
-  './app.js?v=8.2',
+  './styles.css?v=8.3',
+  './app.js?v=8.3',
   './manifest.webmanifest',
   './icon.svg',
   './assets/icon-120.png','./assets/icon-152.png','./assets/icon-167.png','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
