@@ -1,0 +1,52 @@
+MES MENUS V8.2 — CORRECTION : LA LISTE DE COURSES NE CORRESPONDAIT PAS AUX MENUS
+
+CONSTAT
+Signalé : "La liste des courses ne correspond pas strictement au repas de
+la semaine. Il y a des articles qui manquent et parfois des articles qui
+n'ont rien à voir."
+
+Vérifié par un audit systématique (script sur les 930 plats distincts de
+l'application, pas au jugé) : le constat était exact, et même plus étendu
+qu'il n'y paraissait.
+
+CE QUI MANQUAIT (jamais reconnus par la liste de courses jusqu'ici, malgré
+des dizaines d'occurrences dans les menus) : pâtes complètes, sarrasin,
+riz noir, riz rouge, épeautre, millet, blettes, topinambours, salsifis,
+betterave (pourtant très présente dans les menus), endive, chicorée,
+laitue, romaine, batavia, iceberg, mâche, roquette (quand le mot "salade"
+n'était pas dans le titre), saka-saka, ainsi que les mentions génériques
+"légumes méditerranéens" / "légumes verts". Un plat avec "choux de
+Bruxelles" (au pluriel) n'était pas non plus reconnu, à cause d'une
+règle de détection qui ne captait que "chou" au singulier.
+
+CE QUI N'AVAIT "RIEN À VOIR" : la salade "feuilles de patate douce et
+tomate" faisait apparaître par erreur "Patate douce" dans la liste de
+courses — donnant l'impression qu'il fallait acheter et faire rôtir une
+patate douce, alors que la recette utilise ses feuilles, pas le tubercule.
+Autre cas : un plat à la citrouille ou au potimarron n'affichait dans la
+liste qu'un intitulé générique "Courge (potiron, butternut ou courge
+spaghetti)" qui ne les mentionnait pas du tout.
+
+CORRECTIONS
+1. 21 nouveaux ingrédients ajoutés à la reconnaissance de la liste de
+   courses (tous ceux listés ci-dessus), chacun avec sa propre fiche de
+   préparation complète (comme les autres légumes de l'application).
+2. Le plat "feuilles de patate douce et tomate" a été renommé "feuilles
+   vertes tropicales et tomate" pour ne plus déclencher par erreur l'achat
+   d'une patate douce.
+3. L'intitulé de la courge dans la liste de courses mentionne maintenant
+   explicitement le potimarron et la citrouille.
+4. La détection du chou reconnaît maintenant aussi le pluriel ("choux de
+   Bruxelles", etc.).
+
+MÉTHODE DE VÉRIFICATION
+Avant d'expédier cette correction, un script a comparé automatiquement
+les 930 plats existants à la liste des ingrédients reconnus : il ne reste
+plus qu'un seul cas non reconnu, un artefact bénin sans lien avec les
+courses (un intitulé mentionnant deux protéines dans un même plat).
+
+CE QUI N'A PAS CHANGÉ
+- Aucun intitulé de plat n'a été modifié à part le seul cas cité au
+  point 2 ci-dessus.
+- Vos données (favoris, historique, poids, réglages, journal, photos)
+  sont conservées.
