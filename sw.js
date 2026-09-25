@@ -1,4 +1,4 @@
-const CACHE_NAME='mes-menus-v8-3';
+const CACHE_NAME='mes-menus-v8-4';
 const ASSETS=[
   './',
   './index.html',

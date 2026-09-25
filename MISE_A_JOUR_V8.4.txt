@@ -1,0 +1,81 @@
+MES MENUS V8.4 — CRUSTACÉS LIMITÉS À UNE FOIS PAR SEMAINE
+
+DEMANDE
+Recommandation du diététicien : les crustacés ne doivent apparaître qu'une
+fois par semaine.
+
+CONSTAT (audit par script, pas au jugé)
+Dans le programme de 12 semaines, 9 semaines sur 12 dépassaient la règle :
+30 repas de crustacés au total au lieu de 12 maximum. La semaine 7 en
+comptait même quatre (gambas mercredi soir, crevettes samedi midi, gambas
+samedi soir, langouste mercredi midi). Et comme le tirage automatique des
+menus (V7) ne tenait pas compte de cette règle, les menus enregistrés sur
+votre téléphone pouvaient aussi en contenir plusieurs par semaine.
+
+CE QUI COMPTE COMME CRUSTACÉ
+Crevettes, gambas, langouste, homard, tourteau, crabe, écrevisse.
+Les noix de Saint-Jacques, le poulpe et les calamars sont des mollusques :
+ils ne sont pas concernés et restent au programme. (Si le diététicien vise
+en fait tous les fruits de mer, il suffit de le signaler.)
+
+CORRECTIONS
+1. Programme de base : 18 repas de crustacés en trop remplacés (liste
+   ci-dessous). Chaque semaine en garde exactement un. Les remplaçants
+   respectent les règles habituelles : aucun féculent au dîner, féculents
+   complets au déjeuner, pas de plat déjà servi dans les 2 semaines
+   alentour, et de préférence du poisson (pour garder l'apport en produits
+   de la mer), sinon une autre famille que la veille et le lendemain.
+2. Menus déjà enregistrés sur l'appareil : au premier lancement de la V8.4,
+   l'application vérifie chaque semaine et remplace les crustacés en trop.
+   Si vous aviez choisi vous-même un plat de crustacés, c'est celui-là qui
+   est conservé. Un message unique indique combien de repas ont été
+   remplacés (touchez-le pour le fermer).
+3. « Changer ce repas » : ne propose plus de crustacés si la semaine en
+   contient déjà un. Si c'est justement le plat de crustacés qu'on change,
+   il reste possible d'en choisir un autre (la semaine n'en compte alors
+   toujours qu'un).
+4. Tirage au sort des menus et cycle complémentaire (semaines 13 à 16) :
+   ne placent jamais plus d'un repas de crustacés par semaine.
+5. Nouvelle alerte : si une semaine se retrouve malgré tout avec deux
+   repas de crustacés (par exemple après « Avancer à aujourd'hui » depuis
+   le frigo), un bandeau orange l'indique sur le jour concerné.
+6. L'alerte « même famille qu'hier » disait « crustacés » pour le poulpe
+   et les Saint-Jacques : elle dit maintenant « fruits de mer ».
+
+CORRECTION D'UN DÉFAUT DÉCOUVERT EN PASSANT
+Le cycle complémentaire (semaines 13 à 16) était retiré au sort à nouveau
+à chaque ouverture de l'application : les menus de ces semaines changeaient
+sans prévenir, ce qui pouvait dérouter le cuisinier. Il est maintenant
+tiré une seule fois puis mémorisé.
+
+MÉTHODE DE VÉRIFICATION
+Application testée automatiquement dans un navigateur simulé : appareil
+neuf, appareil ayant déjà des menus tirés au sort avec 3 crustacés dans la
+même semaine, cycle complémentaire rechargé deux fois, et 20 tirages au
+sort successifs. Résultat : aucune semaine avec plus d'un repas de
+crustacés, aucun dîner avec féculent, cycle complémentaire identique
+d'une ouverture à l'autre.
+
+REPAS REMPLACÉS DANS LE PROGRAMME DE BASE
+- S1 Mercredi déjeuner : Gambas au four à l'ail et au thym + riz complet aux herbes + brocoli vapeur  →  Filet de colin au naturel, filet de citron + riz complet + poêlée de courgettes
+- S1 Dimanche déjeuner : Crevettes grillées à la plancha + lentilles corail + poivrons grillés  →  Poulet yassa léger + lentilles tièdes + salade croquante
+- S2 Mercredi déjeuner : Tourteau mariné au paprika doux + pâtes complètes + ratatouille légère  →  Darne de saumon en ceviche au citron vert + sarrasin + blettes sautées
+- S2 Jeudi dîner : Langouste sautée à l'ail et au persil + salade de tomates et basilic  →  Œufs cocotte aux épinards + salade roquette, concombre et avocat
+- S2 Dimanche dîner : Queue de homard marinée au citron vert + salade de roquette et parmesan  →  Omelette aux herbes fraîches + courgettes et menthe fraîche
+- S5 Dimanche déjeuner : Langouste poêlée minute au paprika + quinoa + fenouil braisé  →  Filet de dorade au naturel, filet de citron + lentilles vertes + carottes rôties
+- S7 Mercredi dîner : Gambas grillées ail-citron + asperges et salade de roquette  →  Escalope de veau en tranches fines au romarin + champignons et persillade
+- S7 Samedi déjeuner : Crevettes vapeur à l'aneth + millet + asperges vapeur  →  Filet de merlan meunière léger + riz complet + carottes vapeur
+- S7 Samedi dîner : Gambas vapeur à l'aneth + épinards sautés à l'ail  →  Noix de Saint-Jacques rôties à l'ail + salade verte et avocat
+- S8 Vendredi déjeuner : Langouste rôtie ail-persil + pommes grenaille + chou braisé aux herbes  →  Filet de dorade au naturel, filet de citron + lentilles vertes + carottes rôties
+- S8 Samedi dîner : Gambas marinées au paprika doux + salade de radis et concombre  →  Œufs cocotte aux épinards + fenouil braisé et orange
+- S9 Lundi dîner : Crevettes grillées au poivre + topinambours rôtis  →  Pilon de poulet sans peau rôti à l'ail + haricots verts et amandes effilées
+- S9 Samedi dîner : Tourteau en carpaccio au citron + poivrons grillés et aubergines  →  Filet de sole rôti au romarin + salade de brocoli et amandes
+- S10 Jeudi dîner : Gambas au gingembre et coriandre + salade de chou et concombre  →  Filet de bar rayé poêlé à la provençale + fenouil braisé et orange
+- S10 Samedi dîner : Brochettes de crevettes au paprika + poêlée de poivrons et oignons  →  Filet de bar rayé sauté au wok et cinq épices + salade verte et avocat
+- S11 Samedi déjeuner : Crevettes rôties à l'ail + pâtes complètes + chou-fleur vapeur  →  Poulet yassa léger + boulgour complet + haricots verts
+- S11 Samedi dîner : Gambas sautées à l'ail et au persil + courgettes et menthe fraîche  →  Œufs cocotte à la tomate + salade de concombre et menthe
+- S12 Jeudi dîner : Gambas au gingembre et coriandre + épinards sautés et champignons  →  Cuisse de poulet sans peau rôtie au romarin + ratatouille légère
+CE QUI N'A PAS CHANGÉ
+- Les entrées ne sont pas modifiées (aucune ne contenait de crustacés).
+- Vos données (favoris, historique, poids, réglages, journal, photos)
+  sont conservées.
